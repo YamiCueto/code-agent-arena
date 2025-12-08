@@ -8,23 +8,27 @@ Un sitio web interactivo y educativo para aprender todos los conceptos sobre age
 
 ### ✨ Características
 
-- 🎯 **7 Módulos completos** siguiendo un plan de estudio estructurado
+- 🎯 **7 Módulos** siguiendo un plan de estudio estructurado (4 completados)
 - 🎮 **15+ juegos interactivos** para aprender jugando
 - 📚 **Contenido teórico visual** y fácil de entender
-- 📝 **Quizzes** para evaluar tu progreso
-- 🏆 **Sistema de progreso** con desbloqueo de módulos
+- 📝 **Quizzes randomizados** para evaluar tu progreso
+- 🆓 **Navegación libre** - Explora cualquier módulo sin restricciones
 - 📱 **Diseño responsive** para móviles y tablets
 - 🎨 **Interfaz moderna** con animaciones suaves
+- ♿ **Accesible** con soporte para teclado y lectores de pantalla
+- 🧩 **CSS modular** - Arquitectura escalable y mantenible
 
 ### 📋 Módulos
 
-1. **🎯 Fundamentos** - ¿Qué es un agente? Tipos y componentes
-2. **🏗️ Arquitectura** - ReAct, Chain-of-Thought, Tree of Thoughts
-3. **🛠️ Técnicas** - Memory Systems, Tool Use, Multi-Agent
-4. **🚀 Herramientas** - LLM Providers, Vector Databases
-5. **💼 Casos de Uso** - Aplicaciones reales de agentes
-6. **🔬 Tópicos Avanzados** - Evaluación, Safety, Optimization
-7. **🎓 Proyecto Final** - Construye tu propio agente
+| Módulo | Estado | Descripción | Juego Interactivo |
+|--------|--------|-------------|-------------------|
+| 🎯 **Módulo 1: Fundamentos** | ✅ Completo | ¿Qué es un agente? Tipos y componentes | Drag & Drop: Clasifica Agentes |
+| 🏗️ **Módulo 2: Arquitectura** | ✅ Completo | ReAct, Chain-of-Thought, Tree of Thoughts | ReAct Simulator |
+| 🛠️ **Módulo 3: Técnicas** | ✅ Completo | Memory Systems, Tool Use, Multi-Agent | Memory Challenge |
+| 🚀 **Módulo 4: Herramientas** | ✅ Completo | LLM Providers, Vector DBs, Observability | Provider Matcher |
+| 💼 **Módulo 5: Casos de Uso** | 🚧 Próximamente | Aplicaciones reales de agentes | Agent Builder |
+| 🔬 **Módulo 6: Avanzado** | 🚧 Próximamente | Evaluación, Safety, Optimization | Safety Challenge |
+| 🎓 **Módulo 7: Capstone** | 🚧 Próximamente | Proyectos finales completos | 3 Proyectos Prácticos |
 
 ### 🚀 Comenzar
 
@@ -59,52 +63,70 @@ Luego visita `http://localhost:8000`
 
 ### 📁 Estructura del Proyecto
 
-```
-agentes-ia-academy/
-├── index.html              # Página principal
+```plaintext
+code-agent-arena/
+├── index.html                    # Página principal
+├── .github/
+│   └── copilot-instructions.md  # Guía completa de Clean Code y mejores prácticas
 ├── css/
-│   ├── styles.css         # Estilos principales
-│   └── games.css          # Estilos de juegos
+│   ├── styles.css               # Estilos principales del sitio
+│   ├── games.css                # Importa módulos CSS + estilos compartidos
+│   └── games/                   # CSS modular por juego
+│       ├── shared.css           # Estilos comunes (botones, animaciones, feedback)
+│       ├── agent-types.css      # Módulo 1 & 2
+│       ├── memory-challenge.css # Módulo 3
+│       └── provider-matcher.css # Módulo 4
 ├── js/
-│   ├── main.js           # JavaScript principal
-│   └── games/
-│       ├── agent-types.js    # Juego de tipos de agentes
-│       ├── react-simulator.js # (próximamente)
-│       └── memory-game.js     # (próximamente)
-├── pages/
-│   ├── module1.html      # Módulo 1: Fundamentos
-│   ├── module2.html      # (próximamente)
-│   └── ...
-└── assets/               # Imágenes y recursos
+│   ├── main.js                  # Navegación y funciones globales
+│   └── games/                   # JavaScript por juego (un archivo = un juego)
+│       ├── agent-types.js       # Drag & Drop - Módulo 1
+│       ├── react-simulator.js   # ReAct Simulator - Módulo 2
+│       ├── memory-challenge.js  # Memory Challenge - Módulo 3
+│       └── provider-matcher.js  # Provider Matcher - Módulo 4
+└── pages/
+    ├── module1.html             # Fundamentos
+    ├── module2.html             # Arquitectura
+    ├── module3.html             # Técnicas y Frameworks
+    └── module4.html             # Herramientas y Plataformas
 ```
 
 ### 🎮 Juegos Disponibles
 
-#### Módulo 1
-- **Clasifica los Agentes** - Drag & drop para clasificar tipos de agentes
+**Módulo 1: Fundamentos**
+- **Clasifica los Agentes** - Drag & drop para identificar tipos de agentes (Reactivos, BDI, Reflexivos, etc.)
 
-#### Próximamente
-- **Simulador ReAct** - Visualiza thought-action-observation loops
-- **Memory Challenge** - Juego de memoria para short-term vs long-term
-- **Multi-Agent Arena** - Simula colaboración entre agentes
-- **Tool Builder** - Construye agentes con herramientas
+**Módulo 2: Arquitectura**
+- **Simulador ReAct** - Visualiza ciclos thought → action → observation en 3 escenarios diferentes
+
+**Módulo 3: Técnicas**
+- **Memory Challenge** - 10 situaciones para elegir el tipo correcto de memoria (short-term, long-term, working)
+
+**Módulo 4: Herramientas**
+- **Provider Matcher** - 8 escenarios para elegir el mejor LLM provider (OpenAI, Anthropic, Google, Open Source)
+
+**Próximamente**
+- **Agent Builder** - Construye tu propio agente con componentes drag & drop
+- **Safety Challenge** - Identifica y mitiga riesgos en agentes
+- **Proyectos Capstone** - 3 proyectos prácticos completos
 
 ### 🎨 Tecnologías
 
-- **HTML5** - Estructura semántica
-- **CSS3** - Animaciones y diseño moderno
-- **JavaScript Vanilla** - Sin frameworks, puro JS
-- **Web APIs** - Drag & Drop, Local Storage, Web Audio
+- **HTML5** - Estructura semántica con tags apropiados
+- **CSS3** - Diseño modular, animaciones, CSS Grid/Flexbox
+- **JavaScript ES6+** - Vanilla JS sin frameworks
+- **Web APIs** - Drag & Drop, Local Storage, Web Audio (opcional)
 
 ### 🌟 Características Técnicas
 
-- ✅ Sin dependencias externas
-- ✅ 100% offline capable
-- ✅ Progressive enhancement
-- ✅ Accesibilidad (ARIA labels)
-- ✅ Responsive design
-- ✅ Animaciones suaves
-- ✅ Local storage para progreso
+- ✅ **Sin dependencias externas** - 100% standalone
+- ✅ **Arquitectura CSS modular** - Fácil mantenimiento y escalabilidad
+- ✅ **Clean Code** - Siguiendo principios SOLID, DRY, KISS
+- ✅ **Accesibilidad (a11y)** - ARIA labels, navegación por teclado
+- ✅ **Responsive Design** - Mobile-first approach
+- ✅ **Progressive Enhancement** - Funciona en todos los navegadores
+- ✅ **Offline Capable** - Todo el contenido disponible localmente
+- ✅ **Local Storage** - Guarda progreso del usuario
+- ✅ **BEM Methodology** - Convención de nombres CSS consistente
 
 ### 📱 Compatibilidad
 
@@ -124,26 +146,54 @@ Al completar todos los módulos podrás:
 - Evaluar y optimizar agentes
 - Construir casos de uso reales
 
+### 🏗️ Mejores Prácticas Implementadas
+
+Este proyecto sigue estrictos estándares de calidad documentados en `.github/copilot-instructions.md`:
+
+- **Clean Code**: Funciones de máx 50 líneas, single responsibility
+- **Naming Conventions**: BEM para CSS, camelCase para JS
+- **CSS Modular**: Archivos separados por módulo (max 500 líneas/archivo)
+- **Accesibilidad**: Semántica HTML5, ARIA labels, navegación por teclado
+- **Performance**: Event delegation, lazy loading, debouncing
+- **Error Handling**: Try-catch, validación de inputs, mensajes amigables
+- **Git Conventions**: Commits semánticos (feat, fix, refactor, docs, style)
+- **Responsive**: Mobile-first con breakpoints en 768px, 1024px, 1440px
+- **Browser Support**: Últimas 2 versiones de Chrome, Firefox, Safari, Edge
+
 ### 🤝 Contribuir
 
-¡Las contribuciones son bienvenidas! Especialmente:
+¡Las contribuciones son bienvenidas! Por favor revisa `.github/copilot-instructions.md` antes de contribuir.
 
-- 🎮 Nuevos juegos interactivos
-- 📚 Contenido educativo
-- 🐛 Reportes de bugs
-- 🎨 Mejoras de diseño
-- 🌍 Traducciones
+**Áreas de contribución:**
+
+- 🎮 Nuevos juegos interactivos para módulos 5-7
+- 📚 Contenido educativo y ejemplos
+- 🐛 Reportes de bugs con steps to reproduce
+- 🎨 Mejoras de diseño UI/UX
+- 🌍 Traducciones a otros idiomas
+- ♿ Mejoras de accesibilidad
+- 📱 Optimizaciones mobile
+
+**Proceso:**
+
+1. Fork el proyecto
+2. Crea una rama (`git checkout -b feature/AmazingFeature`)
+3. Commit con convención semántica (`git commit -m 'feat: Add amazing feature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
 ### 📄 Licencia
 
-Este proyecto es de código abierto y está disponible para uso educativo.
+MIT License - Este proyecto es de código abierto y está disponible para uso educativo y comercial.
 
 ### 🙏 Créditos
 
-Basado en el plan de estudio completo de Agentes con IA.
+- **Autor:** [Yamid Cueto](https://github.com/YamiCueto)
+- **Inspiración:** Plan de estudio de 16 semanas sobre Agentes de IA
+- **Comunidad:** Gracias a todos los que aprenden y contribuyen
 
 ---
 
 **Hecho con ❤️ por [Yamid Cueto](https://github.com/YamiCueto) para la comunidad**
 
-**¡Comienza tu aventura en el mundo de los agentes de IA! 🚀🤖**
+## 🚀 Comienza tu aventura en el mundo de los agentes de IA
