@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1: Fundamentos - Code Agent Arena</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/games.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🤖 Code Agent Arena</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">← Inicio</a></li>
+                <li><a href="#teoria">Teoría</a></li>
+                <li><a href="#juego">Juego</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Module Header -->
+        <section class="module-header">
+            <div class="module-header-content">
+                <div class="breadcrumb">Módulo 1 / Fundamentos</div>
+                <h1>🎯 Fundamentos de Agentes IA</h1>
+                <p class="module-description">Descubre qué son los agentes, sus tipos y componentes principales</p>
+                <div class="module-stats">
+                    <span class="stat-item">⏱️ 2 semanas</span>
+                    <span class="stat-item">🎮 3 juegos</span>
+                    <span class="stat-item">📝 1 quiz</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theory Section -->
+        <section id="teoria" class="theory-section">
+            <div class="theory-container">
+                <h2>📚 ¿Qué es un Agente de IA?</h2>
+                
+                <div class="theory-card">
+                    <h3>Definición Simple</h3>
+                    <p>Un <strong>agente de IA</strong> es un programa que puede:</p>
+                    <ul class="theory-list">
+                        <li>👀 <strong>Percibir</strong> su entorno (recibir información)</li>
+                        <li>🧠 <strong>Pensar</strong> y razonar sobre qué hacer</li>
+                        <li>⚡ <strong>Actuar</strong> para lograr un objetivo</li>
+                        <li>🔄 <strong>Aprender</strong> de sus experiencias</li>
+                    </ul>
+                </div>
+
+                <div class="theory-card highlight">
+                    <h3>Ejemplo del Mundo Real 🏠</h3>
+                    <p>Imagina un robot aspiradora (como Roomba):</p>
+                    <div class="example-box">
+                        <div class="example-step">
+                            <span class="step-icon">👀</span>
+                            <div>
+                                <strong>Percibe:</strong> Detecta obstáculos y suciedad
+                            </div>
+                        </div>
+                        <div class="example-step">
+                            <span class="step-icon">🧠</span>
+                            <div>
+                                <strong>Piensa:</strong> "Hay suciedad adelante, pero una silla bloqueando"
+                            </div>
+                        </div>
+                        <div class="example-step">
+                            <span class="step-icon">⚡</span>
+                            <div>
+                                <strong>Actúa:</strong> Rodea la silla y limpia el área
+                            </div>
+                        </div>
+                        <div class="example-step">
+                            <span class="step-icon">🔄</span>
+                            <div>
+                                <strong>Aprende:</strong> Recuerda el mapa de la casa para ser más eficiente
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🎭 Tipos de Agentes</h2>
+                
+                <div class="agent-types-grid">
+                    <div class="agent-type-card" data-type="reactive">
+                        <div class="agent-type-icon">⚡</div>
+                        <h3>Reactivo Simple</h3>
+                        <p><strong>Características:</strong></p>
+                        <ul>
+                            <li>Responde directamente a lo que ve</li>
+                            <li>No tiene memoria del pasado</li>
+                            <li>Muy rápido pero limitado</li>
+                        </ul>
+                        <p class="agent-example">📱 Ejemplo: Termostato - Si temperatura > 25°C → encender ventilador</p>
+                    </div>
+
+                    <div class="agent-type-card" data-type="model-based">
+                        <div class="agent-type-icon">🧠</div>
+                        <h3>Basado en Modelos</h3>
+                        <p><strong>Características:</strong></p>
+                        <ul>
+                            <li>Mantiene modelo del mundo</li>
+                            <li>Recuerda información importante</li>
+                            <li>Toma decisiones más informadas</li>
+                        </ul>
+                        <p class="agent-example">🚗 Ejemplo: Auto autónomo - recuerda el tráfico y condiciones del camino</p>
+                    </div>
+
+                    <div class="agent-type-card" data-type="goal-based">
+                        <div class="agent-type-icon">🎯</div>
+                        <h3>Basado en Objetivos</h3>
+                        <p><strong>Características:</strong></p>
+                        <ul>
+                            <li>Tiene objetivos claros</li>
+                            <li>Planifica cómo lograrlos</li>
+                            <li>Puede tomar caminos diferentes</li>
+                        </ul>
+                        <p class="agent-example">🗺️ Ejemplo: GPS - encuentra la mejor ruta a tu destino</p>
+                    </div>
+
+                    <div class="agent-type-card" data-type="utility-based">
+                        <div class="agent-type-icon">⭐</div>
+                        <h3>Basado en Utilidad</h3>
+                        <p><strong>Características:</strong></p>
+                        <ul>
+                            <li>Evalúa qué tan "bueno" es cada resultado</li>
+                            <li>Optimiza para el mejor resultado</li>
+                            <li>Considera múltiples factores</li>
+                        </ul>
+                        <p class="agent-example">💰 Ejemplo: Trading bot - maximiza ganancias minimizando riesgos</p>
+                    </div>
+
+                    <div class="agent-type-card" data-type="learning">
+                        <div class="agent-type-icon">📚</div>
+                        <h3>Agente que Aprende</h3>
+                        <p><strong>Características:</strong></p>
+                        <ul>
+                            <li>Mejora con el tiempo</li>
+                            <li>Se adapta a nuevas situaciones</li>
+                            <li>Más autónomo y poderoso</li>
+                        </ul>
+                        <p class="agent-example">🎮 Ejemplo: AlphaGo - aprendió a jugar Go mejor que humanos</p>
+                    </div>
+                </div>
+
+                <h2>🔧 Componentes Principales</h2>
+                
+                <div class="components-diagram">
+                    <div class="component-box">
+                        <div class="component-icon">👁️</div>
+                        <h4>Sensores</h4>
+                        <p>Reciben información del entorno</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="component-box">
+                        <div class="component-icon">🧠</div>
+                        <h4>Cerebro (Razonamiento)</h4>
+                        <p>Procesa y decide qué hacer</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="component-box">
+                        <div class="component-icon">🦾</div>
+                        <h4>Actuadores</h4>
+                        <p>Ejecutan las acciones</p>
+                    </div>
+                </div>
+
+                <div class="theory-card">
+                    <h3>💾 Memoria</h3>
+                    <p>Los agentes más avanzados también tienen:</p>
+                    <ul>
+                        <li><strong>Memoria a corto plazo:</strong> Información de la conversación actual</li>
+                        <li><strong>Memoria a largo plazo:</strong> Conocimiento y experiencias previas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="juego" class="game-section">
+            <div class="game-container">
+                <h2>🎮 Juego: Clasifica los Agentes</h2>
+                <p class="game-instructions">Arrastra cada ejemplo al tipo de agente correcto. ¡Completa todas las categorías para ganar!</p>
+                
+                <div class="game-board">
+                    <!-- Drop zones -->
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-type="reactive">
+                            <h3>⚡ Reactivo Simple</h3>
+                            <div class="drop-area" id="drop-reactive"></div>
+                        </div>
+                        <div class="drop-zone" data-type="model-based">
+                            <h3>🧠 Basado en Modelos</h3>
+                            <div class="drop-area" id="drop-model"></div>
+                        </div>
+                        <div class="drop-zone" data-type="goal-based">
+                            <h3>🎯 Basado en Objetivos</h3>
+                            <div class="drop-area" id="drop-goal"></div>
+                        </div>
+                        <div class="drop-zone" data-type="utility-based">
+                            <h3>⭐ Basado en Utilidad</h3>
+                            <div class="drop-area" id="drop-utility"></div>
+                        </div>
+                        <div class="drop-zone" data-type="learning">
+                            <h3>📚 Que Aprende</h3>
+                            <div class="drop-area" id="drop-learning"></div>
+                        </div>
+                    </div>
+
+                    <!-- Draggable items -->
+                    <div class="draggable-items" id="items-container">
+                        <div class="draggable-item" draggable="true" data-correct="reactive">
+                            🌡️ Termostato
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="model-based">
+                            🚗 Auto autónomo
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="goal-based">
+                            🗺️ Navegador GPS
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="utility-based">
+                            💰 Bot de trading
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="learning">
+                            🎮 AlphaGo
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="reactive">
+                            💡 Detector de movimiento
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="model-based">
+                            🏠 Asistente virtual
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="goal-based">
+                            🤖 Robot de limpieza
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="utility-based">
+                            📊 Optimizador de recursos
+                        </div>
+                        <div class="draggable-item" draggable="true" data-correct="learning">
+                            🎵 Recomendador de música
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn btn-secondary" onclick="resetGame()">🔄 Reiniciar</button>
+                    <div class="score-display">
+                        <span>Puntos: <span id="score">0</span></span>
+                        <span>Correctas: <span id="correct">0</span>/10</span>
+                    </div>
+                </div>
+
+                <div id="game-feedback" class="game-feedback"></div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-container">
+                <h2>📝 Quiz Final</h2>
+                <p>Responde estas preguntas para completar el módulo</p>
+
+                <div class="quiz-questions">
+                    <div class="quiz-question">
+                        <h3>1. ¿Cuál es la principal diferencia entre un chatbot y un agente?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>Un agente puede tomar acciones en el mundo real o digital</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>Un chatbot es más inteligente</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>No hay diferencia</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>2. ¿Qué tipo de agente NO tiene memoria del pasado?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>Reactivo Simple</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>Basado en Modelos</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>Que Aprende</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>3. ¿Cuáles son los tres componentes principales de un agente?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                <span>Percepción, Razonamiento y Acción</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                <span>Entrada, Proceso y Salida</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                <span>Hardware, Software y Red</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>4. Un agente basado en utilidad...</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="a">
+                                <span>Optimiza para obtener el mejor resultado posible</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="b">
+                                <span>Solo responde a estímulos directos</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="c">
+                                <span>No puede tomar decisiones</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>5. ¿Qué hace especial a un agente que aprende?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="a">
+                                <span>Mejora su desempeño con la experiencia</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="b">
+                                <span>Es más rápido que otros agentes</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="c">
+                                <span>No necesita programación</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="checkQuiz()">Enviar Respuestas</button>
+                <div id="quiz-result" class="quiz-result"></div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="module-navigation">
+            <a href="../index.html" class="nav-btn nav-prev">← Volver al Inicio</a>
+            <a href="module2.html" class="nav-btn nav-next locked" id="next-module">Módulo 2: Arquitectura →</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>🤖 Code Agent Arena - Módulo 1: Fundamentos</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/games/agent-types.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# 🤖 Agentes IA Academy
+# 🤖 Code Agent Arena
 
 ## Aprende sobre Agentes de Inteligencia Artificial ¡Jugando! 🎮
 
@@ -141,5 +141,7 @@ Este proyecto es de código abierto y está disponible para uso educativo.
 Basado en el plan de estudio completo de Agentes con IA.
 
 ---
+
+**Hecho con ❤️ por [Yamid Cueto](https://github.com/YamiCueto) para la comunidad**
 
 **¡Comienza tu aventura en el mundo de los agentes de IA! 🚀🤖**

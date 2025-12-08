@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Agent Arena - Aprende Agentes IA Jugando 🤖</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🤖 Code Agent Arena</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#modulos">Módulos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>Aprende sobre Agentes de IA</h2>
+                <h3>¡Jugando! 🎮</h3>
+                <p class="hero-subtitle">Domina los conceptos de agentes inteligentes a través de juegos interactivos. Para todas las edades.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToModules()">Comenzar Aventura</button>
+                    <button class="btn btn-secondary" onclick="scrollToRoadmap()">Ver Roadmap</button>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <div class="robot-container">
+                    <div class="robot">🤖</div>
+                    <div class="speech-bubble">¡Hola! ¿Listo para aprender?</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Módulos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Juegos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">16</div>
+                <div class="stat-label">Semanas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Gratis</div>
+            </div>
+        </section>
+
+        <!-- Roadmap Visual -->
+        <section id="roadmap" class="roadmap">
+            <h2>Tu Camino de Aprendizaje 🗺️</h2>
+            <p class="section-subtitle">Un viaje interactivo de 16 semanas</p>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-item" data-module="1">
+                    <div class="module-icon">🎯</div>
+                    <h3>Módulo 1: Fundamentos</h3>
+                    <p>2 semanas</p>
+                    <ul class="module-topics">
+                        <li>¿Qué es un agente?</li>
+                        <li>Tipos de agentes</li>
+                        <li>Componentes core</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="goToModule(1)">Empezar</button>
+                    <div class="progress-badge">🔒</div>
+                </div>
+
+                <div class="roadmap-item" data-module="2">
+                    <div class="module-icon">🏗️</div>
+                    <h3>Módulo 2: Arquitectura</h3>
+                    <p>3 semanas</p>
+                    <ul class="module-topics">
+                        <li>ReAct Framework</li>
+                        <li>Chain-of-Thought</li>
+                        <li>Tree of Thoughts</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="goToModule(2)">Empezar</button>
+                    <div class="progress-badge">🔒</div>
+                </div>
+
+                <div class="roadmap-item" data-module="3">
+                    <div class="module-icon">🛠️</div>
+                    <h3>Módulo 3: Técnicas</h3>
+                    <p>3 semanas</p>
+                    <ul class="module-topics">
+                        <li>Memory Systems</li>
+                        <li>Tool Use</li>
+                        <li>Multi-Agent</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="goToModule(3)">Empezar</button>
+                    <div class="progress-badge">🔒</div>
+                </div>
+
+                <div class="roadmap-item" data-module="4">
+                    <div class="module-icon">🚀</div>
+                    <h3>Módulo 4: Herramientas</h3>
+                    <p>2 semanas</p>
+                    <ul class="module-topics">
+                        <li>LLM Providers</li>
+                        <li>Vector Databases</li>
+                        <li>Observability</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="goToModule(4)">Empezar</button>
+                    <div class="progress-badge">🔒</div>
+                </div>
+
+                <div class="roadmap-item" data-module="5">
+                    <div class="module-icon">💼</div>
+                    <h3>Módulo 5: Casos de Uso</h3>
+                    <p>2 semanas</p>
+                    <ul class="module-topics">
+                        <li>Customer Support</li>
+                        <li>Research Assistant</li>
+                        <li>Code Assistant</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="goToModule(5)">Empezar</button>
+                    <div class="progress-badge">🔒</div>
+                </div>
+
+                <div class="roadmap-item" data-module="6">
+                    <div class="module-icon">🔬</div>
+                    <h3>Módulo 6: Avanzado</h3>
+                    <p>2 semanas</p>
+                    <ul class="module-topics">
+                        <li>Evaluation</li>
+                        <li>Safety & Alignment</li>
+                        <li>Optimization</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="goToModule(6)">Empezar</button>
+                    <div class="progress-badge">🔒</div>
+                </div>
+
+                <div class="roadmap-item" data-module="7">
+                    <div class="module-icon">🎓</div>
+                    <h3>Módulo 7: Proyecto Final</h3>
+                    <p>2 semanas</p>
+                    <ul class="module-topics">
+                        <li>Research Agent</li>
+                        <li>Customer Service</li>
+                        <li>Code Review</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="goToModule(7)">Empezar</button>
+                    <div class="progress-badge">🔒</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules Quick Access -->
+        <section id="modulos" class="modules-section">
+            <h2>Acceso Rápido a Módulos 📚</h2>
+            <div class="modules-grid">
+                <a href="pages/module1.html" class="module-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Fundamentos</h3>
+                    <p>Descubre qué son los agentes y sus tipos</p>
+                    <span class="card-arrow">→</span>
+                </a>
+                <a href="pages/module2.html" class="module-card locked">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Arquitectura</h3>
+                    <p>ReAct, CoT y más patrones</p>
+                    <span class="card-lock">🔒</span>
+                </a>
+                <a href="pages/module3.html" class="module-card locked">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Técnicas</h3>
+                    <p>Memory, Tools y Multi-Agent</p>
+                    <span class="card-lock">🔒</span>
+                </a>
+                <a href="pages/module4.html" class="module-card locked">
+                    <div class="card-icon">🚀</div>
+                    <h3>Herramientas</h3>
+                    <p>LLMs, Vectors y más</p>
+                    <span class="card-lock">🔒</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="about">
+            <h2>¿Por qué aprender con juegos? 🎮</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🧠</div>
+                    <h3>Aprendizaje Activo</h3>
+                    <p>Los juegos te obligan a aplicar conceptos inmediatamente</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">😊</div>
+                    <h3>Más Divertido</h3>
+                    <p>Aprende sin darte cuenta mientras te diviertes</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Para Todos</h3>
+                    <p>Diseñado para todas las edades y niveles</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">⚡</div>
+                    <h3>Progreso Rápido</h3>
+                    <p>Feedback inmediato acelera tu aprendizaje</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>🤖 Code Agent Arena - Aprende jugando</p>
+            <p>Basado en el plan de estudio completo de Agentes con IA</p>
+            <p>© 2025 - Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
