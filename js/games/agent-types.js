@@ -4,18 +4,19 @@ let score = 0;
 let correctAnswers = 0;
 const totalItems = 10;
 
-// Quiz correct answers
-const quizAnswers = {
-    q1: 'a',
-    q2: 'a',
-    q3: 'a',
-    q4: 'a',
-    q5: 'a'
+// Quiz correct answers (stored by question text to track after shuffling)
+const quizCorrectAnswers = {
+    q1: 'Un agente puede tomar acciones en el mundo real o digital',
+    q2: 'Reactivo Simple',
+    q3: 'Percepción, Razonamiento y Acción',
+    q4: 'Optimiza para obtener el mejor resultado posible',
+    q5: 'Mejora su desempeño con la experiencia'
 };
 
 // Initialize drag and drop
 document.addEventListener('DOMContentLoaded', () => {
     initDragAndDrop();
+    shuffleQuizOptions();
 });
 
 function initDragAndDrop() {
@@ -186,6 +187,28 @@ function resetGame() {
     showFeedback('Juego reiniciado 🔄', 'success');
 }
 
+// Shuffle quiz options
+function shuffleQuizOptions() {
+    const questions = document.querySelectorAll('.quiz-question');
+    
+    questions.forEach((question, index) => {
+        const optionsContainer = question.querySelector('.quiz-options');
+        const options = Array.from(optionsContainer.querySelectorAll('.quiz-option'));
+        
+        // Shuffle options
+        for (let i = options.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [options[i], options[j]] = [options[j], options[i]];
+        }
+        
+        // Clear and re-append in shuffled order
+        optionsContainer.innerHTML = '';
+        options.forEach(option => {
+            optionsContainer.appendChild(option);
+        });
+    });
+}
+
 // Quiz functions
 function checkQuiz() {
     let correct = 0;
@@ -205,7 +228,10 @@ function checkQuiz() {
         // Only mark the selected option as correct or incorrect
         if (selected) {
             const label = selected.parentElement;
-            if (selected.value === quizAnswers[`q${i}`]) {
+            const answerText = label.querySelector('span').textContent.trim();
+            const correctAnswer = quizCorrectAnswers[`q${i}`];
+            
+            if (answerText === correctAnswer) {
                 label.classList.add('correct');
                 correct++;
             } else {
