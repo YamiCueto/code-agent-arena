@@ -269,12 +269,6 @@ function checkQuiz() {
 }
 
 function unlockNextModule() {
-    const nextBtn = document.getElementById('next-module');
-    if (nextBtn) {
-        nextBtn.classList.remove('locked');
-        nextBtn.href = 'module2.html';
-    }
-    
     // Save progress
     const progress = JSON.parse(localStorage.getItem('agentesIAProgress') || '{}');
     progress.completedModules = progress.completedModules || [];
@@ -307,10 +301,8 @@ function playSound(type) {
     oscillator.stop(audioContext.currentTime + 0.1);
 }
 
-// Track progress
+// Track progress (no longer blocks navigation)
 window.addEventListener('load', () => {
     const progress = JSON.parse(localStorage.getItem('agentesIAProgress') || '{}');
-    if (progress.completedModules && progress.completedModules.includes(1)) {
-        unlockNextModule();
-    }
+    // Progress is saved but doesn't lock modules
 });

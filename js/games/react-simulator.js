@@ -367,12 +367,6 @@ function checkQuizModule2() {
 }
 
 function unlockNextModuleM2() {
-    const nextBtn = document.getElementById('next-module');
-    if (nextBtn) {
-        nextBtn.classList.remove('locked');
-        nextBtn.href = 'module3.html';
-    }
-    
     const progress = JSON.parse(localStorage.getItem('agentesIAProgress') || '{}');
     progress.completedModules = progress.completedModules || [];
     if (!progress.completedModules.includes(2)) {
@@ -404,12 +398,10 @@ function shuffleQuizOptions() {
     });
 }
 
-// Check progress on load
+// Track progress (no longer blocks navigation)
 window.addEventListener('load', () => {
     const progress = JSON.parse(localStorage.getItem('agentesIAProgress') || '{}');
-    if (progress.completedModules && progress.completedModules.includes(2)) {
-        unlockNextModuleM2();
-    }
+    // Progress is saved but doesn't lock modules
 });
 
 // Sound effect

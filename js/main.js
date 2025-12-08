@@ -11,41 +11,11 @@ function scrollToRoadmap() {
 
 // Navigation to modules
 function goToModule(moduleNumber) {
-    // Check if module is unlocked (for now, only module 1 is unlocked)
-    if (moduleNumber === 1) {
-        window.location.href = `pages/module${moduleNumber}.html`;
-    } else {
-        showLockedMessage();
-    }
+    // All modules are accessible
+    window.location.href = `pages/module${moduleNumber}.html`;
 }
 
-// Show locked message
-function showLockedMessage() {
-    const message = document.createElement('div');
-    message.className = 'locked-message';
-    message.innerHTML = '🔒 Este módulo se desbloqueará al completar el anterior';
-    message.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 2rem 3rem;
-        border-radius: 1rem;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-        z-index: 10000;
-        text-align: center;
-        font-size: 1.2rem;
-        animation: slideIn 0.3s ease-out;
-    `;
-    
-    document.body.appendChild(message);
-    
-    setTimeout(() => {
-        message.style.animation = 'slideOut 0.3s ease-out';
-        setTimeout(() => message.remove(), 300);
-    }, 2000);
-}
+// Locked message removed - all modules are now accessible
 
 // Add CSS animations dynamically
 const style = document.createElement('style');

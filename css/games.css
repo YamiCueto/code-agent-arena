@@ -520,13 +520,7 @@
     color: white;
 }
 
-.nav-next.locked {
-    background: #cbd5e1;
-    color: #64748b;
-    cursor: not-allowed;
-}
-
-.nav-btn:hover:not(.locked) {
+.nav-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--card-shadow-lg);
 }
