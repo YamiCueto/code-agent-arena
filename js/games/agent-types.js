@@ -66,34 +66,41 @@ function handleDrop(e) {
     const draggedElement = document.querySelector('.dragging');
     
     if (draggedElement) {
+        // Check if element was already marked as correct
+        const wasAlreadyCorrect = draggedElement.classList.contains('correct');
+        
+        // Remove previous states
+        draggedElement.classList.remove('dragging', 'incorrect');
+        
         // Move element to drop zone
         this.appendChild(draggedElement);
-        draggedElement.classList.remove('dragging');
 
-        // Check if correct
-        if (correctType === zoneType) {
-            draggedElement.classList.add('correct');
-            draggedElement.draggable = false;
-            score += 10;
-            correctAnswers++;
-            showFeedback('¡Correcto! 🎉', 'success');
-            playSound('correct');
-        } else {
-            draggedElement.classList.add('incorrect');
-            setTimeout(() => {
-                draggedElement.classList.remove('incorrect');
-                // Return to items container
-                const itemsContainer = document.getElementById('items-container');
-                if (itemsContainer) {
-                    itemsContainer.appendChild(draggedElement);
-                }
-            }, 1000);
-            showFeedback('¡Intenta de nuevo! 🤔', 'error');
-            playSound('incorrect');
+        // Only process if not already correct
+        if (!wasAlreadyCorrect) {
+            // Check if correct
+            if (correctType === zoneType) {
+                draggedElement.classList.add('correct');
+                draggedElement.draggable = false;
+                score += 10;
+                correctAnswers++;
+                showFeedback('¡Correcto! 🎉', 'success');
+                playSound('correct');
+                updateScore();
+                checkGameComplete();
+            } else {
+                draggedElement.classList.add('incorrect');
+                setTimeout(() => {
+                    draggedElement.classList.remove('incorrect');
+                    // Return to items container
+                    const itemsContainer = document.getElementById('items-container');
+                    if (itemsContainer) {
+                        itemsContainer.appendChild(draggedElement);
+                    }
+                }, 1000);
+                showFeedback('¡Intenta de nuevo! 🤔', 'error');
+                playSound('incorrect');
+            }
         }
-
-        updateScore();
-        checkGameComplete();
     }
 }
 
