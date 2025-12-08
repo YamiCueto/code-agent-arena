@@ -1,0 +1,715 @@
+/* ============================================
+   MODULE 6: SAFETY CHALLENGE GAME STYLES
+   ============================================ */
+
+/* Warning Box */
+.warning-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Evaluation Types */
+.evaluation-types {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.eval-type {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.eval-type h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.eval-type ul {
+    margin: 0.5rem 0;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-example pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+}
+
+.code-example code {
+    color: inherit;
+    background: none;
+    padding: 0;
+}
+
+/* Metrics Comparison */
+.metrics-comparison {
+    margin: 1.5rem 0;
+}
+
+.metrics-comparison table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.metrics-comparison th,
+.metrics-comparison td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.metrics-comparison th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.metrics-comparison tr:last-child td {
+    border-bottom: none;
+}
+
+.metrics-comparison .positive {
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* Robustness Tests */
+.robustness-tests {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.test-case {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid;
+}
+
+.test-case.fail {
+    background: #fee;
+    border-color: var(--danger);
+}
+
+.test-case.pass {
+    background: #efe;
+    border-color: var(--success);
+}
+
+.test-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.test-content {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Evaluation Frameworks */
+.eval-frameworks {
+    margin: 2rem 0;
+}
+
+.frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.framework-card {
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.framework-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.framework-card h5 {
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+}
+
+.framework-card p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.framework-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* Security Threats */
+.security-threats {
+    margin: 2rem 0;
+}
+
+.threat {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--danger);
+}
+
+.threat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.threat-icon {
+    font-size: 2rem;
+}
+
+.threat-header h5 {
+    flex: 1;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.threat-severity {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.threat-severity.critical {
+    background: #dc3545;
+    color: white;
+}
+
+.threat-severity.high {
+    background: #fd7e14;
+    color: white;
+}
+
+.threat-severity.medium {
+    background: #ffc107;
+    color: #000;
+}
+
+.threat-example {
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+}
+
+.threat-mitigation {
+    margin-top: 1rem;
+}
+
+.threat-mitigation strong {
+    color: var(--success);
+}
+
+.threat-mitigation ul {
+    margin: 0.5rem 0;
+}
+
+/* Security Checklist */
+.security-checklist {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.checklist li {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background: white;
+    border-radius: 6px;
+    border-left: 4px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.checklist li:hover {
+    border-left-color: var(--success);
+    transform: translateX(5px);
+}
+
+/* Alignment Examples */
+.alignment-examples {
+    margin: 2rem 0;
+}
+
+.alignment-scenario {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.scenario-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.scenario-icon {
+    font-size: 2rem;
+}
+
+.scenario-header h5 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.scenario-content {
+    margin-top: 1rem;
+}
+
+.scenario-bad {
+    background: #fee;
+    border-left: 4px solid var(--danger);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+}
+
+.scenario-good {
+    background: #efe;
+    border-left: 4px solid var(--success);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+}
+
+.scenario-result {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Alignment Techniques */
+.alignment-techniques {
+    margin: 2rem 0;
+}
+
+.technique {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.technique h5 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.technique ol,
+.technique ul {
+    margin: 0.5rem 0;
+}
+
+.value-spec-example {
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.value-spec-example strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Optimization Strategies */
+.optimization-strategies {
+    margin: 2rem 0;
+}
+
+.optimization-category {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.optimization-category h5 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.strategy {
+    background: white;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.strategy strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.strategy ul {
+    margin: 0.5rem 0;
+}
+
+/* Optimization Example */
+.optimization-example {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.optimization-example table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.optimization-example th,
+.optimization-example td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.optimization-example th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.optimization-result {
+    background: var(--success);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Resources Grid */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.resource-card {
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+}
+
+.resource-card h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.resource-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resource-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.resource-card li:last-child {
+    border-bottom: none;
+}
+
+/* ============================================
+   SAFETY CHALLENGE GAME
+   ============================================ */
+
+.safety-game {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Safety Scenario Card */
+.safety-scenario-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.safety-scenario-card .scenario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.safety-scenario-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.safety-scenario-card .scenario-content {
+    margin-top: 1rem;
+}
+
+/* Agent Demo */
+.agent-demo {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.agent-demo .user-input,
+.agent-demo .agent-response {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+}
+
+.agent-demo .user-input {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.agent-demo .agent-response {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.agent-demo .action {
+    display: block;
+    margin: 0.5rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.agent-demo .code {
+    display: block;
+    font-family: var(--font-mono);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+}
+
+/* Safety Question */
+.safety-question {
+    margin: 2rem 0;
+}
+
+.safety-question h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Safety Options */
+.safety-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.safety-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.safety-option:hover {
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.safety-option.selected {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.option-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #e9ecef;
+    border-radius: 50%;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.safety-option.selected .option-letter {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.option-text {
+    flex: 1;
+    line-height: 1.5;
+}
+
+/* Submit Button */
+.submit-safety {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    margin: 2rem 0;
+}
+
+.submit-safety:disabled {
+    background: #adb5bd;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Safety Feedback */
+.safety-feedback {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.safety-feedback .feedback-header {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.safety-feedback .feedback-header.success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.safety-feedback .feedback-header.incorrect {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.feedback-explanation {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.feedback-explanation p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .frameworks-grid,
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .eval-type,
+    .threat,
+    .alignment-scenario,
+    .technique,
+    .optimization-category {
+        padding: 1rem;
+    }
+    
+    .threat-header {
+        flex-wrap: wrap;
+    }
+    
+    .safety-option {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .option-letter {
+        align-self: flex-start;
+    }
+}
