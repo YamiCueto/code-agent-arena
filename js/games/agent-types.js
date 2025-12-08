@@ -196,19 +196,21 @@ function checkQuiz() {
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
         const options = document.querySelectorAll(`input[name="q${i}"]`);
         
+        // Remove previous feedback
         options.forEach(option => {
             const label = option.parentElement;
             label.classList.remove('correct', 'incorrect');
-            
-            if (option.value === quizAnswers[`q${i}`]) {
-                label.classList.add('correct');
-            } else if (option.checked) {
-                label.classList.add('incorrect');
-            }
         });
         
-        if (selected && selected.value === quizAnswers[`q${i}`]) {
-            correct++;
+        // Only mark the selected option as correct or incorrect
+        if (selected) {
+            const label = selected.parentElement;
+            if (selected.value === quizAnswers[`q${i}`]) {
+                label.classList.add('correct');
+                correct++;
+            } else {
+                label.classList.add('incorrect');
+            }
         }
     }
     
