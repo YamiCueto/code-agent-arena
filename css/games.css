@@ -7,6 +7,7 @@
 @import url('games/agent-types.css');
 @import url('games/memory-challenge.css');
 @import url('games/provider-matcher.css');
+@import url('games/agent-builder.css');
 
 /* Theory Section - Shared across all modules */
 .theory-section {
