@@ -27,7 +27,7 @@ Un sitio web interactivo y educativo para aprender todos los conceptos sobre age
 | 🛠️ **Módulo 3: Técnicas** | ✅ Completo | Memory Systems, Tool Use, Multi-Agent | Memory Challenge |
 | 🚀 **Módulo 4: Herramientas** | ✅ Completo | LLM Providers, Vector DBs, Observability | Provider Matcher |
 | 💼 **Módulo 5: Casos de Uso** | ✅ Completo | Aplicaciones reales de agentes | Agent Builder |
-| 🔬 **Módulo 6: Avanzado** | 🚧 Próximamente | Evaluación, Safety, Optimization | Safety Challenge |
+| 🔬 **Módulo 6: Avanzado** | ✅ Completo | Evaluación, Safety, Optimization | Safety Challenge |
 | 🎓 **Módulo 7: Capstone** | 🚧 Próximamente | Proyectos finales completos | 3 Proyectos Prácticos |
 
 ### 🚀 Comenzar
@@ -76,7 +76,8 @@ code-agent-arena/
 │       ├── agent-types.css      # Módulo 1 & 2
 │       ├── memory-challenge.css # Módulo 3
 │       ├── provider-matcher.css # Módulo 4
-│       └── agent-builder.css    # Módulo 5
+│       ├── agent-builder.css    # Módulo 5
+│       └── safety-challenge.css # Módulo 6
 ├── js/
 │   ├── main.js                  # Navegación y funciones globales
 │   └── games/                   # JavaScript por juego (un archivo = un juego)
@@ -84,13 +85,15 @@ code-agent-arena/
 │       ├── react-simulator.js   # ReAct Simulator - Módulo 2
 │       ├── memory-challenge.js  # Memory Challenge - Módulo 3
 │       ├── provider-matcher.js  # Provider Matcher - Módulo 4
-│       └── agent-builder.js     # Agent Builder - Módulo 5
+│       ├── agent-builder.js     # Agent Builder - Módulo 5
+│       └── safety-challenge.js  # Safety Challenge - Módulo 6
 └── pages/
     ├── module1.html             # Fundamentos
     ├── module2.html             # Arquitectura
     ├── module3.html             # Técnicas y Frameworks
     ├── module4.html             # Herramientas y Plataformas
-    └── module5.html             # Casos de Uso
+    ├── module5.html             # Casos de Uso
+    └── module6.html             # Tópicos Avanzados
 ```
 
 ### 🎮 Juegos Disponibles
@@ -110,8 +113,10 @@ code-agent-arena/
 **Módulo 5: Casos de Uso**
 - **Agent Builder** - 5 escenarios reales donde configuras el agente ideal (LLM, memoria, herramientas, arquitectura)
 
+**Módulo 6: Tópicos Avanzados**
+- **Safety Challenge** - 6 escenarios sobre vulnerabilidades de seguridad y mitigación (prompt injection, tool injection, data leakage, hallucinations, bias, alignment)
+
 **Próximamente**
-- **Safety Challenge** - Identifica y mitiga riesgos en agentes
 - **Proyectos Capstone** - 3 proyectos prácticos completos
 
 ### 🎨 Tecnologías
