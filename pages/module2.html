@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2: Arquitectura - Code Agent Arena</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/games.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🤖 Code Agent Arena</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">← Inicio</a></li>
+                <li><a href="#teoria">Teoría</a></li>
+                <li><a href="#juego">Juego</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Module Header -->
+        <section class="module-header">
+            <div class="module-header-content">
+                <div class="breadcrumb">Módulo 2 / Arquitectura de Agentes</div>
+                <h1>🏗️ Arquitectura de Agentes</h1>
+                <p class="module-description">Aprende ReAct, Chain-of-Thought y patrones avanzados</p>
+                <div class="module-stats">
+                    <span class="stat-item">⏱️ 3 semanas</span>
+                    <span class="stat-item">🎮 2 juegos</span>
+                    <span class="stat-item">📝 1 quiz</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theory Section -->
+        <section id="teoria" class="theory-section">
+            <div class="theory-container">
+                <h2>🔄 ReAct: Reasoning + Acting</h2>
+                
+                <div class="theory-card">
+                    <h3>¿Qué es ReAct?</h3>
+                    <p>ReAct es un patrón donde el agente alterna entre <strong>pensar</strong> y <strong>actuar</strong>:</p>
+                    <ul class="theory-list">
+                        <li>💭 <strong>Thought (Pensamiento):</strong> El agente razona sobre qué hacer</li>
+                        <li>⚡ <strong>Action (Acción):</strong> Ejecuta una acción en el mundo</li>
+                        <li>👁️ <strong>Observation (Observación):</strong> Ve el resultado de su acción</li>
+                        <li>🔄 <strong>Loop:</strong> Repite hasta completar la tarea</li>
+                    </ul>
+                </div>
+
+                <div class="theory-card highlight">
+                    <h3>Ciclo ReAct en Acción 🔄</h3>
+                    <div class="react-cycle-demo">
+                        <div class="cycle-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>💭 Thought</h4>
+                                <p>"Necesito saber el clima para planificar"</p>
+                            </div>
+                        </div>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>⚡ Action</h4>
+                                <p>Buscar clima en Google</p>
+                            </div>
+                        </div>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>👁️ Observation</h4>
+                                <p>"El clima muestra 25°C y soleado"</p>
+                            </div>
+                        </div>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>💭 Thought</h4>
+                                <p>"Perfecto para salir, ahora necesito restaurantes"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🧠 Chain-of-Thought (CoT)</h2>
+                
+                <div class="theory-card">
+                    <h3>Pensamiento Paso a Paso</h3>
+                    <p>Chain-of-Thought es hacer que el agente "piense en voz alta":</p>
+                    <div class="cot-example">
+                        <div class="problem">
+                            <strong>Problema:</strong> María tiene 3 manzanas. Compra 5 más y regala 2. ¿Cuántas tiene?
+                        </div>
+                        <div class="cot-steps">
+                            <div class="cot-step">
+                                <span class="step-label">Paso 1:</span>
+                                <span>María comienza con 3 manzanas</span>
+                            </div>
+                            <div class="cot-step">
+                                <span class="step-label">Paso 2:</span>
+                                <span>Compra 5 más: 3 + 5 = 8</span>
+                            </div>
+                            <div class="cot-step">
+                                <span class="step-label">Paso 3:</span>
+                                <span>Regala 2: 8 - 2 = 6</span>
+                            </div>
+                            <div class="cot-answer">
+                                <strong>Respuesta:</strong> María tiene 6 manzanas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🌳 Tree of Thoughts (ToT)</h2>
+                
+                <div class="theory-card">
+                    <h3>Explorar Múltiples Caminos</h3>
+                    <p>ToT explora diferentes soluciones como un árbol:</p>
+                    <div class="tot-visual">
+                        <div class="tot-root">🎯 Problema</div>
+                        <div class="tot-branches">
+                            <div class="tot-branch">
+                                <div class="tot-node good">✓ Opción A</div>
+                                <div class="tot-score">Score: 8/10</div>
+                            </div>
+                            <div class="tot-branch">
+                                <div class="tot-node bad">✗ Opción B</div>
+                                <div class="tot-score">Score: 3/10</div>
+                            </div>
+                            <div class="tot-branch">
+                                <div class="tot-node best">★ Opción C</div>
+                                <div class="tot-score">Score: 10/10</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tot-explanation">
+                        El agente evalúa cada opción y elige la mejor. Si falla, puede volver atrás (backtracking) y probar otra.
+                    </p>
+                </div>
+
+                <h2>🪞 Reflection (Auto-crítica)</h2>
+                
+                <div class="theory-card">
+                    <h3>Aprender de los Errores</h3>
+                    <p>Los agentes con reflexión critican y mejoran su propio trabajo:</p>
+                    <div class="reflection-cycle">
+                        <div class="reflection-step">
+                            <span class="reflection-icon">📝</span>
+                            <strong>Intento 1:</strong> Genera una solución
+                        </div>
+                        <div class="reflection-step">
+                            <span class="reflection-icon">🔍</span>
+                            <strong>Auto-crítica:</strong> "Esto podría mejorar si..."
+                        </div>
+                        <div class="reflection-step">
+                            <span class="reflection-icon">✨</span>
+                            <strong>Intento 2:</strong> Genera versión mejorada
+                        </div>
+                        <div class="reflection-step">
+                            <span class="reflection-icon">✅</span>
+                            <strong>Resultado:</strong> Solución optimizada
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🎯 Planning Avanzado</h2>
+                
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🎯</div>
+                        <h3>Task Decomposition</h3>
+                        <p>Divide tareas grandes en subtareas pequeñas:</p>
+                        <ul>
+                            <li>Tarea: "Organizar una fiesta"</li>
+                            <li>→ Subtarea 1: Invitar personas</li>
+                            <li>→ Subtarea 2: Comprar comida</li>
+                            <li>→ Subtarea 3: Decorar</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">📋</div>
+                        <h3>Plan-and-Execute</h3>
+                        <p>Primero planifica, luego ejecuta:</p>
+                        <ul>
+                            <li><strong>Fase 1:</strong> Crear plan detallado</li>
+                            <li><strong>Fase 2:</strong> Ejecutar cada paso</li>
+                            <li><strong>Fase 3:</strong> Verificar resultados</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🔄</div>
+                        <h3>Dynamic Replanning</h3>
+                        <p>Adapta el plan si algo falla:</p>
+                        <ul>
+                            <li>Ejecuta paso 1 ✓</li>
+                            <li>Paso 2 falla ✗</li>
+                            <li>→ Crea nuevo plan alternativo</li>
+                            <li>Continúa con plan B ✓</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="juego" class="game-section">
+            <div class="game-container">
+                <h2>🎮 Juego: Simulador ReAct</h2>
+                <p class="game-instructions">Ayuda al agente a completar la tarea eligiendo los pasos correctos en el ciclo ReAct</p>
+                
+                <div class="game-board">
+                    <div class="react-simulator">
+                        <div class="task-display">
+                            <h3>🎯 Tarea Actual:</h3>
+                            <p id="current-task">Buscar un buen restaurante italiano cerca</p>
+                        </div>
+
+                        <div class="react-flow">
+                            <div class="flow-stage" id="thought-stage">
+                                <h4>💭 Thought (Pensamiento)</h4>
+                                <div class="options-container" id="thought-options">
+                                    <!-- Dynamic options -->
+                                </div>
+                            </div>
+
+                            <div class="flow-stage" id="action-stage" style="display: none;">
+                                <h4>⚡ Action (Acción)</h4>
+                                <div class="options-container" id="action-options">
+                                    <!-- Dynamic options -->
+                                </div>
+                            </div>
+
+                            <div class="flow-stage" id="observation-stage" style="display: none;">
+                                <h4>👁️ Observation (Observación)</h4>
+                                <div class="observation-result" id="observation-result">
+                                    <!-- Dynamic result -->
+                                </div>
+                                <button class="btn btn-primary" onclick="nextCycle()">Continuar →</button>
+                            </div>
+
+                            <div class="flow-stage" id="completion-stage" style="display: none;">
+                                <h4>🎉 ¡Tarea Completada!</h4>
+                                <div class="completion-message" id="completion-message"></div>
+                                <button class="btn btn-primary" onclick="resetReactGame()">Nuevo Desafío</button>
+                            </div>
+                        </div>
+
+                        <div class="game-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <p>Ciclos completados: <span id="cycles-count">0</span>/3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn btn-secondary" onclick="resetReactGame()">🔄 Reiniciar</button>
+                    <div class="score-display">
+                        <span>Puntos: <span id="react-score">0</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-container">
+                <h2>📝 Quiz del Módulo 2</h2>
+                <p>Demuestra lo que has aprendido sobre arquitecturas de agentes</p>
+
+                <div class="quiz-questions">
+                    <div class="quiz-question">
+                        <h3>1. ¿Qué significa ReAct?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>Reasoning and Acting (Razonamiento y Actuación)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>Reactive Actions (Acciones Reactivas)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>Real-time Acting (Actuación en Tiempo Real)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>2. ¿Cuál es el orden correcto del ciclo ReAct?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>Thought → Action → Observation</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>Action → Thought → Observation</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>Observation → Thought → Action</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>3. ¿Qué hace Chain-of-Thought (CoT)?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                <span>Hace que el agente piense paso a paso en voz alta</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                <span>Conecta múltiples agentes en cadena</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                <span>Ejecuta acciones en paralelo</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>4. Tree of Thoughts (ToT) es útil para:</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="a">
+                                <span>Explorar múltiples soluciones posibles antes de elegir</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="b">
+                                <span>Organizar datos en estructura de árbol</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="c">
+                                <span>Tomar decisiones sin pensar</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>5. ¿Qué permite la Reflection en un agente?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="a">
+                                <span>Criticar y mejorar su propio trabajo</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="b">
+                                <span>Copiar el trabajo de otros agentes</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="c">
+                                <span>Reflejar luz como un espejo</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="checkQuizModule2()">Enviar Respuestas</button>
+                <div id="quiz-result-m2" class="quiz-result"></div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="module-navigation">
+            <a href="module1.html" class="nav-btn nav-prev">← Módulo 1</a>
+            <a href="module3.html" class="nav-btn nav-next locked" id="next-module">Módulo 3: Técnicas →</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>🤖 Code Agent Arena - Módulo 2: Arquitectura</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/games/react-simulator.js"></script>
+</body>
+</html>
