@@ -26,7 +26,7 @@ Un sitio web interactivo y educativo para aprender todos los conceptos sobre age
 | 🏗️ **Módulo 2: Arquitectura** | ✅ Completo | ReAct, Chain-of-Thought, Tree of Thoughts | ReAct Simulator |
 | 🛠️ **Módulo 3: Técnicas** | ✅ Completo | Memory Systems, Tool Use, Multi-Agent | Memory Challenge |
 | 🚀 **Módulo 4: Herramientas** | ✅ Completo | LLM Providers, Vector DBs, Observability | Provider Matcher |
-| 💼 **Módulo 5: Casos de Uso** | 🚧 Próximamente | Aplicaciones reales de agentes | Agent Builder |
+| 💼 **Módulo 5: Casos de Uso** | ✅ Completo | Aplicaciones reales de agentes | Agent Builder |
 | 🔬 **Módulo 6: Avanzado** | 🚧 Próximamente | Evaluación, Safety, Optimization | Safety Challenge |
 | 🎓 **Módulo 7: Capstone** | 🚧 Próximamente | Proyectos finales completos | 3 Proyectos Prácticos |
 
@@ -75,19 +75,22 @@ code-agent-arena/
 │       ├── shared.css           # Estilos comunes (botones, animaciones, feedback)
 │       ├── agent-types.css      # Módulo 1 & 2
 │       ├── memory-challenge.css # Módulo 3
-│       └── provider-matcher.css # Módulo 4
+│       ├── provider-matcher.css # Módulo 4
+│       └── agent-builder.css    # Módulo 5
 ├── js/
 │   ├── main.js                  # Navegación y funciones globales
 │   └── games/                   # JavaScript por juego (un archivo = un juego)
 │       ├── agent-types.js       # Drag & Drop - Módulo 1
 │       ├── react-simulator.js   # ReAct Simulator - Módulo 2
 │       ├── memory-challenge.js  # Memory Challenge - Módulo 3
-│       └── provider-matcher.js  # Provider Matcher - Módulo 4
+│       ├── provider-matcher.js  # Provider Matcher - Módulo 4
+│       └── agent-builder.js     # Agent Builder - Módulo 5
 └── pages/
     ├── module1.html             # Fundamentos
     ├── module2.html             # Arquitectura
     ├── module3.html             # Técnicas y Frameworks
-    └── module4.html             # Herramientas y Plataformas
+    ├── module4.html             # Herramientas y Plataformas
+    └── module5.html             # Casos de Uso
 ```
 
 ### 🎮 Juegos Disponibles
@@ -104,8 +107,10 @@ code-agent-arena/
 **Módulo 4: Herramientas**
 - **Provider Matcher** - 8 escenarios para elegir el mejor LLM provider (OpenAI, Anthropic, Google, Open Source)
 
+**Módulo 5: Casos de Uso**
+- **Agent Builder** - 5 escenarios reales donde configuras el agente ideal (LLM, memoria, herramientas, arquitectura)
+
 **Próximamente**
-- **Agent Builder** - Construye tu propio agente con componentes drag & drop
 - **Safety Challenge** - Identifica y mitiga riesgos en agentes
 - **Proyectos Capstone** - 3 proyectos prácticos completos
 
