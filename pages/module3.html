@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Técnicas - Code Agent Arena</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/games.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🤖 Code Agent Arena</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">← Inicio</a></li>
+                <li><a href="#teoria">Teoría</a></li>
+                <li><a href="#juego">Juego</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Module Header -->
+        <section class="module-header">
+            <div class="module-header-content">
+                <div class="breadcrumb">Módulo 3 / Técnicas y Frameworks</div>
+                <h1>🛠️ Técnicas y Frameworks</h1>
+                <p class="module-description">Memory Systems, Tool Use y Multi-Agent Systems</p>
+                <div class="module-stats">
+                    <span class="stat-item">⏱️ 3 semanas</span>
+                    <span class="stat-item">🎮 2 juegos</span>
+                    <span class="stat-item">📝 1 quiz</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theory Section -->
+        <section id="teoria" class="theory-section">
+            <div class="theory-container">
+                <h2>💾 Memory Systems</h2>
+                
+                <div class="theory-card">
+                    <h3>¿Por qué los agentes necesitan memoria?</h3>
+                    <p>Sin memoria, un agente es como tener amnesia: olvida todo inmediatamente. La memoria permite:</p>
+                    <ul class="theory-list">
+                        <li>🔄 <strong>Continuidad:</strong> Recordar conversaciones anteriores</li>
+                        <li>📚 <strong>Aprendizaje:</strong> Guardar información importante</li>
+                        <li>🎯 <strong>Contexto:</strong> Tomar decisiones más informadas</li>
+                        <li>⚡ <strong>Eficiencia:</strong> No repetir el mismo trabajo</li>
+                    </ul>
+                </div>
+
+                <h2>🧠 Tipos de Memoria</h2>
+
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">⚡</div>
+                        <h3>Short-term Memory</h3>
+                        <p><strong>Memoria a Corto Plazo</strong></p>
+                        <ul>
+                            <li>Conversación actual</li>
+                            <li>Últimas 5-10 interacciones</li>
+                            <li>Se borra al terminar</li>
+                            <li>Rápida pero limitada</li>
+                        </ul>
+                        <p class="agent-example">📱 Ejemplo: Chat donde recuerda lo que dijiste hace 3 mensajes</p>
+                    </div>
+
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">📚</div>
+                        <h3>Long-term Memory</h3>
+                        <p><strong>Memoria a Largo Plazo</strong></p>
+                        <ul>
+                            <li>Información permanente</li>
+                            <li>Miles de conversaciones</li>
+                            <li>Se guarda en bases de datos</li>
+                            <li>Más lenta pero ilimitada</li>
+                        </ul>
+                        <p class="agent-example">💾 Ejemplo: Recuerda tu nombre de hace 6 meses</p>
+                    </div>
+
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🎯</div>
+                        <h3>Working Memory</h3>
+                        <p><strong>Memoria de Trabajo</strong></p>
+                        <ul>
+                            <li>Para la tarea actual</li>
+                            <li>Variables temporales</li>
+                            <li>Cálculos intermedios</li>
+                            <li>Se limpia al terminar tarea</li>
+                        </ul>
+                        <p class="agent-example">🧮 Ejemplo: Mantiene números mientras suma</p>
+                    </div>
+                </div>
+
+                <div class="theory-card highlight">
+                    <h3>🗄️ Vector Databases</h3>
+                    <p>Las bases de datos vectoriales son el cerebro de la memoria a largo plazo:</p>
+                    <div class="vector-demo">
+                        <div class="vector-step">
+                            <span class="step-num">1</span>
+                            <div class="step-text">
+                                <strong>Texto:</strong> "Me gustan los gatos"<br>
+                                <strong>→ Vector:</strong> [0.2, 0.8, 0.1, ...]
+                            </div>
+                        </div>
+                        <div class="vector-step">
+                            <span class="step-num">2</span>
+                            <div class="step-text">
+                                <strong>Guardar:</strong> Vector + metadata en DB<br>
+                                (Pinecone, Chroma, Weaviate)
+                            </div>
+                        </div>
+                        <div class="vector-step">
+                            <span class="step-num">3</span>
+                            <div class="step-text">
+                                <strong>Buscar:</strong> "felinos" encuentra "gatos"<br>
+                                ¡Búsqueda por significado, no por palabra exacta!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🔧 Tool Use (Uso de Herramientas)</h2>
+                
+                <div class="theory-card">
+                    <h3>¿Qué son las Tools?</h3>
+                    <p>Las herramientas permiten al agente interactuar con el mundo:</p>
+                    <div class="tools-grid">
+                        <div class="tool-item">🔍 Búsqueda en Google</div>
+                        <div class="tool-item">🗄️ Consultar base de datos</div>
+                        <div class="tool-item">📧 Enviar emails</div>
+                        <div class="tool-item">🧮 Hacer cálculos</div>
+                        <div class="tool-item">📄 Leer archivos</div>
+                        <div class="tool-item">🌐 Llamar APIs</div>
+                        <div class="tool-item">💻 Ejecutar código</div>
+                        <div class="tool-item">📊 Generar gráficos</div>
+                    </div>
+                </div>
+
+                <div class="theory-card">
+                    <h3>Function Calling</h3>
+                    <p>El agente decide QUÉ herramienta usar y CÓMO usarla:</p>
+                    <div class="function-calling-demo">
+                        <div class="fc-step">
+                            <div class="fc-label">Usuario:</div>
+                            <div class="fc-content">"¿Cuál es el clima en Miami?"</div>
+                        </div>
+                        <div class="fc-arrow">↓</div>
+                        <div class="fc-step fc-agent">
+                            <div class="fc-label">Agente piensa:</div>
+                            <div class="fc-content">"Necesito la herramienta get_weather"</div>
+                        </div>
+                        <div class="fc-arrow">↓</div>
+                        <div class="fc-step fc-tool">
+                            <div class="fc-label">Llama función:</div>
+                            <div class="fc-content">get_weather(location="Miami")</div>
+                        </div>
+                        <div class="fc-arrow">↓</div>
+                        <div class="fc-step fc-result">
+                            <div class="fc-label">Resultado:</div>
+                            <div class="fc-content">"28°C, Soleado, Humedad 75%"</div>
+                        </div>
+                        <div class="fc-arrow">↓</div>
+                        <div class="fc-step">
+                            <div class="fc-label">Respuesta:</div>
+                            <div class="fc-content">"En Miami hace 28°C y está soleado 🌞"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>👥 Multi-Agent Systems</h2>
+                
+                <div class="theory-card">
+                    <h3>Múltiples Agentes Trabajando Juntos</h3>
+                    <p>Como un equipo de trabajo, cada agente tiene su especialidad:</p>
+                </div>
+
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">👔</div>
+                        <h3>Hierarchical</h3>
+                        <p><strong>Manager-Worker</strong></p>
+                        <ul>
+                            <li>Un jefe coordina</li>
+                            <li>Trabajadores ejecutan</li>
+                            <li>Estructura clara</li>
+                            <li>Eficiente para tareas complejas</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🤝</div>
+                        <h3>Collaborative</h3>
+                        <p><strong>Peer-to-Peer</strong></p>
+                        <ul>
+                            <li>Todos son iguales</li>
+                            <li>Colaboran libremente</li>
+                            <li>Comparten información</li>
+                            <li>Creatividad máxima</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">⚔️</div>
+                        <h3>Debate</h3>
+                        <p><strong>Competitive</strong></p>
+                        <ul>
+                            <li>Agentes con puntos de vista diferentes</li>
+                            <li>Debaten entre ellos</li>
+                            <li>Mejor solución gana</li>
+                            <li>Evita sesgos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="theory-card highlight">
+                    <h3>Ejemplo Multi-Agent: Escribir un Artículo</h3>
+                    <div class="multi-agent-flow">
+                        <div class="ma-agent">
+                            <strong>🔍 Researcher:</strong> Busca información sobre el tema
+                        </div>
+                        <div class="ma-arrow">→</div>
+                        <div class="ma-agent">
+                            <strong>✍️ Writer:</strong> Escribe el borrador del artículo
+                        </div>
+                        <div class="ma-arrow">→</div>
+                        <div class="ma-agent">
+                            <strong>🔍 Fact-Checker:</strong> Verifica que todo sea correcto
+                        </div>
+                        <div class="ma-arrow">→</div>
+                        <div class="ma-agent">
+                            <strong>✨ Editor:</strong> Mejora la redacción y formato
+                        </div>
+                        <div class="ma-arrow">→</div>
+                        <div class="ma-result">
+                            📄 <strong>Artículo Final</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🚀 Frameworks Populares</h2>
+
+                <div class="frameworks-grid">
+                    <div class="framework-card">
+                        <h3>🦜 LangChain</h3>
+                        <p>El framework más popular para agentes</p>
+                        <ul>
+                            <li>Chains y agents pre-construidos</li>
+                            <li>Gran comunidad</li>
+                            <li>Muchos ejemplos</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card">
+                        <h3>🔄 LangGraph</h3>
+                        <p>Para workflows complejos</p>
+                        <ul>
+                            <li>State machines</li>
+                            <li>Grafos de agentes</li>
+                            <li>Control fino</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card">
+                        <h3>👥 CrewAI</h3>
+                        <p>Especializado en multi-agent</p>
+                        <ul>
+                            <li>Equipos de agentes</li>
+                            <li>Roles y tareas</li>
+                            <li>Colaboración natural</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card">
+                        <h3>🤖 AutoGen</h3>
+                        <p>De Microsoft, conversacional</p>
+                        <ul>
+                            <li>Agentes que chatean</li>
+                            <li>Fácil de usar</li>
+                            <li>Muy flexible</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="juego" class="game-section">
+            <div class="game-container">
+                <h2>🎮 Juego: Memory Challenge</h2>
+                <p class="game-instructions">Ayuda al agente a gestionar su memoria correctamente. ¿Qué tipo de memoria debe usar para cada situación?</p>
+                
+                <div class="game-board">
+                    <div class="memory-game">
+                        <div class="memory-scenario" id="scenario-display">
+                            <h3>📋 Situación:</h3>
+                            <p id="scenario-text"></p>
+                        </div>
+
+                        <div class="memory-options">
+                            <h4>¿Qué tipo de memoria debe usar?</h4>
+                            <div class="memory-choice-grid">
+                                <button class="memory-choice" onclick="selectMemory('short-term')">
+                                    <div class="choice-icon">⚡</div>
+                                    <div class="choice-label">Short-term</div>
+                                    <div class="choice-desc">Memoria a corto plazo</div>
+                                </button>
+                                <button class="memory-choice" onclick="selectMemory('long-term')">
+                                    <div class="choice-icon">📚</div>
+                                    <div class="choice-label">Long-term</div>
+                                    <div class="choice-desc">Memoria a largo plazo</div>
+                                </button>
+                                <button class="memory-choice" onclick="selectMemory('working')">
+                                    <div class="choice-icon">🎯</div>
+                                    <div class="choice-label">Working</div>
+                                    <div class="choice-desc">Memoria de trabajo</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="game-stats">
+                            <div class="stat">Correctas: <span id="correct-count">0</span>/10</div>
+                            <div class="stat">Puntos: <span id="memory-score">0</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn btn-secondary" onclick="resetMemoryGame()">🔄 Reiniciar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-container">
+                <h2>📝 Quiz del Módulo 3</h2>
+                <p>Demuestra lo que has aprendido sobre técnicas y frameworks</p>
+
+                <div class="quiz-questions">
+                    <div class="quiz-question">
+                        <h3>1. ¿Qué tipo de memoria se usa para la conversación actual?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>Short-term Memory (Memoria a corto plazo)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>Long-term Memory (Memoria a largo plazo)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>No se necesita memoria</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>2. ¿Para qué sirven las Vector Databases?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>Buscar información por significado, no por palabra exacta</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>Solo para guardar números</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>Reemplazar bases de datos normales</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>3. ¿Qué es Function Calling?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                <span>Permitir que el agente use herramientas y APIs</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                <span>Llamar por teléfono a alguien</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                <span>Solo para programadores</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>4. En un sistema Multi-Agent Hierarchical:</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="a">
+                                <span>Un agente manager coordina a los workers</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="b">
+                                <span>Todos los agentes son iguales</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="c">
+                                <span>Los agentes compiten entre sí</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>5. ¿Cuál framework es especializado en multi-agent?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="a">
+                                <span>CrewAI</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="b">
+                                <span>React</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="c">
+                                <span>TensorFlow</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="checkQuizModule3()">Enviar Respuestas</button>
+                <div id="quiz-result-m3" class="quiz-result"></div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="module-navigation">
+            <a href="module2.html" class="nav-btn nav-prev">← Módulo 2</a>
+            <a href="module4.html" class="nav-btn nav-next">Módulo 4: Herramientas →</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>🤖 Code Agent Arena - Módulo 3: Técnicas y Frameworks</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/games/memory-challenge.js"></script>
+</body>
+</html>
