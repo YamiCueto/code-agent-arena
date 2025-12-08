@@ -28,7 +28,7 @@ Un sitio web interactivo y educativo para aprender todos los conceptos sobre age
 | 🚀 **Módulo 4: Herramientas** | ✅ Completo | LLM Providers, Vector DBs, Observability | Provider Matcher |
 | 💼 **Módulo 5: Casos de Uso** | ✅ Completo | Aplicaciones reales de agentes | Agent Builder |
 | 🔬 **Módulo 6: Avanzado** | ✅ Completo | Evaluación, Safety, Optimization | Safety Challenge |
-| 🎓 **Módulo 7: Capstone** | 🚧 Próximamente | Proyectos finales completos | 3 Proyectos Prácticos |
+| 🎓 **Módulo 7: Capstone** | ✅ Completo | Proyectos finales completos | 3 Proyectos Prácticos |
 
 ### 🚀 Comenzar
 
@@ -69,31 +69,34 @@ code-agent-arena/
 ├── .github/
 │   └── copilot-instructions.md  # Guía completa de Clean Code y mejores prácticas
 ├── css/
-│   ├── styles.css               # Estilos principales del sitio
-│   ├── games.css                # Importa módulos CSS + estilos compartidos
-│   └── games/                   # CSS modular por juego
-│       ├── shared.css           # Estilos comunes (botones, animaciones, feedback)
-│       ├── agent-types.css      # Módulo 1 & 2
-│       ├── memory-challenge.css # Módulo 3
-│       ├── provider-matcher.css # Módulo 4
-│       ├── agent-builder.css    # Módulo 5
-│       └── safety-challenge.css # Módulo 6
+│   ├── styles.css                # Estilos principales del sitio
+│   ├── games.css                 # Importa módulos CSS + estilos compartidos
+│   └── games/                    # CSS modular por juego
+│       ├── shared.css            # Estilos comunes (botones, animaciones, feedback)
+│       ├── agent-types.css       # Módulo 1 & 2
+│       ├── memory-challenge.css  # Módulo 3
+│       ├── provider-matcher.css  # Módulo 4
+│       ├── agent-builder.css     # Módulo 5
+│       ├── safety-challenge.css  # Módulo 6
+│       └── capstone-projects.css # Módulo 7
 ├── js/
-│   ├── main.js                  # Navegación y funciones globales
-│   └── games/                   # JavaScript por juego (un archivo = un juego)
-│       ├── agent-types.js       # Drag & Drop - Módulo 1
-│       ├── react-simulator.js   # ReAct Simulator - Módulo 2
-│       ├── memory-challenge.js  # Memory Challenge - Módulo 3
-│       ├── provider-matcher.js  # Provider Matcher - Módulo 4
-│       ├── agent-builder.js     # Agent Builder - Módulo 5
-│       └── safety-challenge.js  # Safety Challenge - Módulo 6
+│   ├── main.js                   # Navegación y funciones globales
+│   └── games/                    # JavaScript por juego (un archivo = un juego)
+│       ├── agent-types.js        # Drag & Drop - Módulo 1
+│       ├── react-simulator.js    # ReAct Simulator - Módulo 2
+│       ├── memory-challenge.js   # Memory Challenge - Módulo 3
+│       ├── provider-matcher.js   # Provider Matcher - Módulo 4
+│       ├── agent-builder.js      # Agent Builder - Módulo 5
+│       ├── safety-challenge.js   # Safety Challenge - Módulo 6
+│       └── capstone-projects.js  # Capstone Projects - Módulo 7
 └── pages/
-    ├── module1.html             # Fundamentos
-    ├── module2.html             # Arquitectura
-    ├── module3.html             # Técnicas y Frameworks
-    ├── module4.html             # Herramientas y Plataformas
-    ├── module5.html             # Casos de Uso
-    └── module6.html             # Tópicos Avanzados
+    ├── module1.html              # Fundamentos
+    ├── module2.html              # Arquitectura
+    ├── module3.html              # Técnicas y Frameworks
+    ├── module4.html              # Herramientas y Plataformas
+    ├── module5.html              # Casos de Uso
+    ├── module6.html              # Tópicos Avanzados
+    └── module7.html              # Proyectos Capstone
 ```
 
 ### 🎮 Juegos Disponibles
@@ -116,8 +119,10 @@ code-agent-arena/
 **Módulo 6: Tópicos Avanzados**
 - **Safety Challenge** - 6 escenarios sobre vulnerabilidades de seguridad y mitigación (prompt injection, tool injection, data leakage, hallucinations, bias, alignment)
 
-**Próximamente**
-- **Proyectos Capstone** - 3 proyectos prácticos completos
+**Módulo 7: Proyectos Capstone**
+- **FAQ Agent** - Agente de soporte con RAG y base de conocimiento
+- **Data Analysis Agent** - Agente que ejecuta código Python para análisis de datos
+- **Research Agent** - Sistema multi-agente para investigación exhaustiva
 
 ### 🎨 Tecnologías
 
