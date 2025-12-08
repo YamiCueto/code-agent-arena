@@ -8,28 +8,28 @@
     <link rel="stylesheet" href="../css/games.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">🤖 Code Agent Arena</a>
-            <div class="nav-links">
-                <a href="../index.html">Inicio</a>
-                <a href="module1.html">Módulo 1</a>
-                <a href="module2.html">Módulo 2</a>
-                <a href="module3.html">Módulo 3</a>
-                <a href="module4.html">Módulo 4</a>
-                <a href="module5.html" class="active">Módulo 5</a>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🤖 Code Agent Arena</h1>
             </div>
-        </div>
-    </nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">← Inicio</a></li>
+                <li><a href="#teoria">Teoría</a></li>
+                <li><a href="#buildYourAgent">Juego</a></li>
+                <li><a href="#quizModule5">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="container">
+    <main>
         <div class="module-header">
             <h1>Módulo 5: Casos de Uso</h1>
             <p class="module-subtitle">Aplicaciones Reales de Agentes de IA</p>
         </div>
 
         <!-- Teoría -->
-        <section class="theory-section">
+        <section id="teoria" class="theory-section">
             <h2>🎯 Aplicaciones Prácticas de Agentes</h2>
             
             <div class="theory-card">
@@ -628,18 +628,21 @@ const users = await User.findAll({
             </div>
         </section>
 
-        <!-- Navegación -->
-        <div class="module-navigation">
-            <a href="module4.html" class="btn btn-secondary">← Módulo 4</a>
-            <a href="../index.html" class="btn btn-secondary">Inicio 🏠</a>
-            <a href="module6.html" class="btn btn-primary" id="nextModuleBtn">Módulo 6 →</a>
-        </div>
+        <!-- Navigation -->
+        <section class="module-navigation">
+            <a href="module4.html" class="nav-btn nav-prev">← Módulo 4</a>
+            <a href="module6.html" class="nav-btn nav-next">Módulo 6: Tópicos Avanzados →</a>
+        </section>
     </main>
 
-    <footer class="footer">
-        <p>Hecho con ❤️ por Yamid Cueto</p>
+    <footer>
+        <div class="footer-content">
+            <p>🤖 Code Agent Arena - Módulo 5: Casos de Uso</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+        </div>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script src="../js/games/agent-builder.js"></script>
 </body>
 </html>
