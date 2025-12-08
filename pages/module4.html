@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4: Herramientas - Code Agent Arena</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/games.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🤖 Code Agent Arena</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">← Inicio</a></li>
+                <li><a href="#teoria">Teoría</a></li>
+                <li><a href="#juego">Juego</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Module Header -->
+        <section class="module-header">
+            <div class="module-header-content">
+                <div class="breadcrumb">Módulo 4 / Herramientas y Plataformas</div>
+                <h1>🚀 Herramientas y Plataformas</h1>
+                <p class="module-description">LLMs, Vector Databases y Observability</p>
+                <div class="module-stats">
+                    <span class="stat-item">⏱️ 3 semanas</span>
+                    <span class="stat-item">🎮 1 juego</span>
+                    <span class="stat-item">📝 1 quiz</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theory Section -->
+        <section id="teoria" class="theory-section">
+            <div class="theory-container">
+                <h2>🤖 LLM Providers (Proveedores de Modelos)</h2>
+                
+                <div class="theory-card">
+                    <h3>¿Qué son los LLM Providers?</h3>
+                    <p>Son las empresas que ofrecen acceso a modelos de lenguaje grandes (Large Language Models). Como el cerebro de tu agente, cada proveedor tiene sus propias fortalezas:</p>
+                </div>
+
+                <div class="providers-grid">
+                    <div class="provider-card">
+                        <div class="provider-logo">🔵</div>
+                        <h3>OpenAI</h3>
+                        <p class="provider-model">GPT-4, GPT-3.5</p>
+                        <div class="provider-pros">
+                            <strong>✅ Ventajas:</strong>
+                            <ul>
+                                <li>Mejor calidad general</li>
+                                <li>Excelente en razonamiento</li>
+                                <li>API muy estable</li>
+                                <li>Gran documentación</li>
+                            </ul>
+                        </div>
+                        <div class="provider-cons">
+                            <strong>⚠️ Desventajas:</strong>
+                            <ul>
+                                <li>Más costoso</li>
+                                <li>Límites de rate</li>
+                            </ul>
+                        </div>
+                        <p class="provider-usecase">💡 <strong>Mejor para:</strong> Aplicaciones production que necesitan calidad máxima</p>
+                    </div>
+
+                    <div class="provider-card">
+                        <div class="provider-logo">🟡</div>
+                        <h3>Anthropic</h3>
+                        <p class="provider-model">Claude 3.5 Sonnet, Opus</p>
+                        <div class="provider-pros">
+                            <strong>✅ Ventajas:</strong>
+                            <ul>
+                                <li>Contexto gigante (200k tokens)</li>
+                                <li>Muy seguro y ético</li>
+                                <li>Excelente en código</li>
+                                <li>Razonamiento superior</li>
+                            </ul>
+                        </div>
+                        <div class="provider-cons">
+                            <strong>⚠️ Desventajas:</strong>
+                            <ul>
+                                <li>Precio alto</li>
+                                <li>Menos integraciones</li>
+                            </ul>
+                        </div>
+                        <p class="provider-usecase">💡 <strong>Mejor para:</strong> Análisis de documentos largos, coding assistants</p>
+                    </div>
+
+                    <div class="provider-card">
+                        <div class="provider-logo">🟣</div>
+                        <h3>Google</h3>
+                        <p class="provider-model">Gemini Pro, Ultra</p>
+                        <div class="provider-pros">
+                            <strong>✅ Ventajas:</strong>
+                            <ul>
+                                <li>Multimodal (texto, imagen, video)</li>
+                                <li>Integración con Google Cloud</li>
+                                <li>Buena velocidad</li>
+                                <li>Precio competitivo</li>
+                            </ul>
+                        </div>
+                        <div class="provider-cons">
+                            <strong>⚠️ Desventajas:</strong>
+                            <ul>
+                                <li>Menos adopción</li>
+                                <li>API en evolución</li>
+                            </ul>
+                        </div>
+                        <p class="provider-usecase">💡 <strong>Mejor para:</strong> Aplicaciones multimodales, empresas en GCP</p>
+                    </div>
+
+                    <div class="provider-card">
+                        <div class="provider-logo">🟢</div>
+                        <h3>Open Source</h3>
+                        <p class="provider-model">Llama 3, Mistral, Mixtral</p>
+                        <div class="provider-pros">
+                            <strong>✅ Ventajas:</strong>
+                            <ul>
+                                <li>Gratis (self-hosted)</li>
+                                <li>Control total</li>
+                                <li>Privacidad completa</li>
+                                <li>Personalizable</li>
+                            </ul>
+                        </div>
+                        <div class="provider-cons">
+                            <strong>⚠️ Desventajas:</strong>
+                            <ul>
+                                <li>Necesitas infraestructura</li>
+                                <li>Calidad inferior</li>
+                            </ul>
+                        </div>
+                        <p class="provider-usecase">💡 <strong>Mejor para:</strong> Datos sensibles, presupuesto limitado, experimentación</p>
+                    </div>
+                </div>
+
+                <div class="theory-card highlight">
+                    <h3>💰 Comparación de Costos (por 1M tokens)</h3>
+                    <div class="cost-comparison">
+                        <div class="cost-item">
+                            <span class="cost-provider">OpenAI GPT-4:</span>
+                            <span class="cost-price">$30 input / $60 output</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-provider">Claude Opus:</span>
+                            <span class="cost-price">$15 input / $75 output</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-provider">Claude Sonnet:</span>
+                            <span class="cost-price">$3 input / $15 output</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-provider">GPT-3.5:</span>
+                            <span class="cost-price">$0.50 input / $1.50 output</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-provider">Gemini Pro:</span>
+                            <span class="cost-price">$0.50 input / $1.50 output</span>
+                        </div>
+                        <div class="cost-item highlight-best">
+                            <span class="cost-provider">Open Source:</span>
+                            <span class="cost-price">💰 Gratis (pero necesitas GPUs)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🗄️ Vector Databases (Bases de Datos Vectoriales)</h2>
+                
+                <div class="theory-card">
+                    <h3>¿Por qué Vector Databases?</h3>
+                    <p>Permiten buscar información por <strong>significado</strong>, no por palabra exacta. Esencial para memoria a largo plazo de agentes.</p>
+                    <div class="vector-flow">
+                        <div class="vf-step">
+                            <div class="vf-num">1</div>
+                            <div class="vf-text">
+                                <strong>Texto:</strong> "Los gatos son animales"<br>
+                                <strong>Embedding:</strong> Convertir a vector numérico
+                            </div>
+                        </div>
+                        <div class="vf-arrow">↓</div>
+                        <div class="vf-step">
+                            <div class="vf-num">2</div>
+                            <div class="vf-text">
+                                <strong>Almacenar:</strong> Guardar vector en DB<br>
+                                Vector: [0.23, -0.45, 0.67, ...]
+                            </div>
+                        </div>
+                        <div class="vf-arrow">↓</div>
+                        <div class="vf-step">
+                            <div class="vf-num">3</div>
+                            <div class="vf-text">
+                                <strong>Buscar:</strong> "información sobre felinos"<br>
+                                ¡Encuentra "gatos" aunque no use esa palabra!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="databases-grid">
+                    <div class="database-card">
+                        <h3>🌲 Pinecone</h3>
+                        <p class="db-type">Managed Cloud</p>
+                        <ul>
+                            <li>✅ Fácil de usar</li>
+                            <li>✅ Muy escalable</li>
+                            <li>✅ No requiere mantenimiento</li>
+                            <li>⚠️ Precio basado en uso</li>
+                        </ul>
+                        <p class="db-best">💡 Mejor para startups y MVPs</p>
+                    </div>
+
+                    <div class="database-card">
+                        <div class="db-type">Self-Hosted</div>
+                        <h3>🎨 Chroma</h3>
+                        <ul>
+                            <li>✅ Gratis y open source</li>
+                            <li>✅ Fácil de empezar</li>
+                            <li>✅ Buena integración con LangChain</li>
+                            <li>⚠️ Menos escalable</li>
+                        </ul>
+                        <p class="db-best">💡 Mejor para desarrollo local</p>
+                    </div>
+
+                    <div class="database-card">
+                        <h3>🌊 Weaviate</h3>
+                        <p class="db-type">Hybrid</p>
+                        <ul>
+                            <li>✅ Muy potente</li>
+                            <li>✅ Filtros complejos</li>
+                            <li>✅ Multi-modal</li>
+                            <li>⚠️ Curva de aprendizaje</li>
+                        </ul>
+                        <p class="db-best">💡 Mejor para producción enterprise</p>
+                    </div>
+
+                    <div class="database-card">
+                        <h3>⚡ Qdrant</h3>
+                        <p class="db-type">Self-Hosted</p>
+                        <ul>
+                            <li>✅ Súper rápido</li>
+                            <li>✅ Rust (eficiente)</li>
+                            <li>✅ Buena documentación</li>
+                            <li>⚠️ Comunidad más pequeña</li>
+                        </ul>
+                        <p class="db-best">💡 Mejor para alto rendimiento</p>
+                    </div>
+                </div>
+
+                <h2>👁️ Observability & Monitoring</h2>
+                
+                <div class="theory-card">
+                    <h3>¿Por qué necesitas Observability?</h3>
+                    <p>Los agentes son complejos y pueden fallar de formas inesperadas. Necesitas ver:</p>
+                    <ul class="theory-list">
+                        <li>🔍 <strong>Traces:</strong> Qué está haciendo el agente paso a paso</li>
+                        <li>📊 <strong>Metrics:</strong> Velocidad, costo, tasa de éxito</li>
+                        <li>📝 <strong>Logs:</strong> Errores y mensajes de debug</li>
+                        <li>💰 <strong>Costs:</strong> Cuánto estás gastando en APIs</li>
+                    </ul>
+                </div>
+
+                <div class="tools-comparison">
+                    <div class="tool-card">
+                        <h3>🦜 LangSmith</h3>
+                        <p class="tool-by">Por LangChain</p>
+                        <div class="tool-features">
+                            <strong>Features:</strong>
+                            <ul>
+                                <li>Tracing detallado</li>
+                                <li>Debugging visual</li>
+                                <li>Testing de prompts</li>
+                                <li>Integración perfecta con LangChain</li>
+                            </ul>
+                        </div>
+                        <p class="tool-pricing">💰 Gratis hasta 5k traces/mes</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🔭 Helicone</h3>
+                        <p class="tool-by">Open Source</p>
+                        <div class="tool-features">
+                            <strong>Features:</strong>
+                            <ul>
+                                <li>Monitoreo de costos</li>
+                                <li>Analytics en tiempo real</li>
+                                <li>Caching de requests</li>
+                                <li>Muy fácil de integrar</li>
+                            </ul>
+                        </div>
+                        <p class="tool-pricing">💰 Gratis para self-hosted</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>📊 Weights & Biases</h3>
+                        <p class="tool-by">Enterprise Grade</p>
+                        <div class="tool-features">
+                            <strong>Features:</strong>
+                            <ul>
+                                <li>Experimentos ML</li>
+                                <li>Comparación de modelos</li>
+                                <li>Colaboración en equipo</li>
+                                <li>Reports automáticos</li>
+                            </ul>
+                        </div>
+                        <p class="tool-pricing">💰 Gratis para individuos</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🎯 LangFuse</h3>
+                        <p class="tool-by">Open Source Alternative</p>
+                        <div class="tool-features">
+                            <strong>Features:</strong>
+                            <ul>
+                                <li>Tracing completo</li>
+                                <li>Cost tracking</li>
+                                <li>Evaluations</li>
+                                <li>Self-hosted</li>
+                            </ul>
+                        </div>
+                        <p class="tool-pricing">💰 Completamente gratis</p>
+                    </div>
+                </div>
+
+                <div class="theory-card highlight">
+                    <h3>🏗️ Stack Recomendado para Principiantes</h3>
+                    <div class="recommended-stack">
+                        <div class="stack-item">
+                            <strong>🤖 LLM:</strong> OpenAI GPT-3.5 (barato y bueno para empezar)
+                        </div>
+                        <div class="stack-item">
+                            <strong>🗄️ Vector DB:</strong> Chroma (gratis, fácil, local)
+                        </div>
+                        <div class="stack-item">
+                            <strong>🦜 Framework:</strong> LangChain (más ejemplos y comunidad)
+                        </div>
+                        <div class="stack-item">
+                            <strong>👁️ Monitoring:</strong> LangSmith (integrado con LangChain)
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; text-align: center;">💡 Puedes empezar gratis y escalar cuando necesites</p>
+                </div>
+
+                <h2>🔧 Otras Herramientas Útiles</h2>
+
+                <div class="other-tools-grid">
+                    <div class="ot-card">
+                        <div class="ot-icon">🔗</div>
+                        <h4>API Gateways</h4>
+                        <p><strong>Portkey, LiteLLM:</strong> Cambia entre LLMs sin cambiar código</p>
+                    </div>
+                    <div class="ot-card">
+                        <div class="ot-icon">💾</div>
+                        <h4>Prompt Management</h4>
+                        <p><strong>PromptLayer, HumanLoop:</strong> Versiona y testea prompts</p>
+                    </div>
+                    <div class="ot-card">
+                        <div class="ot-icon">🧪</div>
+                        <h4>Evaluation</h4>
+                        <p><strong>RAGAS, TruLens:</strong> Mide calidad de respuestas</p>
+                    </div>
+                    <div class="ot-card">
+                        <div class="ot-icon">🎨</div>
+                        <h4>UI Frameworks</h4>
+                        <p><strong>Streamlit, Gradio:</strong> Crea interfaces rápido</p>
+                    </div>
+                    <div class="ot-card">
+                        <div class="ot-icon">🔐</div>
+                        <h4>Security</h4>
+                        <p><strong>LLM Guard, NeMo:</strong> Protege contra prompts maliciosos</p>
+                    </div>
+                    <div class="ot-card">
+                        <div class="ot-icon">⚡</div>
+                        <h4>Caching</h4>
+                        <p><strong>GPTCache:</strong> Ahorra dinero cacheando respuestas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="juego" class="game-section">
+            <div class="game-container">
+                <h2>🎮 Juego: LLM Provider Matcher</h2>
+                <p class="game-instructions">Elige el mejor proveedor de LLM para cada situación. ¡Piensa en costo, calidad y requisitos!</p>
+                
+                <div class="game-board">
+                    <div class="provider-game">
+                        <div class="scenario-display" id="provider-scenario">
+                            <h3>📋 Situación:</h3>
+                            <p id="provider-scenario-text"></p>
+                        </div>
+
+                        <div class="provider-options">
+                            <h4>¿Qué proveedor escogerías?</h4>
+                            <div class="provider-choice-grid">
+                                <button class="provider-choice" onclick="selectProvider('openai')">
+                                    <div class="choice-icon">🔵</div>
+                                    <div class="choice-label">OpenAI</div>
+                                    <div class="choice-desc">GPT-4 / GPT-3.5</div>
+                                </button>
+                                <button class="provider-choice" onclick="selectProvider('anthropic')">
+                                    <div class="choice-icon">🟡</div>
+                                    <div class="choice-label">Anthropic</div>
+                                    <div class="choice-desc">Claude Sonnet / Opus</div>
+                                </button>
+                                <button class="provider-choice" onclick="selectProvider('google')">
+                                    <div class="choice-icon">🟣</div>
+                                    <div class="choice-label">Google</div>
+                                    <div class="choice-desc">Gemini Pro / Ultra</div>
+                                </button>
+                                <button class="provider-choice" onclick="selectProvider('opensource')">
+                                    <div class="choice-icon">🟢</div>
+                                    <div class="choice-label">Open Source</div>
+                                    <div class="choice-desc">Llama / Mistral</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="game-stats">
+                            <div class="stat">Correctas: <span id="provider-correct">0</span>/8</div>
+                            <div class="stat">Puntos: <span id="provider-score">0</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn btn-secondary" onclick="resetProviderGame()">🔄 Reiniciar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-container">
+                <h2>📝 Quiz del Módulo 4</h2>
+                <p>Demuestra lo que has aprendido sobre herramientas y plataformas</p>
+
+                <div class="quiz-questions">
+                    <div class="quiz-question">
+                        <h3>1. ¿Cuál LLM tiene el contexto más grande (200k tokens)?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>Claude de Anthropic</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>GPT-4 de OpenAI</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>Gemini de Google</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>2. ¿Para qué sirven las Vector Databases?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                <span>Buscar información por significado semántico</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                <span>Solo para guardar números</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                <span>Reemplazar bases de datos SQL</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>3. ¿Qué vector DB es mejor para principiantes?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                <span>Chroma (gratis, fácil, local)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                <span>Weaviate (enterprise)</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                <span>MongoDB (SQL tradicional)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>4. ¿Para qué sirve LangSmith?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="a">
+                                <span>Observability y debugging de agentes</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="b">
+                                <span>Crear presentaciones</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="c">
+                                <span>Diseñar interfaces</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>5. ¿Cuál es la principal ventaja de Open Source LLMs?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="a">
+                                <span>Privacidad total y control completo</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="b">
+                                <span>Mejor calidad que GPT-4</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="c">
+                                <span>No necesitan GPUs</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="checkQuizModule4()">Enviar Respuestas</button>
+                <div id="quiz-result-m4" class="quiz-result"></div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="module-navigation">
+            <a href="module3.html" class="nav-btn nav-prev">← Módulo 3</a>
+            <a href="module5.html" class="nav-btn nav-next">Módulo 5: Casos de Uso →</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>🤖 Code Agent Arena - Módulo 4: Herramientas y Plataformas</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/games/provider-matcher.js"></script>
+</body>
+</html>
