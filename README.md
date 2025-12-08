@@ -2,6 +2,8 @@
 
 ## Aprende sobre Agentes de Inteligencia Artificial ¡Jugando! 🎮
 
+**🎮 [VER DEMO EN VIVO](https://yamicueto.github.io/code-agent-arena/)**
+
 Un sitio web interactivo y educativo para aprender todos los conceptos sobre agentes de IA a través de juegos y actividades interactivas. Diseñado para todas las edades.
 
 ### ✨ Características
