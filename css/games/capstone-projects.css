@@ -2,6 +2,83 @@
    CAPSTONE PROJECTS - MODULE 7 STYLES
    =================================== */
 
+/* Tabs Navigation */
+.tabs-container {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+}
+
+.tabs-nav {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding-bottom: 0;
+}
+
+.tabs-nav::-webkit-scrollbar {
+    height: 4px;
+}
+
+.tabs-nav::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.tabs-nav::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.tab-btn {
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    bottom: -2px;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+    min-height: 500px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Capstone Overview */
 .capstone-overview {
     display: flex;
@@ -147,14 +224,17 @@
 
 /* Projects Section */
 .projects-section {
-    margin-block-start: 3rem;
+    margin-block-start: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-inline: auto;
 }
 
 .project-card {
-    margin-block-end: 3rem;
+    margin-block-end: 2rem;
     border: 2px solid #e5e7eb;
     border-radius: 16px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -218,31 +298,7 @@
 /* Project Content */
 .project-content {
     padding: 2rem;
-    max-height: 800px;
-    overflow: hidden;
-    position: relative;
-    transition: max-height 0.5s ease;
-}
-
-.project-content.expanded {
-    max-height: none;
     overflow: visible;
-}
-
-.project-content::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: linear-gradient(to bottom, transparent, white);
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.project-content.expanded::after {
-    opacity: 0;
 }
 
 .project-description,
@@ -454,22 +510,7 @@
 
 /* Project Toggle Button */
 .project-toggle-btn {
-    width: 100%;
-    padding: 1rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.project-toggle-btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    display: none;
 }
 
 /* Example Interaction */
@@ -589,6 +630,10 @@
 /* Certificate Preview */
 .certificate-preview {
     margin-block-start: 2rem;
+}
+
+.certificate-preview.hidden {
+    display: none;
 }
 
 .certificate {
@@ -776,10 +821,6 @@
 @media (min-width: 1024px) {
     .tech-stack {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .project-content {
-        max-height: 1000px;
     }
 }
 

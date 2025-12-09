@@ -14,7 +14,44 @@ let projectsCompleted = {
 function initCapstone() {
     loadProgress();
     setupEventListeners();
+    setupTabs();
     checkAllProjectsCompleted();
+}
+
+// Setup tabs functionality
+function setupTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked button
+            btn.classList.add('active');
+            
+            // Show corresponding content
+            const targetContent = document.getElementById(targetTab);
+            if (targetContent) {
+                targetContent.classList.add('active');
+                // Smooth scroll to top of content
+                targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    
+    // Check URL hash on load
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+        const targetBtn = document.querySelector(`.tab-btn[data-tab="${hash}"]`);
+        if (targetBtn) {
+            targetBtn.click();
+        }
+    }
 }
 
 // Cargar progreso guardado
@@ -138,7 +175,7 @@ function generateCertificate() {
     document.getElementById('certDate').textContent = dateStr;
     
     // Mostrar certificado
-    document.getElementById('certificatePreview').style.display = 'block';
+    document.getElementById('certificatePreview').classList.remove('hidden');
     
     // Guardar info del certificado
     const certificateData = {

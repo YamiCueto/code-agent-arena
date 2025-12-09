@@ -28,8 +28,19 @@
             <p class="module-subtitle">Construye 3 Agentes Completos Aplicando Todo lo Aprendido</p>
         </div>
 
-        <!-- Introducción -->
-        <section id="teoria" class="theory-section">
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="intro">📚 Introducción</button>
+                <button class="tab-btn" data-tab="proyecto1">🤖 Proyecto 1</button>
+                <button class="tab-btn" data-tab="proyecto2">📊 Proyecto 2</button>
+                <button class="tab-btn" data-tab="proyecto3">🔍 Proyecto 3</button>
+                <button class="tab-btn" data-tab="certificado">🎓 Certificado</button>
+            </div>
+        </div>
+
+        <!-- Tab Content: Introducción -->
+        <section id="intro" class="tab-content active theory-section">
             <h2>🎓 ¡Llegaste al Final del Viaje!</h2>
             
             <div class="theory-card">
@@ -193,12 +204,11 @@
             </div>
         </section>
 
-        <!-- Proyectos -->
-        <section id="proyectos" class="projects-section">
-            <h2>🚀 Los Proyectos</h2>
+        <!-- Tab Content: Proyecto 1 -->
+        <section id="proyecto1" class="tab-content projects-section">
+            <h2>🤖 Proyecto 1: Agente de FAQ Inteligente con RAG</h2>
 
-            <!-- Proyecto 1: FAQ Agent -->
-            <div class="project-card" id="proyecto1">
+            <div class="project-card">
                 <div class="project-header">
                     <div class="project-number">Proyecto 1</div>
                     <h3>🤖 Agente de FAQ Inteligente con RAG</h3>
@@ -384,9 +394,13 @@ def evaluate_agent(test_cases, vector_store):
                     </button>
                 </div>
             </div>
+        </section>
 
-            <!-- Proyecto 2: Data Analysis Agent -->
-            <div class="project-card" id="proyecto2">
+        <!-- Tab Content: Proyecto 2 -->
+        <section id="proyecto2" class="tab-content projects-section">
+            <h2>📊 Proyecto 2: Agente de Análisis de Datos</h2>
+
+            <div class="project-card">
                 <div class="project-header">
                     <div class="project-number">Proyecto 2</div>
                     <h3>📊 Agente de Análisis de Datos con Code Interpreter</h3>
@@ -613,6 +627,11 @@ def evaluate_analysis_agent(test_cases):
                     </button>
                 </div>
             </div>
+        </section>
+
+        <!-- Tab Content: Proyecto 3 -->
+        <section id="proyecto3" class="tab-content projects-section">
+            <h2>🔍 Proyecto 3: Agente de Investigación Multi-Fuente</h2>
 
             <!-- Proyecto 3: Research Agent -->
             <div class="project-card" id="proyecto3">
@@ -873,8 +892,8 @@ Contenido sintetizado:
             </div>
         </section>
 
-        <!-- Certificado -->
-        <section id="certificado" class="certificate-section">
+        <!-- Tab Content: Certificado -->
+        <section id="certificado" class="tab-content certificate-section">
             <h2>🎓 ¡Felicidades por Completar el Curso!</h2>
             
             <div class="certificate-container">
@@ -905,7 +924,7 @@ Contenido sintetizado:
                     </div>
                 </div>
 
-                <div class="certificate-preview" id="certificatePreview" style="display: none;">
+                <div class="certificate-preview hidden" id="certificatePreview">
                     <div class="certificate">
                         <div class="certificate-border">
                             <div class="certificate-content">
