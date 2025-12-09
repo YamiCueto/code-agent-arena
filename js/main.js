@@ -13,16 +13,37 @@ function scrollToRoadmap() {
 function goToModule(moduleNumber) {
     const completedModules = JSON.parse(localStorage.getItem('completedModules') || '[]');
     
-    // Módulo 1 siempre está desbloqueado
-    if (moduleNumber === 1) {
-        window.location.href = `pages/module${moduleNumber}.html`;
+    // Determinar el módulo actual basado en la URL
+    const currentPath = window.location.pathname;
+    const currentModuleMatch = currentPath.match(/module(\d+)\.html/);
+    const currentModuleNum = currentModuleMatch ? parseInt(currentModuleMatch[1]) : 0;
+    
+    // Permitir retroceder siempre (ir a módulo anterior o igual)
+    if (moduleNumber <= currentModuleNum) {
+        // Determinar si estamos en index.html o en un módulo
+        const targetPath = currentPath.includes('/pages/') 
+            ? `module${moduleNumber}.html` 
+            : `pages/module${moduleNumber}.html`;
+        window.location.href = targetPath;
         return;
     }
     
-    // Verificar si el módulo anterior está completado
+    // Módulo 1 siempre está desbloqueado
+    if (moduleNumber === 1) {
+        const targetPath = currentPath.includes('/pages/') 
+            ? `module${moduleNumber}.html` 
+            : `pages/module${moduleNumber}.html`;
+        window.location.href = targetPath;
+        return;
+    }
+    
+    // Verificar si el módulo anterior está completado (solo al avanzar)
     const previousModule = moduleNumber - 1;
     if (completedModules.includes(`module${previousModule}`)) {
-        window.location.href = `pages/module${moduleNumber}.html`;
+        const targetPath = currentPath.includes('/pages/') 
+            ? `module${moduleNumber}.html` 
+            : `pages/module${moduleNumber}.html`;
+        window.location.href = targetPath;
     } else {
         showLockedMessage(moduleNumber, previousModule);
     }
