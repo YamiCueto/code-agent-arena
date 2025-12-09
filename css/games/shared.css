@@ -216,3 +216,115 @@
     80% { opacity: 1; transform: translate(-50%, -50%); }
     100% { opacity: 0; transform: translate(-50%, -40%); }
 }
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Mejoras para pantallas táctiles */
+    .draggable-item,
+    .btn,
+    .quiz-option,
+    .tab-btn,
+    .nav-btn {
+        min-height: 44px; /* Tamaño mínimo táctil según Apple HIG */
+        touch-action: manipulation; /* Previene zoom en double-tap */
+    }
+    
+    .draggable-item {
+        cursor: grab;
+    }
+    
+    .draggable-item:active {
+        cursor: grabbing;
+    }
+    
+    /* Mejora feedback visual en touch */
+    .btn:active,
+    .quiz-option:active,
+    .tab-btn:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .game-section {
+        padding: 2rem 1rem;
+        min-height: auto;
+    }
+    
+    .game-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .game-instructions {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .game-board {
+        padding: 1.5rem;
+    }
+    
+    .game-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .game-stats {
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .stat-item {
+        font-size: 0.9rem;
+    }
+    
+    /* Feedback visual */
+    .feedback-message {
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+        max-width: 90%;
+    }
+    
+    /* Drag items más grandes para touch */
+    .draggable-item {
+        padding: 1rem;
+        font-size: 0.9rem;
+        min-height: 48px;
+    }
+    
+    .drop-zone {
+        min-height: 60px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .game-board {
+        padding: 1.25rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    
+    .stat-item {
+        font-size: 0.85rem;
+    }
+    
+    .feedback-message {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
