@@ -8,11 +8,14 @@ Un sitio web interactivo y educativo para aprender todos los conceptos sobre age
 
 ### ✨ Características
 
-- 🎯 **7 Módulos** siguiendo un plan de estudio estructurado (4 completados)
+- 🎯 **7 Módulos completos** siguiendo un plan de estudio estructurado
 - 🎮 **15+ juegos interactivos** para aprender jugando
 - 📚 **Contenido teórico visual** y fácil de entender
 - 📝 **Quizzes randomizados** para evaluar tu progreso
-- 🆓 **Navegación libre** - Explora cualquier módulo sin restricciones
+- 🔒 **Sistema de progreso** - Desbloquea módulos al aprobar con 80%+
+- 💾 **Persistencia local** - Tu progreso se guarda automáticamente
+- 🎉 **Celebraciones animadas** - Confetti al completar módulos
+- 📊 **Tracking de progreso** - Barra visual y estadísticas
 - 📱 **Diseño responsive** para móviles y tablets
 - 🎨 **Interfaz moderna** con animaciones suaves
 - ♿ **Accesible** con soporte para teclado y lectores de pantalla
@@ -101,28 +104,49 @@ code-agent-arena/
 
 ### 🎮 Juegos Disponibles
 
-**Módulo 1: Fundamentos**
+#### Módulo 1: Fundamentos
+
 - **Clasifica los Agentes** - Drag & drop para identificar tipos de agentes (Reactivos, BDI, Reflexivos, etc.)
 
-**Módulo 2: Arquitectura**
+#### Módulo 2: Arquitectura
+
 - **Simulador ReAct** - Visualiza ciclos thought → action → observation en 3 escenarios diferentes
 
-**Módulo 3: Técnicas**
+#### Módulo 3: Técnicas
+
 - **Memory Challenge** - 10 situaciones para elegir el tipo correcto de memoria (short-term, long-term, working)
 
-**Módulo 4: Herramientas**
+#### Módulo 4: Herramientas
+
 - **Provider Matcher** - 8 escenarios para elegir el mejor LLM provider (OpenAI, Anthropic, Google, Open Source)
 
-**Módulo 5: Casos de Uso**
+#### Módulo 5: Casos de Uso
+
 - **Agent Builder** - 5 escenarios reales donde configuras el agente ideal (LLM, memoria, herramientas, arquitectura)
 
-**Módulo 6: Tópicos Avanzados**
+#### Módulo 6: Tópicos Avanzados
+
 - **Safety Challenge** - 6 escenarios sobre vulnerabilidades de seguridad y mitigación (prompt injection, tool injection, data leakage, hallucinations, bias, alignment)
 
-**Módulo 7: Proyectos Capstone**
+#### Módulo 7: Proyectos Capstone
+
 - **FAQ Agent** - Agente de soporte con RAG y base de conocimiento
 - **Data Analysis Agent** - Agente que ejecuta código Python para análisis de datos
 - **Research Agent** - Sistema multi-agente para investigación exhaustiva
+
+### 📊 Sistema de Progreso
+
+Code Agent Arena incluye un **sistema de progreso completo** para guiar tu aprendizaje:
+
+- 🔒 **Desbloqueo progresivo**: Debes completar cada módulo antes de avanzar
+- 📈 **80% para aprobar**: Necesitas 80% o más en cada quiz para pasar
+- 💾 **Persistencia automática**: Tu progreso se guarda en tu navegador
+- 🎉 **Celebraciones**: Animaciones con confetti al completar módulos
+- 📊 **Tracking visual**: Barra de progreso y badges en cada módulo
+- 🔄 **Intentos ilimitados**: Repite los quizzes cuantas veces necesites
+- 📝 **Mejor puntaje**: Guardamos tu mejor resultado en cada módulo
+
+**Ver documentación completa:** [PROGRESS_SYSTEM.md](PROGRESS_SYSTEM.md)
 
 ### 🎨 Tecnologías
 
@@ -181,13 +205,13 @@ Este proyecto sigue estrictos estándares de calidad documentados en `.github/co
 
 **Áreas de contribución:**
 
-- 🎮 Nuevos juegos interactivos para módulos 5-7
-- 📚 Contenido educativo y ejemplos
+- 📚 Contenido educativo y ejemplos adicionales
 - 🐛 Reportes de bugs con steps to reproduce
 - 🎨 Mejoras de diseño UI/UX
 - 🌍 Traducciones a otros idiomas
 - ♿ Mejoras de accesibilidad
 - 📱 Optimizaciones mobile
+- 🎮 Nuevos desafíos o ejercicios interactivos
 
 **Proceso:**
 
