@@ -130,20 +130,13 @@ function checkAllProjectsCompleted() {
     const allCompleted = Object.values(projectsCompleted).every(completed => completed);
     
     if (allCompleted) {
-        // Marcar módulo como completado
-        markModuleAsCompleted();
+        // Marcar módulo como completado usando el sistema centralizado
+        if (typeof completeModuleInLocalStorage === 'function') {
+            completeModuleInLocalStorage(7);
+        }
     }
     
     return allCompleted;
-}
-
-// Marcar módulo como completado
-function markModuleAsCompleted() {
-    const completedModules = JSON.parse(localStorage.getItem('completedModules') || '[]');
-    if (!completedModules.includes('module7')) {
-        completedModules.push('module7');
-        localStorage.setItem('completedModules', JSON.stringify(completedModules));
-    }
 }
 
 // Generar certificado

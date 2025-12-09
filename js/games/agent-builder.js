@@ -441,45 +441,24 @@ function checkQuizModule5() {
     };
     
     let correct = 0;
-    let feedback = [];
     
     for (let i = 1; i <= 5; i++) {
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        if (selected && selected.value === answers[`q${i}`]) {
-            correct++;
-            feedback.push(`<p class="correct">✅ Pregunta ${i}: Correcta</p>`);
-        } else {
-            feedback.push(`<p class="incorrect">❌ Pregunta ${i}: Incorrecta</p>`);
+        const options = document.querySelectorAll(`input[name="q${i}"]`);
+        
+        options.forEach(option => {
+            option.parentElement.classList.remove('correct', 'incorrect');
+        });
+        
+        if (selected) {
+            const isCorrect = selected.value === answers[`q${i}`];
+            selected.parentElement.classList.add(isCorrect ? 'correct' : 'incorrect');
+            if (isCorrect) correct++;
         }
     }
     
-    const percentage = (correct / 5 * 100).toFixed(0);
-    let message = '';
-    
-    if (percentage === 100) {
-        message = '🏆 ¡Perfecto! Dominas la selección de componentes para casos de uso.';
-    } else if (percentage >= 80) {
-        message = '🌟 ¡Muy bien! Tienes buen entendimiento de casos de uso.';
-    } else if (percentage >= 60) {
-        message = '👍 Bien. Revisa los casos que fallaste.';
-    } else {
-        message = '📚 Repasa la teoría sobre cada caso de uso y sus requisitos.';
-    }
-    
-    const resultDiv = document.getElementById('quizResultModule5');
-    resultDiv.innerHTML = `
-        <h3>${message}</h3>
-        <p><strong>Puntuación: ${correct}/5 (${percentage}%)</strong></p>
-        ${feedback.join('')}
-        ${percentage >= 80 ? '<p class="success-message">✅ ¡Has completado el Módulo 5!</p>' : ''}
-    `;
-    resultDiv.style.display = 'block';
-    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    
-    // Save quiz result
-    if (percentage >= 80) {
-        localStorage.setItem('module5-quiz-passed', 'true');
-    }
+    // Use the new centralized quiz system
+    evaluateQuizAndUpdateProgress(correct, 5, 5);
 }
 
 /**

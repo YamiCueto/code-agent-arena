@@ -251,36 +251,8 @@ function checkQuizModule3() {
         }
     }
     
-    // Show results
-    const percentage = (correctCount / totalQuestions) * 100;
-    const resultDiv = document.getElementById('quiz-result-m3');
-    
-    let message = '';
-    if (percentage === 100) {
-        message = `🎉 ¡Perfecto! ${correctCount}/${totalQuestions} correctas. ¡Dominas las técnicas y frameworks!`;
-    } else if (percentage >= 80) {
-        message = `✨ ¡Muy bien! ${correctCount}/${totalQuestions} correctas. Excelente comprensión.`;
-    } else if (percentage >= 60) {
-        message = `👍 Bien hecho. ${correctCount}/${totalQuestions} correctas. Módulo completado.`;
-    } else {
-        message = `📚 ${correctCount}/${totalQuestions} correctas. Revisa la teoría y vuelve a intentar.`;
-    }
-    
-    resultDiv.textContent = message;
-    resultDiv.className = 'quiz-result ' + (percentage >= 60 ? 'success' : 'error');
-    resultDiv.style.display = 'block';
-    
-    // Save progress if passed
-    if (percentage >= 60) {
-        saveModuleProgress('module3-quiz', {
-            completed: true,
-            score: correctCount,
-            total: totalQuestions
-        });
-    }
-    
-    // Scroll to result
-    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Use the new centralized quiz system
+    evaluateQuizAndUpdateProgress(correctCount, totalQuestions, 3);
 }
 
 // Initialize on page load

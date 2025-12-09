@@ -240,32 +240,8 @@ function checkQuiz() {
         }
     }
     
-    // Show result
-    const resultDiv = document.getElementById('quiz-result');
-    const percentage = (correct / total) * 100;
-    
-    resultDiv.classList.add('show');
-    
-    if (percentage >= 80) {
-        resultDiv.className = 'quiz-result show pass';
-        resultDiv.innerHTML = `
-            🎉 ¡Excelente! ${correct}/${total} correctas (${percentage}%)
-            <br><br>
-            <strong>¡Has completado el Módulo 1!</strong>
-            <br>
-            Ahora puedes avanzar al Módulo 2
-        `;
-        unlockNextModule();
-    } else {
-        resultDiv.className = 'quiz-result show fail';
-        resultDiv.innerHTML = `
-            💪 Sigue intentando: ${correct}/${total} correctas (${percentage}%)
-            <br><br>
-            Necesitas al menos 80% para continuar.
-            <br>
-            Revisa la teoría y vuelve a intentarlo.
-        `;
-    }
+    // Use the new centralized quiz system
+    evaluateQuizAndUpdateProgress(correct, total, 1);
 }
 
 function unlockNextModule() {
