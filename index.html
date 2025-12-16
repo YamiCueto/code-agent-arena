@@ -68,6 +68,17 @@
                 <div class="progress-bar-fill" style="width: 0%;"></div>
             </div>
             <p class="progress-text">0/7 módulos completados (0%)</p>
+            
+            <!-- Progress Backup Controls -->
+            <div class="progress-controls">
+                <button onclick="exportProgress()" class="btn btn-outline" title="Descarga tu progreso como archivo JSON">
+                    💾 Exportar Progreso
+                </button>
+                <button onclick="document.getElementById('import-file').click()" class="btn btn-outline" title="Importa un archivo de progreso">
+                    📥 Importar Progreso
+                </button>
+                <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importProgress(this.files[0])">
+            </div>
         </section>
 
         <!-- Roadmap Visual -->

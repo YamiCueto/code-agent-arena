@@ -275,6 +275,107 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// ========== Export/Import Progress System ==========
+
+/**
+ * Export user progress as JSON file
+ */
+function exportProgress() {
+    const data = {
+        version: '1.0',
+        exportDate: new Date().toISOString(),
+        completedModules: localStorage.getItem('completedModules') || '[]',
+        moduleScores: localStorage.getItem('moduleScores') || '{}',
+        appName: 'Code Agent Arena'
+    };
+    
+    // Create blob and download
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `code-agent-arena-progress-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    showNotification('✅ Progreso exportado exitosamente', 'success');
+    trackEvent('Progress', 'Export', 'Success');
+}
+
+/**
+ * Import user progress from JSON file
+ */
+function importProgress(file) {
+    if (!file) {
+        showNotification('❌ No se seleccionó ningún archivo', 'error');
+        return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = JSON.parse(e.target.result);
+            
+            // Validate data structure
+            if (!data.completedModules || !data.moduleScores) {
+                throw new Error('Formato de archivo inválido');
+            }
+            
+            // Validate it's from Code Agent Arena
+            if (data.appName !== 'Code Agent Arena') {
+                throw new Error('Este archivo no es de Code Agent Arena');
+            }
+            
+            // Restore data
+            localStorage.setItem('completedModules', data.completedModules);
+            localStorage.setItem('moduleScores', data.moduleScores);
+            
+            // Update UI
+            updateProgressUI();
+            
+            const completedCount = JSON.parse(data.completedModules).length;
+            showNotification(`🎉 Progreso restaurado: ${completedCount} módulos completados`, 'success');
+            trackEvent('Progress', 'Import', 'Success');
+            
+        } catch (error) {
+            console.error('Error importing progress:', error);
+            showNotification('❌ Error al importar: ' + error.message, 'error');
+            trackEvent('Progress', 'Import', 'Error');
+        }
+    };
+    
+    reader.onerror = () => {
+        showNotification('❌ Error al leer el archivo', 'error');
+    };
+    
+    reader.readAsText(file);
+    
+    // Reset file input
+    document.getElementById('import-file').value = '';
+}
+
+/**
+ * Show notification toast
+ */
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // Trigger animation
+    setTimeout(() => notification.classList.add('show'), 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
 // Analytics (placeholder for future implementation)
 function trackEvent(category, action, label) {
     console.log(`Event: ${category} - ${action} - ${label}`);
