@@ -9,77 +9,19 @@ function scrollToRoadmap() {
     document.getElementById('roadmap').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Navigation to modules
+// Navigation to modules - Free access to all modules
 function goToModule(moduleNumber) {
-    const completedModules = JSON.parse(localStorage.getItem('completedModules') || '[]');
-    
-    // Determinar el módulo actual basado en la URL
+    // Determinar la ruta correcta basándose en la ubicación actual
     const currentPath = window.location.pathname;
-    const currentModuleMatch = currentPath.match(/module(\d+)\.html/);
-    const currentModuleNum = currentModuleMatch ? parseInt(currentModuleMatch[1]) : 0;
+    const targetPath = currentPath.includes('/pages/') 
+        ? `module${moduleNumber}.html` 
+        : `pages/module${moduleNumber}.html`;
     
-    // Permitir retroceder siempre (ir a módulo anterior o igual)
-    if (moduleNumber <= currentModuleNum) {
-        // Determinar si estamos en index.html o en un módulo
-        const targetPath = currentPath.includes('/pages/') 
-            ? `module${moduleNumber}.html` 
-            : `pages/module${moduleNumber}.html`;
-        window.location.href = targetPath;
-        return;
-    }
-    
-    // Módulo 1 siempre está desbloqueado
-    if (moduleNumber === 1) {
-        const targetPath = currentPath.includes('/pages/') 
-            ? `module${moduleNumber}.html` 
-            : `pages/module${moduleNumber}.html`;
-        window.location.href = targetPath;
-        return;
-    }
-    
-    // Verificar si el módulo anterior está completado (solo al avanzar)
-    const previousModule = moduleNumber - 1;
-    if (completedModules.includes(`module${previousModule}`)) {
-        const targetPath = currentPath.includes('/pages/') 
-            ? `module${moduleNumber}.html` 
-            : `pages/module${moduleNumber}.html`;
-        window.location.href = targetPath;
-    } else {
-        showLockedMessage(moduleNumber, previousModule);
-    }
+    // Navegar directamente sin restricciones
+    window.location.href = targetPath;
 }
 
-// Mostrar mensaje de módulo bloqueado
-function showLockedMessage(moduleNumber, previousModule) {
-    const modal = document.createElement('div');
-    modal.className = 'locked-modal';
-    modal.innerHTML = `
-        <div class="locked-content">
-            <div class="locked-icon">🔒</div>
-            <h2>Módulo ${moduleNumber} Bloqueado</h2>
-            <p>Debes completar el <strong>Módulo ${previousModule}</strong> primero para desbloquear este contenido.</p>
-            <p class="tip">💡 Completa el quiz del módulo anterior con al menos 80% de aciertos.</p>
-            <button onclick="closeLockedModal()" class="btn btn-primary">Entendido</button>
-        </div>
-    `;
-    document.body.appendChild(modal);
-    
-    // Cerrar al hacer clic fuera
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeLockedModal();
-        }
-    });
-}
-
-function closeLockedModal() {
-    const modal = document.querySelector('.locked-modal');
-    if (modal) {
-        modal.remove();
-    }
-}
-
-// Locked message removed - all modules are now accessible
+// Lock system removed - all modules are freely accessible
 
 // Add CSS animations dynamically
 const style = document.createElement('style');
@@ -159,25 +101,26 @@ function updateProgressUI() {
         }
     });
     
-    // Actualizar tarjetas de módulos también
+    // Actualizar tarjetas de módulos - todos los módulos accesibles
     moduleCards.forEach((card, index) => {
         const moduleNum = index + 1;
         
         if (completedModules.includes(`module${moduleNum}`)) {
             card.classList.add('completed');
             card.classList.remove('locked');
-        } else if (moduleNum === 1 || completedModules.includes(`module${moduleNum - 1}`)) {
-            card.classList.remove('locked', 'completed');
-        } else {
-            card.classList.add('locked');
-            card.classList.remove('completed');
             
-            // Añadir overlay de candado
-            if (!card.querySelector('.lock-overlay')) {
-                const overlay = document.createElement('div');
-                overlay.className = 'lock-overlay';
-                overlay.innerHTML = '<div class="lock-icon">🔒</div>';
-                card.appendChild(overlay);
+            // Remover overlay de candado si existe
+            const overlay = card.querySelector('.lock-overlay');
+            if (overlay) {
+                overlay.remove();
+            }
+        } else {
+            card.classList.remove('locked', 'completed');
+            
+            // Remover overlay de candado si existe
+            const overlay = card.querySelector('.lock-overlay');
+            if (overlay) {
+                overlay.remove();
             }
         }
     });
