@@ -20,9 +20,17 @@
     <link rel="stylesheet" href="../css/futuristic/_utilities.css">
     <!-- Game Styles -->
     <link rel="stylesheet" href="../css/games.css">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body data-theme="futuristic">
+    <!-- Futuristic Background Decorations -->
+    <div class="circuit-background"></div>
+    <div class="hexagon-grid"></div>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -38,10 +46,19 @@
     </header>
 
     <main>
-        <div class="module-header">
-            <h1>Módulo 7: Proyectos Capstone</h1>
-            <p class="module-subtitle">Construye 3 Agentes Completos Aplicando Todo lo Aprendido</p>
-        </div>
+        <!-- Module Header -->
+        <section class="module-header">
+            <div class="module-header-content">
+                <div class="breadcrumb">Módulo 7 / Proyectos Capstone</div>
+                <h1>🚀 Proyectos Capstone</h1>
+                <p class="module-description">Construye 3 Agentes Completos Aplicando Todo lo Aprendido</p>
+                <div class="module-stats">
+                    <span class="stat-item">⏱️ 3-4 semanas</span>
+                    <span class="stat-item">🎯 3 proyectos</span>
+                    <span class="stat-item">🎓 1 certificado</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Tabs Navigation -->
         <div class="tabs-container">
@@ -63,30 +80,24 @@
                 <p>Un proyecto capstone es un proyecto final integrador donde aplicas todos los conceptos aprendidos
                     para construir algo real y funcional.</p>
 
-                <div class="capstone-overview">
-                    <div class="overview-item">
-                        <div class="overview-icon">✅</div>
-                        <div class="overview-content">
-                            <h4>Integración Completa</h4>
-                            <p>Usarás arquitecturas (ReAct, CoT), memoria (vector DBs), herramientas, y evaluación en un
-                                solo proyecto.</p>
-                        </div>
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">✅</div>
+                        <h4>Integración Completa</h4>
+                        <p>Usarás arquitecturas (ReAct, CoT), memoria (vector DBs), herramientas, y evaluación en un
+                            solo proyecto.</p>
                     </div>
-                    <div class="overview-item">
-                        <div class="overview-icon">🛠️</div>
-                        <div class="overview-content">
-                            <h4>Implementación Real</h4>
-                            <p>No son ejercicios teóricos. Son proyectos que puedes usar en tu portafolio o adaptar para
-                                casos reales.</p>
-                        </div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🛠️</div>
+                        <h4>Implementación Real</h4>
+                        <p>No son ejercicios teóricos. Son proyectos que puedes usar en tu portafolio o adaptar para
+                            casos reales.</p>
                     </div>
-                    <div class="overview-item">
-                        <div class="overview-icon">📚</div>
-                        <div class="overview-content">
-                            <h4>Guía Paso a Paso</h4>
-                            <p>Cada proyecto incluye: especificaciones, pseudocódigo, decisiones de diseño, y recursos
-                                para implementar.</p>
-                        </div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">📚</div>
+                        <h4>Guía Paso a Paso</h4>
+                        <p>Cada proyecto incluye: especificaciones, pseudocódigo, decisiones de diseño, y recursos
+                            para implementar.</p>
                     </div>
                 </div>
             </div>
@@ -95,9 +106,9 @@
                 <h3>📋 Los 3 Proyectos</h3>
                 <p>Elegimos estos proyectos porque representan casos de uso comunes y valiosos en la industria:</p>
 
-                <div class="projects-preview">
-                    <div class="project-preview-card">
-                        <div class="project-icon">🤖</div>
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🤖</div>
                         <h4>Proyecto 1: Agente de FAQ Inteligente</h4>
                         <p class="project-difficulty">Dificultad: 🟢 Intermedia</p>
                         <p>Un agente de soporte que responde preguntas frecuentes usando RAG con una base de
@@ -110,8 +121,8 @@
                         </div>
                     </div>
 
-                    <div class="project-preview-card">
-                        <div class="project-icon">📊</div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">📊</div>
                         <h4>Proyecto 2: Agente de Análisis de Datos</h4>
                         <p class="project-difficulty">Dificultad: 🟡 Intermedia-Avanzada</p>
                         <p>Un agente que carga CSVs, ejecuta análisis con Python (pandas), genera gráficos, y responde
@@ -124,8 +135,8 @@
                         </div>
                     </div>
 
-                    <div class="project-preview-card">
-                        <div class="project-icon">🔍</div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🔍</div>
                         <h4>Proyecto 3: Agente de Investigación Multi-Fuente</h4>
                         <p class="project-difficulty">Dificultad: 🔴 Avanzada</p>
                         <p>Un agente que busca información en múltiples fuentes (web, papers, APIs), sintetiza
@@ -159,8 +170,8 @@
                 <p>Estos proyectos pueden implementarse con diferentes stacks. Aquí está la recomendación para
                     principiantes:</p>
 
-                <div class="tech-stack">
-                    <div class="stack-category">
+                <div class="agent-types-grid">
+                    <div class="agent-type-card theory-card">
                         <h4>Lenguaje</h4>
                         <div class="stack-option recommended">
                             <strong>Python 3.10+</strong>
@@ -168,7 +179,7 @@
                         </div>
                     </div>
 
-                    <div class="stack-category">
+                    <div class="agent-type-card theory-card">
                         <h4>Framework de Agentes</h4>
                         <div class="stack-option recommended">
                             <strong>LangChain / LangGraph</strong>
@@ -180,7 +191,7 @@
                         </div>
                     </div>
 
-                    <div class="stack-category">
+                    <div class="agent-type-card theory-card">
                         <h4>LLM Provider</h4>
                         <div class="stack-option recommended">
                             <strong>OpenAI GPT-4o-mini</strong>
@@ -192,7 +203,7 @@
                         </div>
                     </div>
 
-                    <div class="stack-category">
+                    <div class="agent-type-card theory-card">
                         <h4>Vector Database</h4>
                         <div class="stack-option recommended">
                             <strong>Chroma</strong>
@@ -204,7 +215,7 @@
                         </div>
                     </div>
 
-                    <div class="stack-category">
+                    <div class="agent-type-card theory-card">
                         <h4>Evaluación</h4>
                         <div class="stack-option recommended">
                             <strong>LangSmith</strong>
@@ -212,7 +223,7 @@
                         </div>
                     </div>
 
-                    <div class="stack-category">
+                    <div class="agent-type-card theory-card">
                         <h4>Deployment (Opcional)</h4>
                         <div class="stack-option recommended">
                             <strong>Streamlit</strong>

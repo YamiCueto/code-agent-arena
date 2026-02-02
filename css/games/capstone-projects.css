@@ -1068,3 +1068,176 @@
         display: none;
     }
 }
+
+/* ===================================
+   FUTURISTIC THEME OVERRIDES - MODULE 7
+   =================================== */
+
+/* Tabs container and navigation */
+[data-theme="futuristic"] .tabs-container {
+    background: rgba(15, 23, 41, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .tab-btn {
+    background: rgba(15, 23, 41, 0.7);
+    border: 2px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .tab-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--futuristic-cyan-bright);
+    color: var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .tab-btn.active {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
+    border-color: var(--futuristic-cyan-bright);
+    color: var(--futuristic-text-primary);
+    box-shadow: 0 6px 12px rgba(0, 217, 255, 0.3);
+}
+
+[data-theme="futuristic"] .tab-btn.active::after {
+    background: var(--futuristic-cyan-bright);
+}
+
+/* Tab content */
+[data-theme="futuristic"] .tab-content {
+    background: transparent;
+}
+
+/* Stack options */
+[data-theme="futuristic"] .stack-option {
+    background: rgba(15, 23, 41, 0.5);
+    border: 2px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .stack-option.recommended {
+    border-color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+[data-theme="futuristic"] .stack-option.alternative {
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+}
+
+[data-theme="futuristic"] .stack-option strong {
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .stack-option p {
+    color: var(--futuristic-text-secondary);
+}
+
+/* Project cards */
+[data-theme="futuristic"] .project-card {
+    background: rgba(15, 23, 41, 0.5);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .project-header {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
+    border-bottom: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .project-number {
+    background: var(--futuristic-cyan-bright);
+    color: #0f1729;
+}
+
+[data-theme="futuristic"] .difficulty {
+    border: 1px solid currentColor;
+}
+
+/* Spec items */
+[data-theme="futuristic"] .spec-item {
+    background: rgba(15, 23, 41, 0.3);
+    border-left: 4px solid var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .spec-item h4 {
+    color: var(--futuristic-cyan-bright);
+}
+
+/* Implementation steps */
+[data-theme="futuristic"] .implementation-step {
+    background: rgba(15, 23, 41, 0.3);
+    border-left: 4px solid var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .step-number {
+    background: var(--futuristic-cyan-bright);
+    color: #0f1729;
+}
+
+[data-theme="futuristic"] .step-content h4 {
+    color: var(--futuristic-text-primary);
+}
+
+/* Code blocks */
+[data-theme="futuristic"] .code-block {
+    background: rgba(15, 23, 41, 0.8);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .code-block pre {
+    color: var(--futuristic-text-primary);
+}
+
+/* Resources and tips */
+[data-theme="futuristic"] .resources-list,
+[data-theme="futuristic"] .tips-list {
+    background: rgba(15, 23, 41, 0.3);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .resource-item,
+[data-theme="futuristic"] .tip-item {
+    border-left: 3px solid var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .resource-item strong,
+[data-theme="futuristic"] .tip-item strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+/* Certificate section */
+[data-theme="futuristic"] .certificate-card {
+    background: rgba(15, 23, 41, 0.5);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .certificate {
+    background: linear-gradient(135deg, rgba(15, 23, 41, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
+    border: 3px solid var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .cert-title {
+    color: var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .cert-name {
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .cert-desc,
+[data-theme="futuristic"] .cert-footer {
+    color: var(--futuristic-text-secondary);
+}
+
+/* Requirements checklist */
+[data-theme="futuristic"] .requirements-checklist {
+    background: rgba(15, 23, 41, 0.3);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .requirements-checklist li {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .requirements-checklist li.completed {
+    color: #22c55e;
+}
