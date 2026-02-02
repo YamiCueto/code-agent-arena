@@ -1298,3 +1298,71 @@
     background: rgba(0, 217, 255, 0.1);
     color: var(--futuristic-cyan-bright);
 }
+
+/* Example interaction */
+[data-theme="futuristic"] .example-interaction {
+    background: rgba(15, 23, 41, 0.3);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .user-msg {
+    background: rgba(102, 126, 234, 0.2);
+    border-left: 4px solid #667eea;
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .agent-msg {
+    background: rgba(34, 197, 94, 0.2);
+    border-left: 4px solid #22c55e;
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .agent-msg code {
+    background: rgba(15, 23, 41, 0.8);
+    color: var(--futuristic-text-primary);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+/* Arch step styles for project 2 */
+[data-theme="futuristic"] .arch-step {
+    margin: 1rem 0;
+}
+
+[data-theme="futuristic"] .step-number {
+    background: var(--futuristic-cyan-bright);
+    color: #0f1729;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+[data-theme="futuristic"] .step-content {
+    margin-top: 0.5rem;
+}
+
+[data-theme="futuristic"] .step-content strong {
+    color: var(--futuristic-cyan-bright);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+[data-theme="futuristic"] .step-content p {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .step-content code {
+    background: rgba(15, 23, 41, 0.8);
+    color: var(--futuristic-text-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .arch-flow {
+    padding: 1rem;
+}
