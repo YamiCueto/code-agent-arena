@@ -1,0 +1,399 @@
+/* ============================================
+   CHAIN-OF-THOUGHT INTERACTIVE DEMO STYLES
+   ============================================ */
+
+.cot-demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Example Selector */
+.cot-example-selector {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cot-example-selector h3 {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.example-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.example-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--futuristic-blue, #0ea5e9);
+    background: transparent;
+    color: var(--futuristic-text-primary, #f0f9ff);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.example-btn:hover {
+    background: rgba(14, 165, 233, 0.1);
+    transform: translateY(-2px);
+}
+
+.example-btn.active {
+    background: linear-gradient(135deg, var(--futuristic-blue), var(--futuristic-cyan, #00d9ff));
+    color: var(--futuristic-bg-primary, #0a1628);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+}
+
+/* Problem Display */
+.cot-problem-display {
+    background: rgba(15, 23, 41, 0.7);
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.cot-problem-display h4 {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 0.75rem;
+}
+
+.cot-problem-display p {
+    color: var(--futuristic-text-primary, #f0f9ff);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Comparison View */
+.cot-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: start;
+}
+
+.comparison-side {
+    background: rgba(15, 23, 41, 0.5);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    min-height: 400px;
+}
+
+.comparison-side h4 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.without-cot {
+    border: 2px solid rgba(239, 68, 68, 0.5);
+}
+
+.without-cot h4 {
+    color: #ef4444;
+}
+
+.with-cot {
+    border: 2px solid rgba(16, 185, 129, 0.5);
+}
+
+.with-cot h4 {
+    color: #10b981;
+}
+
+.comparison-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.direct-answer {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 3px solid #ef4444;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--futuristic-text-primary, #f0f9ff);
+    font-size: 1.05rem;
+}
+
+.comparison-note {
+    font-size: 0.9rem;
+    color: var(--futuristic-text-muted, #94a3b8);
+    text-align: center;
+    font-style: italic;
+}
+
+.comparison-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.comparison-divider span {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue, #0ea5e9));
+    color: var(--futuristic-bg-primary, #0a1628);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+/* CoT Steps */
+.cot-steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cot-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(16, 185, 129, 0.05);
+    border-left: 3px solid rgba(16, 185, 129, 0.3);
+    border-radius: 0.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+}
+
+.cot-step.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cot-step.current {
+    background: rgba(16, 185, 129, 0.15);
+    border-left-color: #10b981;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    animation: pulse-green 1.5s ease-in-out infinite;
+}
+
+.step-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.3));
+}
+
+.step-details {
+    flex: 1;
+}
+
+.step-label {
+    color: #10b981;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.step-content {
+    color: var(--futuristic-text-primary, #f0f9ff);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.step-calculation {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: rgba(0, 217, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
+
+/* Step Controls */
+.cot-step-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.cot-control-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--futuristic-cyan, #00d9ff);
+    background: transparent;
+    color: var(--futuristic-cyan, #00d9ff);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cot-control-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.cot-control-btn.primary {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue, #0ea5e9));
+    color: var(--futuristic-bg-primary, #0a1628);
+    border-color: var(--futuristic-cyan-bright, #00f0ff);
+}
+
+.cot-control-btn.primary:hover {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+.cot-control-btn:active {
+    transform: translateY(0);
+}
+
+/* Progress Indicator */
+.cot-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 41, 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.cot-progress span {
+    color: var(--futuristic-text-secondary, #bae6fd);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.cot-progress strong {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-size: 1.1rem;
+}
+
+.cot-progress-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cot-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, var(--futuristic-cyan, #00d9ff));
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* Animations */
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .cot-comparison {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .comparison-divider {
+        order: 1;
+    }
+
+    .without-cot {
+        order: 0;
+    }
+
+    .with-cot {
+        order: 2;
+    }
+
+    .comparison-divider span {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .cot-demo-container {
+        padding: 1rem;
+    }
+
+    .cot-step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-icon {
+        font-size: 1.5rem;
+    }
+
+    .cot-step-controls {
+        gap: 0.5rem;
+    }
+
+    .cot-control-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .cot-progress {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .cot-progress-bar {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .cot-step,
+    .cot-step.current {
+        animation: none;
+        transition: opacity 0.3s ease;
+    }
+}
+
+/* Fix white backgrounds hiding text */
+.step-content,
+.step-calculation,
+.step-details,
+.step-details>*,
+.cot-step>*,
+.comparison-content>* {
+    background: transparent !important;
+}
+
+.step-content {
+    color: var(--futuristic-text-primary, #f0f9ff) !important;
+}
+
+.step-calculation {
+    color: var(--futuristic-cyan-bright, #00f0ff) !important;
+    background: rgba(0, 217, 255, 0.1) !important;
+}

@@ -1,0 +1,181 @@
+/* ============================================
+   FUTURISTIC THEME - GAMES & QUIZ
+   Interactive game elements and quiz styling
+   ============================================ */
+
+/* ============================================
+   GAME SECTION
+   ============================================ */
+body[data-theme="futuristic"] .game-section {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .game-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    text-align: center;
+}
+
+body[data-theme="futuristic"] .game-instructions {
+    color: var(--futuristic-text-secondary);
+    text-align: center;
+}
+
+body[data-theme="futuristic"] .game-container,
+body[data-theme="futuristic"] .game-board {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .drop-zones {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .drop-area {
+    background: var(--futuristic-glass-bg) !important;
+    border: 2px dashed var(--futuristic-glass-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    min-height: 60px;
+}
+
+body[data-theme="futuristic"] .items-container,
+body[data-theme="futuristic"] .draggable-items {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .drop-zone {
+    background: var(--futuristic-glass-bg);
+    border: 2px dashed var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .drop-zone h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan);
+    font-size: 1rem;
+}
+
+body[data-theme="futuristic"] .drop-zone:hover,
+body[data-theme="futuristic"] .drop-zone.drag-over {
+    border-color: var(--futuristic-cyan);
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .draggable-item {
+    background: linear-gradient(135deg, var(--futuristic-glass-bg), rgba(0, 217, 255, 0.1));
+    border: 1px solid var(--futuristic-cyan);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: var(--futuristic-text-primary);
+    cursor: grab;
+    box-shadow: 0 0 10px var(--futuristic-glow-cyan);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .draggable-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--futuristic-cyan);
+}
+
+body[data-theme="futuristic"] .draggable-item:active {
+    cursor: grabbing;
+}
+
+/* ============================================
+   QUIZ SECTION
+   ============================================ */
+body[data-theme="futuristic"] .quiz-section {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .quiz-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    text-align: center;
+}
+
+body[data-theme="futuristic"] .quiz-container {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .quiz-questions {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .quiz-question {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .quiz-question h3 {
+    color: var(--futuristic-cyan-bright);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+}
+
+body[data-theme="futuristic"] .quiz-option span {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .quiz-option {
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+body[data-theme="futuristic"] .quiz-option:hover {
+    background: rgba(0, 217, 255, 0.15);
+    border-color: var(--futuristic-cyan);
+    box-shadow: 0 0 15px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .quiz-option input[type="radio"]:checked+span {
+    color: var(--futuristic-cyan-bright);
+    font-weight: 700;
+}
+
+/* ============================================
+   GAME CONTROLS & SCORE DISPLAY
+   ============================================ */
+body[data-theme="futuristic"] .game-controls {
+    background: var(--futuristic-glass-bg) !important;
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .score-display {
+    background: transparent !important;
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .score-display span {
+    color: var(--futuristic-cyan-bright);
+    font-weight: 700;
+}
+
+body[data-theme="futuristic"] .game-feedback {
+    color: var(--futuristic-text-primary);
+}

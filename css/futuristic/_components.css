@@ -1,0 +1,303 @@
+/* ============================================
+   FUTURISTIC THEME - COMPONENTS
+   Cards, buttons, diagrams
+   ============================================ */
+
+/* ============================================
+   THEORY CARDS - GLASSMORPHISM
+   ============================================ */
+body[data-theme="futuristic"] .theory-section {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .theory-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .theory-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px var(--futuristic-glow-cyan);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .theory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--futuristic-glow-cyan);
+    border-color: var(--futuristic-cyan);
+}
+
+body[data-theme="futuristic"] .theory-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .theory-card p,
+body[data-theme="futuristic"] .theory-card li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .theory-card strong {
+    color: var(--futuristic-cyan-bright);
+    font-weight: 700;
+}
+
+body[data-theme="futuristic"] .theory-list li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .theory-card.highlight {
+    border: 2px solid var(--futuristic-cyan);
+    background: linear-gradient(135deg, var(--futuristic-glass-bg), rgba(0, 217, 255, 0.05));
+}
+
+/* Example Box Styling */
+body[data-theme="futuristic"] .example-box {
+    background: var(--futuristic-glass-bg) !important;
+    border: 1px solid var(--futuristic-cyan);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .example-step {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .example-step strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .step-icon {
+    filter: drop-shadow(0 0 5px var(--futuristic-cyan));
+}
+
+/* ============================================
+   AGENT TYPE CARDS
+   ============================================ */
+body[data-theme="futuristic"] .agent-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+body[data-theme="futuristic"] .agent-type-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="futuristic"] .agent-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--futuristic-cyan), var(--futuristic-blue));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+body[data-theme="futuristic"] .agent-type-card:hover::before {
+    transform: scaleX(1);
+}
+
+body[data-theme="futuristic"] .agent-type-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--futuristic-cyan);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .agent-type-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+body[data-theme="futuristic"] .agent-type-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .agent-type-card p,
+body[data-theme="futuristic"] .agent-type-card li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .agent-type-card strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .agent-example {
+    background: rgba(0, 217, 255, 0.1);
+    border-left: 3px solid var(--futuristic-cyan);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   COMPONENTS DIAGRAM
+   ============================================ */
+body[data-theme="futuristic"] .components-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .component-box {
+    background: var(--futuristic-glass-bg);
+    border: 2px solid var(--futuristic-cyan);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    min-width: 150px;
+}
+
+body[data-theme="futuristic"] .component-box h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    margin-top: 0.5rem;
+}
+
+body[data-theme="futuristic"] .component-box p {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .component-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+body[data-theme="futuristic"] .components-diagram .arrow {
+    font-size: 2rem;
+    color: var(--futuristic-cyan);
+    text-shadow: 0 0 10px var(--futuristic-cyan);
+}
+
+/* ============================================
+   BUTTONS - NEON STYLE
+   ============================================ */
+body[data-theme="futuristic"] .btn {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--futuristic-cyan);
+    background: transparent;
+    color: var(--futuristic-cyan-bright);
+    box-shadow: 0 0 10px var(--futuristic-glow-cyan),
+        inset 0 0 10px rgba(0, 217, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="futuristic"] .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--futuristic-glow-cyan), transparent);
+    transition: left 0.5s ease;
+}
+
+body[data-theme="futuristic"] .btn:hover::before {
+    left: 100%;
+}
+
+body[data-theme="futuristic"] .btn:hover {
+    background: var(--futuristic-cyan);
+    color: var(--futuristic-bg-primary);
+    box-shadow: 0 0 20px var(--futuristic-cyan),
+        0 0 40px var(--futuristic-glow-cyan);
+    transform: translateY(-2px);
+}
+
+body[data-theme="futuristic"] .btn-primary {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue));
+    border-color: var(--futuristic-cyan-bright);
+    color: var(--futuristic-bg-primary);
+}
+
+body[data-theme="futuristic"] .btn-secondary {
+    background: transparent;
+    border-color: var(--futuristic-blue);
+    color: var(--futuristic-blue);
+}
+
+/* Module Navigation */
+body[data-theme="futuristic"] .module-navigation .nav-btn {
+    color: var(--futuristic-text-primary);
+    border-color: var(--futuristic-cyan);
+}
+
+body[data-theme="futuristic"] .module-navigation .nav-btn:hover {
+    color: var(--futuristic-bg-primary);
+    background: var(--futuristic-cyan);
+}
+
+/* ============================================
+   PROGRESS BARS - GLOWING
+   ============================================ */
+body[data-theme="futuristic"] .progress-bar {
+    background: var(--futuristic-bg-tertiary);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="futuristic"] .progress-bar-fill {
+    background: linear-gradient(90deg, var(--futuristic-cyan), var(--futuristic-blue));
+    box-shadow: 0 0 20px var(--futuristic-cyan),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: progressGlow 2s ease-in-out infinite;
+}
+
+body[data-theme="futuristic"] .progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s linear infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body[data-theme="futuristic"] .agent-types-grid {
+        grid-template-columns: 1fr;
+    }
+}

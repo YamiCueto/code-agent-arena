@@ -1,0 +1,30 @@
+/* ============================================
+   FUTURISTIC THEME - CODE AGENT ARENA
+   Main Theme File - Modular Imports
+   ============================================ 
+   
+   This file orchestrates all modular CSS files
+   for the futuristic theme. Import this single
+   file in your HTML to load the complete theme.
+   
+   Author: Code Agent Arena
+   Version: 2.0.0 (Modular)
+   ============================================ */
+
+/* Core - Variables & Animations */
+@import url('futuristic/_variables.css');
+@import url('futuristic/_animations.css');
+@import url('futuristic/_backgrounds.css');
+
+/* Layout - Structure & Navigation */
+@import url('futuristic/_layout.css');
+
+/* Components - UI Elements */
+@import url('futuristic/_components.css');
+@import url('futuristic/_games.css');
+@import url('futuristic/_stepper.css');
+
+/* Features - Interactive Elements */
+@import url('futuristic/_demos.css');
+@import url('futuristic/_utilities.css');
+@import url('futuristic/_locked.css');

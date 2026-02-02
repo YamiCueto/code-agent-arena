@@ -1,0 +1,151 @@
+/* ============================================
+   FUTURISTIC THEME - MODULE STEPPER
+   Horizontal progress stepper with states
+   ============================================ */
+
+body[data-theme="futuristic"] .module-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--futuristic-glass-bg);
+    border-bottom: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .stepper-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0 2rem;
+}
+
+body[data-theme="futuristic"] .stepper-step:hover:not(.locked) {
+    transform: translateY(-3px);
+}
+
+body[data-theme="futuristic"] .step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+body[data-theme="futuristic"] .step-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+body[data-theme="futuristic"] .step-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Step Connector Line */
+body[data-theme="futuristic"] .step-connector {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: var(--futuristic-glass-border);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .step-connector.completed {
+    background: linear-gradient(90deg, var(--futuristic-cyan), var(--futuristic-blue));
+    box-shadow: 0 0 10px var(--futuristic-cyan);
+}
+
+/* Locked State */
+body[data-theme="futuristic"] .stepper-step.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+body[data-theme="futuristic"] .stepper-step.locked .step-number {
+    background: var(--futuristic-bg-tertiary);
+    border: 2px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-muted);
+}
+
+body[data-theme="futuristic"] .stepper-step.locked .step-label {
+    color: var(--futuristic-text-muted);
+}
+
+/* Active State */
+body[data-theme="futuristic"] .stepper-step.active .step-number {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue));
+    border: 2px solid var(--futuristic-cyan-bright);
+    color: var(--futuristic-bg-primary);
+    box-shadow: 0 0 20px var(--futuristic-cyan),
+        0 0 40px var(--futuristic-glow-cyan);
+    animation: stepPulse 2s ease-in-out infinite;
+}
+
+body[data-theme="futuristic"] .stepper-step.active .step-label {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+/* Completed State */
+body[data-theme="futuristic"] .stepper-step.completed .step-number {
+    background: var(--futuristic-success);
+    border: 2px solid var(--futuristic-success);
+    color: white;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+body[data-theme="futuristic"] .stepper-step.completed .step-label {
+    color: var(--futuristic-success);
+}
+
+body[data-theme="futuristic"] .stepper-step.completed:hover .step-number {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body[data-theme="futuristic"] .module-stepper {
+        padding: 1.5rem 1rem;
+    }
+
+    body[data-theme="futuristic"] .stepper-step {
+        padding: 0 1rem;
+    }
+
+    body[data-theme="futuristic"] .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    body[data-theme="futuristic"] .step-icon {
+        font-size: 1.5rem;
+    }
+
+    body[data-theme="futuristic"] .step-label {
+        font-size: 0.85rem;
+    }
+}

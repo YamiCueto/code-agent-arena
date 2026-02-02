@@ -1,0 +1,296 @@
+/* ============================================
+   FUTURISTIC THEME - LAYOUT
+   Navbar, sections, headers, footer
+   ============================================ */
+
+/* ============================================
+   NAVBAR - FUTURISTIC STYLE
+   ============================================ */
+body[data-theme="futuristic"] .navbar {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-tertiary));
+    border-bottom: 2px solid var(--futuristic-cyan);
+    box-shadow: 0 4px 20px var(--futuristic-glow-cyan);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1000;
+}
+
+body[data-theme="futuristic"] .logo h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan),
+        0 0 40px var(--futuristic-glow-cyan);
+    letter-spacing: 2px;
+}
+
+body[data-theme="futuristic"] .nav-links a {
+    color: var(--futuristic-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--futuristic-cyan);
+    box-shadow: 0 0 10px var(--futuristic-cyan);
+    transition: width 0.3s ease;
+}
+
+body[data-theme="futuristic"] .nav-links a:hover {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   SECTIONS & CONTAINERS
+   ============================================ */
+body[data-theme="futuristic"] main {
+    position: relative;
+    z-index: 1;
+}
+
+body[data-theme="futuristic"] section {
+    position: relative;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+body[data-theme="futuristic"] .hero-content h2,
+body[data-theme="futuristic"] .hero-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .hero-subtitle {
+    color: var(--futuristic-text-primary);
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+body[data-theme="futuristic"] .stat-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .stat-number {
+    background: linear-gradient(135deg, var(--futuristic-cyan-bright), var(--futuristic-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body[data-theme="futuristic"] .stat-label {
+    color: var(--futuristic-text-primary);
+    font-weight: 600;
+}
+
+/* ============================================
+   PROGRESS CONTAINER
+   ============================================ */
+body[data-theme="futuristic"] .progress-container {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .progress-container h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .progress-text {
+    color: var(--futuristic-text-primary);
+}
+
+/* ============================================
+   ROADMAP SECTION
+   ============================================ */
+body[data-theme="futuristic"] .roadmap {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-tertiary));
+}
+
+body[data-theme="futuristic"] .roadmap h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .section-subtitle {
+    color: var(--futuristic-text-secondary);
+}
+
+body[data-theme="futuristic"] .roadmap-item {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="futuristic"] .roadmap-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .roadmap-item p,
+body[data-theme="futuristic"] .roadmap-item li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .module-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+/* ============================================
+   MODULES SECTION
+   ============================================ */
+body[data-theme="futuristic"] .modules-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .module-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .module-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .module-card p {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .card-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+body[data-theme="futuristic"] .card-arrow {
+    color: var(--futuristic-cyan-bright);
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+body[data-theme="futuristic"] .about {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .about h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .about-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .about-card p {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .about-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+/* ============================================
+   MODULE HEADER
+   ============================================ */
+body[data-theme="futuristic"] .module-header {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-tertiary));
+    border-bottom: 2px solid var(--futuristic-cyan);
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="futuristic"] .module-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--futuristic-glow-cyan), transparent);
+    animation: scanLine 3s linear infinite;
+}
+
+body[data-theme="futuristic"] .module-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    letter-spacing: 2px;
+}
+
+body[data-theme="futuristic"] .breadcrumb {
+    color: var(--futuristic-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+body[data-theme="futuristic"] .module-description {
+    color: var(--futuristic-text-secondary);
+}
+
+body[data-theme="futuristic"] .module-stats .stat-item {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+body[data-theme="futuristic"] footer {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-primary));
+    border-top: 2px solid var(--futuristic-cyan);
+    box-shadow: 0 -4px 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] footer a {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body[data-theme="futuristic"] .module-header h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,111 @@
+/* ============================================
+   FUTURISTIC THEME - LOCKED & NAVIGATION
+   Locked sections, continue buttons, back navigation
+   ============================================ */
+
+/* ============================================
+   LOCKED SECTIONS & CONTINUE BUTTON
+   ============================================ */
+body[data-theme="futuristic"] .locked-section {
+    opacity: 0.3;
+    pointer-events: none;
+    filter: grayscale(100%) blur(2px);
+}
+
+body[data-theme="futuristic"] .continue-button-container {
+    position: relative;
+    z-index: 10;
+}
+
+body[data-theme="futuristic"] .continue-btn {
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+body[data-theme="futuristic"] .continue-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 217, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+body[data-theme="futuristic"] .continue-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+body[data-theme="futuristic"] .continue-btn:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   SECTION UNLOCK NOTIFICATION
+   ============================================ */
+.section-unlock-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: var(--futuristic-glass-bg);
+    border: 2px solid var(--futuristic-cyan);
+    border-radius: 0.75rem;
+    padding: 1.5rem 2rem;
+    color: var(--futuristic-text-primary);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 30px var(--futuristic-glow-cyan);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    animation: slideInRight 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+}
+
+.section-unlock-notification h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.section-unlock-notification p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   BACK NAVIGATION BUTTONS
+   ============================================ */
+body[data-theme="futuristic"] .back-navigation-container {
+    position: relative;
+    z-index: 10;
+}
+
+body[data-theme="futuristic"] .back-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-secondary);
+    box-shadow: none;
+    animation: none;
+    /* No pulse animation for back buttons */
+}
+
+body[data-theme="futuristic"] .back-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--futuristic-cyan);
+    color: var(--futuristic-cyan-bright);
+    box-shadow: 0 0 15px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .back-btn::before {
+    display: none;
+    /* Remove the sweep animation */
+}

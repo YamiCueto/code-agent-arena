@@ -1,0 +1,243 @@
+/* ============================================
+   TREE OF THOUGHTS VISUALIZER STYLES
+   ============================================ */
+
+.tot-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Scenario Selector */
+.tot-scenario-selector {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tot-scenario-selector h3 {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.tot-scenario-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.tot-scenario-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--futuristic-cyan, #00d9ff);
+    background: transparent;
+    color: var(--futuristic-text-primary, #f0f9ff);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.tot-scenario-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.tot-scenario-btn.active {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue, #0ea5e9));
+    color: var(--futuristic-bg-primary, #0a1628);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+.tot-scenario-description {
+    color: var(--futuristic-text-secondary, #bae6fd);
+    font-size: 1rem;
+}
+
+/* Tree Visualization Area */
+.tot-tree-area {
+    background: rgba(15, 23, 41, 0.7);
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+#tot-svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.tot-node {
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.tot-node:hover {
+    filter: drop-shadow(0 0 15px currentColor) !important;
+}
+
+.tot-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+.tot-line {
+    transition: all 0.5s ease;
+}
+
+/* Legend */
+.tot-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(15, 23, 41, 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.legend-item span {
+    color: var(--futuristic-text-secondary, #bae6fd);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Controls */
+.tot-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tot-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--futuristic-cyan, #00d9ff);
+    background: transparent;
+    color: var(--futuristic-cyan, #00d9ff);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.tot-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.tot-btn.primary {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue, #0ea5e9));
+    color: var(--futuristic-bg-primary, #0a1628);
+    border-color: var(--futuristic-cyan-bright, #00f0ff);
+}
+
+.tot-btn.primary:hover {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+.tot-btn:active {
+    transform: translateY(0);
+}
+
+/* Explanation */
+.tot-explanation {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(14, 165, 233, 0.1));
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tot-explanation p {
+    color: var(--futuristic-text-primary, #f0f9ff);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.tot-explanation strong {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tot-container {
+        padding: 1rem;
+    }
+
+    .tot-tree-area {
+        padding: 1rem;
+    }
+
+    #tot-svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .tot-legend {
+        gap: 1rem;
+    }
+
+    .legend-item {
+        font-size: 0.85rem;
+    }
+
+    .legend-color {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tot-controls {
+        flex-direction: column;
+    }
+
+    .tot-btn {
+        width: 100%;
+    }
+
+    .tot-explanation {
+        padding: 1rem;
+    }
+
+    .tot-explanation p {
+        font-size: 1rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .tot-node,
+    .tot-line {
+        transition: none;
+    }
+}

@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo 2: Arquitectura - Code Agent Arena</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/futuristic-theme.css">
     <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="../css/games/react-simulator-enhanced.css">
+    <link rel="stylesheet" href="../css/games/cot-demo.css">
+    <link rel="stylesheet" href="../css/games/tot-visualizer.css">
+    <link rel="stylesheet" href="../css/games/comparison-table.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
+
+<body data-theme="futuristic">
+    <!-- Futuristic Background Decorations -->
+    <div class="circuit-background"></div>
+    <div class="hexagon-grid"></div>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -41,10 +55,12 @@
         <section id="teoria" class="theory-section">
             <div class="theory-container">
                 <h2>🔄 ReAct: Reasoning + Acting</h2>
-                
+
                 <div class="theory-card">
                     <h3>¿Qué es ReAct?</h3>
-                    <p>ReAct es un patrón donde el agente alterna entre <strong>pensar</strong> y <strong>actuar</strong>:</p>
+                    <p>ReAct es un patrón donde el agente alterna entre <strong>pensar</strong> y
+                        <strong>actuar</strong>:
+                    </p>
                     <ul class="theory-list">
                         <li>💭 <strong>Thought (Pensamiento):</strong> El agente razona sobre qué hacer</li>
                         <li>⚡ <strong>Action (Acción):</strong> Ejecuta una acción en el mundo</li>
@@ -91,63 +107,322 @@
                 </div>
 
                 <h2>🧠 Chain-of-Thought (CoT)</h2>
-                
+
                 <div class="theory-card">
                     <h3>Pensamiento Paso a Paso</h3>
                     <p>Chain-of-Thought es hacer que el agente "piense en voz alta":</p>
-                    <div class="cot-example">
-                        <div class="problem">
-                            <strong>Problema:</strong> María tiene 3 manzanas. Compra 5 más y regala 2. ¿Cuántas tiene?
-                        </div>
-                        <div class="cot-steps">
-                            <div class="cot-step">
-                                <span class="step-label">Paso 1:</span>
-                                <span>María comienza con 3 manzanas</span>
-                            </div>
-                            <div class="cot-step">
-                                <span class="step-label">Paso 2:</span>
-                                <span>Compra 5 más: 3 + 5 = 8</span>
-                            </div>
-                            <div class="cot-step">
-                                <span class="step-label">Paso 3:</span>
-                                <span>Regala 2: 8 - 2 = 6</span>
-                            </div>
-                            <div class="cot-answer">
-                                <strong>Respuesta:</strong> María tiene 6 manzanas
-                            </div>
-                        </div>
-                    </div>
+                    <p style="margin-top: 1rem;"><strong>👇 Prueba el demostrador interactivo más abajo para ver CoT en
+                            acción</strong></p>
+                </div>
+
+                <!-- Interactive CoT Demo -->
+                <div class="theory-card highlight" style="margin-top: 2rem;">
+                    <h3>🎮 Demostrador Interactivo de Chain-of-Thought</h3>
+                    <div id="cot-interactive-demo"></div>
                 </div>
 
                 <h2>🌳 Tree of Thoughts (ToT)</h2>
-                
+
                 <div class="theory-card">
                     <h3>Explorar Múltiples Caminos</h3>
-                    <p>ToT explora diferentes soluciones como un árbol:</p>
-                    <div class="tot-visual">
-                        <div class="tot-root">🎯 Problema</div>
-                        <div class="tot-branches">
-                            <div class="tot-branch">
-                                <div class="tot-node good">✓ Opción A</div>
-                                <div class="tot-score">Score: 8/10</div>
+                    <p>ToT explora diferentes soluciones como un árbol. El agente evalúa cada opción y elige la mejor.
+                        Si falla, puede volver atrás (backtracking) y probar otra.</p>
+                    <p style="margin-top: 1rem;"><strong>👇 Prueba el visualizador interactivo más abajo</strong></p>
+                </div>
+
+                <!-- Interactive ToT Visualizer -->
+                <div class="theory-card highlight" style="margin-top: 2rem;">
+                    <h3>🎮 Visualizador Interactivo de Tree of Thoughts</h3>
+                    <div id="tot-visualizer"></div>
+                </div>
+
+                <!-- ============================================
+                     COMPARISON SECTION: ReAct vs CoT vs ToT
+                     ============================================ -->
+                <h2 style="margin-top: 4rem;">⚖️ Comparación: ReAct vs CoT vs ToT</h2>
+
+                <div class="theory-card highlight" style="margin-top: 2rem;">
+                    <h3>📊 Tabla Comparativa</h3>
+                    <div class="comparison-container">
+                        <div class="comparison-table">
+                            <!-- Headers -->
+                            <div class="comparison-header empty"></div>
+                            <div class="comparison-header">🔄 ReAct</div>
+                            <div class="comparison-header">🧠 Chain-of-Thought</div>
+                            <div class="comparison-header">🌳 Tree of Thoughts</div>
+
+                            <!-- Característica Principal -->
+                            <div class="comparison-cell label">
+                                <span class="icon">🎯</span> Característica
                             </div>
-                            <div class="tot-branch">
-                                <div class="tot-node bad">✗ Opción B</div>
-                                <div class="tot-score">Score: 3/10</div>
+                            <div class="comparison-cell">Ciclo iterativo de pensamiento y acción</div>
+                            <div class="comparison-cell">Razonamiento paso a paso explícito</div>
+                            <div class="comparison-cell">Exploración de múltiples caminos</div>
+
+                            <!-- Cuándo Usar -->
+                            <div class="comparison-cell label">
+                                <span class="icon">💡</span> Cuándo Usar
                             </div>
-                            <div class="tot-branch">
-                                <div class="tot-node best">★ Opción C</div>
-                                <div class="tot-score">Score: 10/10</div>
+                            <div class="comparison-cell">Tareas que requieren interacción con el entorno</div>
+                            <div class="comparison-cell">Problemas que necesitan razonamiento complejo</div>
+                            <div class="comparison-cell">Decisiones con múltiples opciones posibles</div>
+
+                            <!-- Complejidad -->
+                            <div class="comparison-cell label">
+                                <span class="icon">📈</span> Complejidad
+                            </div>
+                            <div class="comparison-cell">Media-Alta</div>
+                            <div class="comparison-cell">Baja-Media</div>
+                            <div class="comparison-cell">Alta</div>
+
+                            <!-- Velocidad -->
+                            <div class="comparison-cell label">
+                                <span class="icon">⚡</span> Velocidad
+                            </div>
+                            <div class="comparison-cell">Variable (depende de acciones)</div>
+                            <div class="comparison-cell">Rápida</div>
+                            <div class="comparison-cell">Lenta (explora múltiples opciones)</div>
+
+                            <!-- Precisión -->
+                            <div class="comparison-cell label">
+                                <span class="icon">🎯</span> Precisión
+                            </div>
+                            <div class="comparison-cell">Alta (se adapta con observaciones)</div>
+                            <div class="comparison-cell">Alta (razonamiento detallado)</div>
+                            <div class="comparison-cell">Muy Alta (evalúa múltiples opciones)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flow Diagrams -->
+                <div class="theory-card" style="margin-top: 2rem;">
+                    <h3>🔄 Diagramas de Flujo</h3>
+                    <div class="flow-diagrams">
+                        <!-- ReAct Flow -->
+                        <div class="flow-diagram">
+                            <h3>🔄 ReAct</h3>
+                            <div class="flow-steps">
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">💭</div>
+                                    <div class="flow-step-text">Pensar: ¿Qué debo hacer?</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">⚡</div>
+                                    <div class="flow-step-text">Actuar: Ejecutar acción</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">👁️</div>
+                                    <div class="flow-step-text">Observar: Ver resultado</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">🔄</div>
+                                    <div class="flow-step-text">Repetir hasta completar</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CoT Flow -->
+                        <div class="flow-diagram">
+                            <h3>🧠 Chain-of-Thought</h3>
+                            <div class="flow-steps">
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">📝</div>
+                                    <div class="flow-step-text">Recibir problema</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">🧠</div>
+                                    <div class="flow-step-text">Paso 1: Razonar</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">🧠</div>
+                                    <div class="flow-step-text">Paso 2: Razonar</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">✅</div>
+                                    <div class="flow-step-text">Respuesta final</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ToT Flow -->
+                        <div class="flow-diagram">
+                            <h3>🌳 Tree of Thoughts</h3>
+                            <div class="flow-steps">
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">🌱</div>
+                                    <div class="flow-step-text">Generar opciones A, B, C</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">⚖️</div>
+                                    <div class="flow-step-text">Evaluar cada opción</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">🔙</div>
+                                    <div class="flow-step-text">Backtrack si falla</div>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <div class="flow-step-icon">🏆</div>
+                                    <div class="flow-step-text">Elegir mejor camino</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <p class="tot-explanation">
-                        El agente evalúa cada opción y elige la mejor. Si falla, puede volver atrás (backtracking) y probar otra.
-                    </p>
+                </div>
+
+                <!-- Use Cases -->
+                <div class="theory-card" style="margin-top: 2rem;">
+                    <h3>💼 Casos de Uso Recomendados</h3>
+                    <div class="use-cases-grid">
+                        <!-- ReAct Use Cases -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-icon">🔄</div>
+                                <div class="use-case-title">ReAct</div>
+                            </div>
+                            <p class="use-case-description">
+                                Ideal para agentes que necesitan interactuar con el mundo real
+                            </p>
+                            <ul class="use-case-list">
+                                <li>Búsqueda web y navegación</li>
+                                <li>Automatización de tareas</li>
+                                <li>Agentes con herramientas (APIs)</li>
+                                <li>Chatbots conversacionales</li>
+                                <li>Asistentes virtuales</li>
+                            </ul>
+                        </div>
+
+                        <!-- CoT Use Cases -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-icon">🧠</div>
+                                <div class="use-case-title">Chain-of-Thought</div>
+                            </div>
+                            <p class="use-case-description">
+                                Perfecto para problemas que requieren razonamiento explícito
+                            </p>
+                            <ul class="use-case-list">
+                                <li>Problemas matemáticos</li>
+                                <li>Análisis de datos</li>
+                                <li>Razonamiento lógico</li>
+                                <li>Explicación de decisiones</li>
+                                <li>Tutoriales paso a paso</li>
+                            </ul>
+                        </div>
+
+                        <!-- ToT Use Cases -->
+                        <div class="use-case-card">
+                            <div class="use-case-header">
+                                <div class="use-case-icon">🌳</div>
+                                <div class="use-case-title">Tree of Thoughts</div>
+                            </div>
+                            <p class="use-case-description">
+                                Excelente cuando necesitas explorar múltiples soluciones
+                            </p>
+                            <ul class="use-case-list">
+                                <li>Planificación estratégica</li>
+                                <li>Diseño de arquitecturas</li>
+                                <li>Resolución de puzzles</li>
+                                <li>Optimización de procesos</li>
+                                <li>Toma de decisiones complejas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pros and Cons -->
+                <div class="theory-card" style="margin-top: 2rem;">
+                    <h3>✅❌ Ventajas y Desventajas</h3>
+                    <div class="pros-cons-grid">
+                        <!-- ReAct Pros/Cons -->
+                        <div class="pros-cons-card">
+                            <h3>🔄 ReAct</h3>
+                            <div class="pros-section">
+                                <h4>✅ Ventajas</h4>
+                                <ul class="pros-list">
+                                    <li>Se adapta dinámicamente</li>
+                                    <li>Interactúa con el entorno</li>
+                                    <li>Aprende de observaciones</li>
+                                    <li>Muy versátil</li>
+                                </ul>
+                            </div>
+                            <div class="cons-section">
+                                <h4>❌ Desventajas</h4>
+                                <ul class="cons-list">
+                                    <li>Puede ser lento</li>
+                                    <li>Requiere herramientas</li>
+                                    <li>Más complejo de implementar</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- CoT Pros/Cons -->
+                        <div class="pros-cons-card">
+                            <h3>🧠 Chain-of-Thought</h3>
+                            <div class="pros-section">
+                                <h4>✅ Ventajas</h4>
+                                <ul class="pros-list">
+                                    <li>Razonamiento transparente</li>
+                                    <li>Fácil de implementar</li>
+                                    <li>Rápido y eficiente</li>
+                                    <li>Mejora precisión</li>
+                                </ul>
+                            </div>
+                            <div class="cons-section">
+                                <h4>❌ Desventajas</h4>
+                                <ul class="cons-list">
+                                    <li>No interactúa con entorno</li>
+                                    <li>Camino lineal (no explora)</li>
+                                    <li>Limitado a razonamiento</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ToT Pros/Cons -->
+                        <div class="pros-cons-card">
+                            <h3>🌳 Tree of Thoughts</h3>
+                            <div class="pros-section">
+                                <h4>✅ Ventajas</h4>
+                                <ul class="pros-list">
+                                    <li>Explora múltiples opciones</li>
+                                    <li>Muy alta precisión</li>
+                                    <li>Puede hacer backtracking</li>
+                                    <li>Encuentra soluciones óptimas</li>
+                                </ul>
+                            </div>
+                            <div class="cons-section">
+                                <h4>❌ Desventajas</h4>
+                                <ul class="cons-list">
+                                    <li>Muy lento</li>
+                                    <li>Costoso computacionalmente</li>
+                                    <li>Complejo de implementar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Quiz -->
+                <div class="theory-card highlight" style="margin-top: 2rem;">
+                    <div class="comparison-quiz">
+                        <h3>🎯 Quiz Interactivo: ¿Qué Técnica Usarías?</h3>
+                        <p style="text-align: center; color: var(--futuristic-text-secondary); margin-bottom: 2rem;">
+                            Pon a prueba tu conocimiento eligiendo la técnica correcta para cada escenario
+                        </p>
+                        <div id="comparison-quiz-container"></div>
+                    </div>
                 </div>
 
                 <h2>🪞 Reflection (Auto-crítica)</h2>
-                
+
                 <div class="theory-card">
                     <h3>Aprender de los Errores</h3>
                     <p>Los agentes con reflexión critican y mejoran su propio trabajo:</p>
@@ -172,7 +447,7 @@
                 </div>
 
                 <h2>🎯 Planning Avanzado</h2>
-                
+
                 <div class="agent-types-grid">
                     <div class="agent-type-card">
                         <div class="agent-type-icon">🎯</div>
@@ -212,64 +487,15 @@
             </div>
         </section>
 
-        <!-- Game Section -->
+        <!-- Enhanced Game Section -->
         <section id="juego" class="game-section">
             <div class="game-container">
-                <h2>🎮 Juego: Simulador ReAct</h2>
-                <p class="game-instructions">Ayuda al agente a completar la tarea eligiendo los pasos correctos en el ciclo ReAct</p>
-                
-                <div class="game-board">
-                    <div class="react-simulator">
-                        <div class="task-display">
-                            <h3>🎯 Tarea Actual:</h3>
-                            <p id="current-task">Buscar un buen restaurante italiano cerca</p>
-                        </div>
+                <h2>🎮 Simulador ReAct Mejorado</h2>
+                <p class="game-instructions">Observa cómo funciona el ciclo ReAct con controles interactivos y múltiples
+                    escenarios</p>
 
-                        <div class="react-flow">
-                            <div class="flow-stage" id="thought-stage">
-                                <h4>💭 Thought (Pensamiento)</h4>
-                                <div class="options-container" id="thought-options">
-                                    <!-- Dynamic options -->
-                                </div>
-                            </div>
-
-                            <div class="flow-stage" id="action-stage" style="display: none;">
-                                <h4>⚡ Action (Acción)</h4>
-                                <div class="options-container" id="action-options">
-                                    <!-- Dynamic options -->
-                                </div>
-                            </div>
-
-                            <div class="flow-stage" id="observation-stage" style="display: none;">
-                                <h4>👁️ Observation (Observación)</h4>
-                                <div class="observation-result" id="observation-result">
-                                    <!-- Dynamic result -->
-                                </div>
-                                <button class="btn btn-primary" onclick="nextCycle()">Continuar →</button>
-                            </div>
-
-                            <div class="flow-stage" id="completion-stage" style="display: none;">
-                                <h4>🎉 ¡Tarea Completada!</h4>
-                                <div class="completion-message" id="completion-message"></div>
-                                <button class="btn btn-primary" onclick="resetReactGame()">Nuevo Desafío</button>
-                            </div>
-                        </div>
-
-                        <div class="game-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="progress-fill"></div>
-                            </div>
-                            <p>Ciclos completados: <span id="cycles-count">0</span>/3</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="game-controls">
-                    <button class="btn btn-secondary" onclick="resetReactGame()">🔄 Reiniciar</button>
-                    <div class="score-display">
-                        <span>Puntos: <span id="react-score">0</span></span>
-                    </div>
-                </div>
+                <!-- Enhanced React Simulator -->
+                <div id="enhanced-react-simulator"></div>
             </div>
         </section>
 
@@ -386,12 +612,18 @@
     <footer>
         <div class="footer-content">
             <p>🤖 Code Agent Arena - Módulo 2: Arquitectura</p>
-            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a>
+                para la comunidad</p>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
     <script src="../js/quiz-system.js"></script>
     <script src="../js/games/react-simulator.js"></script>
+    <script src="../js/games/react-simulator-enhanced.js"></script>
+    <script src="../js/games/cot-demo.js"></script>
+    <script src="../js/games/tot-visualizer.js"></script>
+    <script src="../js/games/comparison-quiz.js"></script>
 </body>
+
 </html>

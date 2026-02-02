@@ -1,0 +1,491 @@
+/* ============================================
+   ENHANCED REACT SIMULATOR STYLES
+   ============================================ */
+
+.react-enhanced-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Scenario Selector */
+.scenario-selector {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.scenario-selector h3 {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.scenario-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.scenario-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--futuristic-cyan, #00d9ff);
+    background: transparent;
+    color: var(--futuristic-text-primary, #f0f9ff);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.scenario-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.scenario-btn.active {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue, #0ea5e9));
+    color: var(--futuristic-bg-primary, #0a1628);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+.scenario-description {
+    color: var(--futuristic-text-secondary, #bae6fd);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Timeline Visualization */
+.react-timeline {
+    background: rgba(15, 23, 41, 0.5);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.react-timeline h3 {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.timeline-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--futuristic-cyan, #00d9ff),
+            transparent);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--futuristic-bg-secondary, #0f1729);
+    border: 2px solid rgba(148, 163, 184, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-label {
+    font-size: 0.75rem;
+    color: var(--futuristic-text-muted, #94a3b8);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.timeline-step.active .timeline-icon {
+    border-color: var(--futuristic-cyan, #00d9ff);
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+.timeline-step.current .timeline-icon {
+    border-color: var(--futuristic-cyan-bright, #00f0ff);
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(14, 165, 233, 0.2));
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.6);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.timeline-step.current .timeline-label {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-weight: 700;
+}
+
+.timeline-step:hover .timeline-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+/* Main Display Area */
+.react-display-area {
+    background: rgba(15, 23, 41, 0.7);
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 1rem;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.current-step-display {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.step-icon {
+    font-size: 4rem;
+    filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.5));
+    animation: float 3s ease-in-out infinite;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h4 {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.step-content p {
+    color: var(--futuristic-text-primary, #f0f9ff);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Playback Controls */
+.playback-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(15, 23, 41, 0.5);
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--futuristic-cyan, #00d9ff);
+    background: transparent;
+    color: var(--futuristic-cyan, #00d9ff);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+.control-btn.primary {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue, #0ea5e9));
+    border-color: var(--futuristic-cyan-bright, #00f0ff);
+    color: var(--futuristic-bg-primary, #0a1628);
+    font-size: 1.5rem;
+}
+
+.control-btn.primary:hover {
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.6);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.speed-control label {
+    color: var(--futuristic-text-secondary, #bae6fd);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.speed-control select {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--futuristic-cyan, #00d9ff);
+    background: var(--futuristic-bg-tertiary, #1a2332);
+    color: var(--futuristic-text-primary, #f0f9ff);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.speed-control select:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+}
+
+/* Progress Info */
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 41, 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    margin-bottom: 2rem;
+}
+
+.cycle-counter,
+.step-counter {
+    color: var(--futuristic-text-secondary, #bae6fd);
+    font-size: 0.9rem;
+}
+
+.cycle-counter strong,
+.step-counter strong {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-size: 1.1rem;
+}
+
+.progress-bar-container {
+    flex: 1;
+    height: 8px;
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--futuristic-cyan), var(--futuristic-blue, #0ea5e9));
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+/* Completion Message */
+.completion-message {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(14, 165, 233, 0.1));
+    border: 2px solid var(--futuristic-cyan, #00d9ff);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+}
+
+.completion-message h3 {
+    color: var(--futuristic-cyan-bright, #00f0ff);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+}
+
+.completion-message p {
+    color: var(--futuristic-text-primary, #f0f9ff);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(0, 217, 255, 0.8);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .react-enhanced-container {
+        padding: 1rem;
+    }
+
+    .current-step-display {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .step-icon {
+        font-size: 3rem;
+    }
+
+    .step-content h4 {
+        font-size: 1.2rem;
+    }
+
+    .step-content p {
+        font-size: 1rem;
+    }
+
+    .timeline-track {
+        flex-wrap: wrap;
+    }
+
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .timeline-label {
+        font-size: 0.65rem;
+    }
+
+    .playback-controls {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .control-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .control-btn.primary {
+        width: 55px;
+        height: 55px;
+    }
+
+    .speed-control {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(0, 217, 255, 0.3);
+        padding-top: 0.5rem;
+    }
+
+    .progress-info {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .progress-bar-container {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .step-icon,
+    .timeline-step.current .timeline-icon {
+        animation: none;
+    }
+
+    .current-step-display {
+        animation: none !important;
+    }
+}

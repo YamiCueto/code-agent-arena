@@ -1,0 +1,141 @@
+/* ============================================
+   FUTURISTIC THEME - ANIMATIONS
+   All @keyframes definitions
+   ============================================ */
+
+/* Circuit Background Pulse */
+@keyframes circuitPulse {
+
+    0%,
+    100% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+}
+
+/* Hexagon Grid Rotation */
+@keyframes hexagonRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hexagon Float Animation */
+@keyframes hexagonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+/* Scan Line Effect */
+@keyframes scanLine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+/* Progress Bar Glow */
+@keyframes progressGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--futuristic-cyan);
+    }
+
+    50% {
+        box-shadow: 0 0 30px var(--futuristic-cyan-bright);
+    }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Section Fade In */
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Pulse */
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px var(--futuristic-glow-cyan),
+            inset 0 0 10px rgba(0, 217, 255, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 25px var(--futuristic-cyan),
+            0 0 40px var(--futuristic-glow-cyan),
+            inset 0 0 20px rgba(0, 217, 255, 0.2);
+    }
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade Out */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+/* Step Pulse */
+@keyframes stepPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--futuristic-cyan),
+            0 0 40px var(--futuristic-glow-cyan);
+    }
+
+    50% {
+        box-shadow: 0 0 30px var(--futuristic-cyan-bright),
+            0 0 60px var(--futuristic-cyan);
+    }
+}
