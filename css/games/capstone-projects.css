@@ -391,6 +391,62 @@
     margin-block: 0.5rem;
 }
 
+/* Arch Flow for step-by-step diagrams */
+.arch-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.arch-step {
+    width: 100%;
+    max-width: 500px;
+    margin: 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-content {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.step-content strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.125rem;
+}
+
+.step-content p {
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.step-content code {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
 .arch-component.decision .arch-box {
     background: #fef3c7;
     border-color: #f59e0b;
@@ -1343,6 +1399,8 @@
 
 [data-theme="futuristic"] .step-content {
     margin-top: 0.5rem;
+    background: rgba(15, 23, 41, 0.5);
+    border: 1px solid rgba(0, 217, 255, 0.3);
 }
 
 [data-theme="futuristic"] .step-content strong {
