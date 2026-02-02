@@ -12,19 +12,19 @@
    ============================================ */
 
 /* Core - Variables & Animations */
-@import url('futuristic/_variables.css');
-@import url('futuristic/_animations.css');
-@import url('futuristic/_backgrounds.css');
+@import 'futuristic/_variables.css';
+@import 'futuristic/_animations.css';
+@import 'futuristic/_backgrounds.css';
 
 /* Layout - Structure & Navigation */
-@import url('futuristic/_layout.css');
+@import 'futuristic/_layout.css';
 
 /* Components - UI Elements */
-@import url('futuristic/_components.css');
-@import url('futuristic/_games.css');
-@import url('futuristic/_stepper.css');
+@import 'futuristic/_components.css';
+@import 'futuristic/_games.css';
+@import 'futuristic/_stepper.css';
 
 /* Features - Interactive Elements */
-@import url('futuristic/_demos.css');
-@import url('futuristic/_utilities.css');
-@import url('futuristic/_locked.css');
+@import 'futuristic/_demos.css';
+@import 'futuristic/_utilities.css';
+@import 'futuristic/_locked.css';
