@@ -318,6 +318,13 @@
     transition: all 0.3s ease;
 }
 
+/* Futuristic override for checklist items */
+[data-theme="futuristic"] .checklist li {
+    background: rgba(15, 23, 41, 0.5);
+    border-left: 4px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-secondary);
+}
+
 .checklist li:hover {
     border-left-color: var(--success);
     transform: translateX(5px);
@@ -951,6 +958,7 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0;
+    background: rgba(15, 23, 41, 0.5);
 }
 
 [data-theme="futuristic"] .optimization-example th {
@@ -963,7 +971,8 @@
 [data-theme="futuristic"] .optimization-example td {
     padding: 0.75rem;
     border: 1px solid var(--futuristic-glass-border);
-    color: var(--futuristic-text-secondary);
+    color: var(--futuristic-text-primary);
+    background: rgba(15, 23, 41, 0.3);
 }
 
 [data-theme="futuristic"] .optimization-example td.positive {
@@ -1045,4 +1054,71 @@
     background: rgba(0, 217, 255, 0.05);
     color: var(--futuristic-text-primary);
     border-radius: 4px;
+}
+
+/* ============================================
+   FUTURISTIC THEME OVERRIDES FOR GAME
+   ============================================ */
+
+/* Safety game container */
+[data-theme="futuristic"] .safety-game {
+    background: rgba(15, 23, 41, 0.3);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+/* Safety question heading */
+[data-theme="futuristic"] .safety-question h4 {
+    color: var(--futuristic-cyan-bright);
+}
+
+/* Safety options */
+[data-theme="futuristic"] .safety-option {
+    background: rgba(15, 23, 41, 0.5);
+    border: 2px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .safety-option:hover {
+    border-color: var(--futuristic-cyan-bright);
+    background: rgba(15, 23, 41, 0.7);
+    box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+}
+
+[data-theme="futuristic"] .safety-option.selected {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
+    border-color: var(--futuristic-cyan-bright);
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .option-letter {
+    background: rgba(0, 217, 255, 0.2);
+    color: var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .safety-option.selected .option-letter {
+    background: var(--futuristic-cyan-bright);
+    color: #0f1729;
+}
+
+[data-theme="futuristic"] .option-text {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .safety-option.selected .option-text {
+    color: var(--futuristic-text-primary);
+}
+
+/* Safety feedback */
+[data-theme="futuristic"] .safety-feedback {
+    background: rgba(15, 23, 41, 0.5);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .feedback-explanation {
+    background: rgba(15, 23, 41, 0.3);
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .feedback-explanation strong {
+    color: var(--futuristic-text-primary);
 }
