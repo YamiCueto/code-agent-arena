@@ -702,6 +702,207 @@
     margin: 0.5rem;
 }
 
+/* ============================================
+   FUTURISTIC THEME OVERRIDES
+   ============================================ */
+body[data-theme="futuristic"] .conversation-flow .message {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+body[data-theme="futuristic"] .message .role {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .message .text {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .message.user {
+    background: rgba(33, 150, 243, 0.15);
+    border-color: var(--futuristic-blue);
+}
+
+body[data-theme="futuristic"] .message.agent {
+    background: rgba(156, 39, 176, 0.15);
+    border-color: #9c27b0;
+}
+
+body[data-theme="futuristic"] .message.agent-thought {
+    background: rgba(255, 152, 0, 0.15);
+    border-color: #ff9800;
+}
+
+body[data-theme="futuristic"] .message.agent-action {
+    background: rgba(76, 175, 80, 0.15);
+    border-color: var(--futuristic-success);
+}
+
+body[data-theme="futuristic"] .message.observation {
+    background: rgba(233, 30, 99, 0.15);
+    border-color: #e91e63;
+}
+
+body[data-theme="futuristic"] .metrics-grid .metric {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .metric-value {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .metric-label {
+    color: var(--futuristic-text-secondary);
+}
+
+body[data-theme="futuristic"] .code-snippet {
+    background: rgba(15, 23, 41, 0.5);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+body[data-theme="futuristic"] .code-snippet code {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .consideration {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+body[data-theme="futuristic"] .consideration h4 {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .consideration li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .use-case-detail {
+    margin: 1.5rem 0;
+}
+
+body[data-theme="futuristic"] .use-case-components,
+body[data-theme="futuristic"] .use-case-example,
+body[data-theme="futuristic"] .use-case-metrics,
+body[data-theme="futuristic"] .use-case-benefits,
+body[data-theme="futuristic"] .research-workflow,
+body[data-theme="futuristic"] .code-assistant-example,
+body[data-theme="futuristic"] .data-analysis-flow {
+    background: var(--futuristic-glass-bg);
+    border-left: 4px solid var(--futuristic-cyan);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .use-case-components h4,
+body[data-theme="futuristic"] .use-case-example h4,
+body[data-theme="futuristic"] .use-case-metrics h4,
+body[data-theme="futuristic"] .use-case-benefits h4,
+body[data-theme="futuristic"] .research-workflow h4,
+body[data-theme="futuristic"] .code-assistant-example h4,
+body[data-theme="futuristic"] .data-analysis-flow h4 {
+    color: var(--futuristic-cyan-bright);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+body[data-theme="futuristic"] .use-case-components ul,
+body[data-theme="futuristic"] .use-case-benefits ul {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .use-case-components li,
+body[data-theme="futuristic"] .use-case-benefits li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .use-case-components strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .analysis-result {
+    background: rgba(15, 23, 41, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+body[data-theme="futuristic"] .analysis-result p,
+body[data-theme="futuristic"] .analysis-result li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .analysis-result strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .decision-matrix table {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+body[data-theme="futuristic"] .decision-matrix th {
+    background: rgba(0, 217, 255, 0.2);
+    color: var(--futuristic-cyan-bright);
+    border-bottom: 2px solid var(--futuristic-cyan);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+body[data-theme="futuristic"] .decision-matrix td {
+    color: var(--futuristic-text-primary);
+    border: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+body[data-theme="futuristic"] .decision-matrix tr:nth-child(even) {
+    background: rgba(15, 23, 41, 0.5);
+}
+
+body[data-theme="futuristic"] .analysis-example {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+body[data-theme="futuristic"] .analysis-example .message {
+    background: var(--futuristic-glass-bg);
+}
+
+body[data-theme="futuristic"] .step-icon {
+    filter: drop-shadow(0 0 5px var(--futuristic-cyan));
+}
+
+body[data-theme="futuristic"] .step-text {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .chart-preview {
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 0.5rem;
+}
+
+body[data-theme="futuristic"] .plan-steps div {
+    color: var(--futuristic-text-primary);
+    padding: 0.25rem 0;
+}
+
+body[data-theme="futuristic"] .code-conversation {
+    background: transparent;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .use-cases-overview {

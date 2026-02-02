@@ -20,9 +20,17 @@
     <link rel="stylesheet" href="../css/futuristic/_utilities.css">
     <!-- Game Styles -->
     <link rel="stylesheet" href="../css/games.css">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body data-theme="futuristic">
+    <!-- Futuristic Background Decorations -->
+    <div class="circuit-background"></div>
+    <div class="hexagon-grid"></div>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -38,10 +46,19 @@
     </header>
 
     <main>
-        <div class="module-header">
-            <h1>Módulo 5: Casos de Uso</h1>
-            <p class="module-subtitle">Aplicaciones Reales de Agentes de IA</p>
-        </div>
+        <!-- Module Header -->
+        <section class="module-header">
+            <div class="module-header-content">
+                <div class="breadcrumb">Módulo 5 / Casos de Uso</div>
+                <h1>💼 Casos de Uso</h1>
+                <p class="module-description">Aplicaciones Reales de Agentes de IA</p>
+                <div class="module-stats">
+                    <span class="stat-item">⏱️ 2 semanas</span>
+                    <span class="stat-item">🎮 1 juego</span>
+                    <span class="stat-item">📝 1 quiz</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Teoría -->
         <section id="teoria" class="theory-section">
@@ -52,25 +69,25 @@
                 <p>Los agentes de IA están transformando múltiples industrias. En esta lección exploraremos los casos de
                     uso más comunes y efectivos, desde soporte al cliente hasta asistencia en programación.</p>
 
-                <div class="use-cases-overview">
-                    <div class="use-case-category">
-                        <div class="category-icon">💬</div>
-                        <h4>Atención al Cliente</h4>
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">💬</div>
+                        <h3>Atención al Cliente</h3>
                         <p>Agentes que resuelven problemas 24/7</p>
                     </div>
-                    <div class="use-case-category">
-                        <div class="category-icon">🔍</div>
-                        <h4>Investigación</h4>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🔍</div>
+                        <h3>Investigación</h3>
                         <p>Búsqueda y síntesis de información</p>
                     </div>
-                    <div class="use-case-category">
-                        <div class="category-icon">💻</div>
-                        <h4>Programación</h4>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">💻</div>
+                        <h3>Programación</h3>
                         <p>Asistentes de código y debugging</p>
                     </div>
-                    <div class="use-case-category">
-                        <div class="category-icon">📊</div>
-                        <h4>Análisis de Datos</h4>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">📊</div>
+                        <h3>Análisis de Datos</h3>
                         <p>Procesamiento y visualización</p>
                     </div>
                 </div>
@@ -178,35 +195,32 @@
 
                         <div class="research-workflow">
                             <h4>Flujo de Trabajo:</h4>
-                            <div class="workflow-steps">
-                                <div class="workflow-step">
+                            <div class="react-cycle-demo">
+                                <div class="react-step">
                                     <div class="step-number">1</div>
                                     <div class="step-content">
-                                        <h5>Agente Buscador</h5>
+                                        <h4>Agente Buscador</h4>
                                         <p>Encuentra 20 artículos relevantes sobre "IA en medicina"</p>
                                     </div>
                                 </div>
-                                <div class="workflow-arrow">→</div>
-                                <div class="workflow-step">
+                                <div class="react-step">
                                     <div class="step-number">2</div>
                                     <div class="step-content">
-                                        <h5>Agente Extractor</h5>
+                                        <h4>Agente Extractor</h4>
                                         <p>Lee cada artículo y extrae hallazgos clave</p>
                                     </div>
                                 </div>
-                                <div class="workflow-arrow">→</div>
-                                <div class="workflow-step">
+                                <div class="react-step">
                                     <div class="step-number">3</div>
                                     <div class="step-content">
-                                        <h5>Agente Sintetizador</h5>
+                                        <h4>Agente Sintetizador</h4>
                                         <p>Agrupa hallazgos por tema y genera reporte</p>
                                     </div>
                                 </div>
-                                <div class="workflow-arrow">→</div>
-                                <div class="workflow-step">
+                                <div class="react-step">
                                     <div class="step-number">4</div>
                                     <div class="step-content">
-                                        <h5>Agente Verificador</h5>
+                                        <h4>Agente Verificador</h4>
                                         <p>Valida claims y cita fuentes</p>
                                     </div>
                                 </div>
@@ -298,21 +312,25 @@ const users = await User.findAll({
 
                         <div class="code-assistant-capabilities">
                             <h4>Capacidades Avanzadas:</h4>
-                            <div class="capabilities-grid">
-                                <div class="capability">
-                                    <h5>🐛 Debugging</h5>
+                            <div class="agent-types-grid">
+                                <div class="agent-type-card">
+                                    <div class="agent-type-icon">🐛</div>
+                                    <h3>Debugging</h3>
                                     <p>Analiza stack traces y sugiere fixes</p>
                                 </div>
-                                <div class="capability">
-                                    <h5>📚 Documentación</h5>
+                                <div class="agent-type-card">
+                                    <div class="agent-type-icon">📚</div>
+                                    <h3>Documentación</h3>
                                     <p>Genera JSDoc y READMEs</p>
                                 </div>
-                                <div class="capability">
-                                    <h5>🔄 Refactoring</h5>
+                                <div class="agent-type-card">
+                                    <div class="agent-type-icon">🔄</div>
+                                    <h3>Refactoring</h3>
                                     <p>Mejora arquitectura y clean code</p>
                                 </div>
-                                <div class="capability">
-                                    <h5>🧪 Testing</h5>
+                                <div class="agent-type-card">
+                                    <div class="agent-type-icon">🧪</div>
+                                    <h3>Testing</h3>
                                     <p>Crea tests unitarios automáticamente</p>
                                 </div>
                             </div>
@@ -357,22 +375,34 @@ const users = await User.findAll({
                                     <span class="text">Voy a analizar tus datos de ventas. Primero, cargando el
                                         CSV...</span>
                                 </div>
-                                <div class="analysis-steps">
-                                    <div class="step">
-                                        <div class="step-icon">📥</div>
-                                        <div class="step-text">Carga <code>ventas_q4.csv</code> con pandas</div>
+                                <div class="react-cycle-demo">
+                                    <div class="react-step">
+                                        <div class="step-number">📥</div>
+                                        <div class="step-content">
+                                            <h4>Carga Datos</h4>
+                                            <p>Carga <code>ventas_q4.csv</code> con pandas</p>
+                                        </div>
                                     </div>
-                                    <div class="step">
-                                        <div class="step-icon">🔍</div>
-                                        <div class="step-text">Filtra últimos 3 meses y agrupa por categoría</div>
+                                    <div class="react-step">
+                                        <div class="step-number">🔍</div>
+                                        <div class="step-content">
+                                            <h4>Filtra y Agrupa</h4>
+                                            <p>Filtra últimos 3 meses y agrupa por categoría</p>
+                                        </div>
                                     </div>
-                                    <div class="step">
-                                        <div class="step-icon">📊</div>
-                                        <div class="step-text">Genera gráfico de líneas con matplotlib</div>
+                                    <div class="react-step">
+                                        <div class="step-number">📊</div>
+                                        <div class="step-content">
+                                            <h4>Genera Gráfico</h4>
+                                            <p>Genera gráfico de líneas con matplotlib</p>
+                                        </div>
                                     </div>
-                                    <div class="step">
-                                        <div class="step-icon">💡</div>
-                                        <div class="step-text">Identifica patrones: "Electrónica +35%, Ropa -10%"</div>
+                                    <div class="react-step">
+                                        <div class="step-number">💡</div>
+                                        <div class="step-content">
+                                            <h4>Identifica Patrones</h4>
+                                            <p>"Electrónica +35%, Ropa -10%"</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="message agent">
