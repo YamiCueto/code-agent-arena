@@ -713,3 +713,251 @@
         align-self: flex-start;
     }
 }
+
+/* ============================================
+   FUTURISTIC THEME OVERRIDES FOR MODULE 6
+   ============================================ */
+
+[data-theme="futuristic"] .warning-box {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid var(--futuristic-cyan-bright);
+    color: var(--futuristic-text-primary);
+}
+
+/* Threat cards */
+[data-theme="futuristic"] .threat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+[data-theme="futuristic"] .threat-header h5 {
+    margin: 0;
+    flex: 1;
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .threat-severity {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+[data-theme="futuristic"] .threat-severity.high {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+}
+
+[data-theme="futuristic"] .threat-severity.medium {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+    border: 1px solid #fbbf24;
+}
+
+[data-theme="futuristic"] .threat-severity.critical {
+    background: rgba(220, 38, 38, 0.3);
+    color: #ff4444;
+    border: 1px solid #dc2626;
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+    animation: pulse-danger 2s infinite;
+}
+
+@keyframes pulse-danger {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+    }
+}
+
+[data-theme="futuristic"] .threat-example,
+[data-theme="futuristic"] .threat-mitigation {
+    background: rgba(15, 23, 41, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.75rem 0;
+    border-left: 3px solid var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .threat-example strong,
+[data-theme="futuristic"] .threat-mitigation strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+/* Alignment scenarios */
+[data-theme="futuristic"] .scenario-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+[data-theme="futuristic"] .scenario-header h5 {
+    margin: 0;
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .scenario-content {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .scenario-bad {
+    background: rgba(239, 68, 68, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.75rem 0;
+    border-left: 3px solid #ef4444;
+}
+
+[data-theme="futuristic"] .scenario-good {
+    background: rgba(34, 197, 94, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.75rem 0;
+    border-left: 3px solid #22c55e;
+}
+
+[data-theme="futuristic"] .scenario-result {
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: var(--futuristic-text-primary);
+}
+
+/* Code examples in theory sections */
+[data-theme="futuristic"] .code-example {
+    background: rgba(15, 23, 41, 0.8);
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .code-example pre {
+    color: var(--futuristic-text-primary);
+}
+
+/* Value specification example */
+[data-theme="futuristic"] .value-spec-example {
+    background: rgba(15, 23, 41, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 3px solid var(--futuristic-cyan-bright);
+}
+
+/* Strategy sections */
+[data-theme="futuristic"] .strategy {
+    background: rgba(15, 23, 41, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.75rem 0;
+}
+
+[data-theme="futuristic"] .strategy strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+/* Optimization example table */
+[data-theme="futuristic"] .optimization-example table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+[data-theme="futuristic"] .optimization-example th {
+    background: rgba(0, 217, 255, 0.2);
+    color: var(--futuristic-cyan-bright);
+    padding: 0.75rem;
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .optimization-example td {
+    padding: 0.75rem;
+    border: 1px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .optimization-example td.positive {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+[data-theme="futuristic"] .optimization-result {
+    background: rgba(34, 197, 94, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 3px solid #22c55e;
+    color: var(--futuristic-text-primary);
+}
+
+/* Resources grid */
+[data-theme="futuristic"] .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+[data-theme="futuristic"] .resource-card {
+    background: var(--futuristic-glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+[data-theme="futuristic"] .resource-card h4 {
+    color: var(--futuristic-cyan-bright);
+    margin-top: 0;
+}
+
+[data-theme="futuristic"] .resource-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+[data-theme="futuristic"] .resource-card li {
+    padding: 0.5rem 0;
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .resource-card strong {
+    color: var(--futuristic-text-primary);
+}
+
+/* Security checklist */
+[data-theme="futuristic"] .security-checklist {
+    background: rgba(15, 23, 41, 0.5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid var(--futuristic-glass-border);
+}
+
+[data-theme="futuristic"] .security-checklist h4 {
+    color: var(--futuristic-cyan-bright);
+    margin-top: 0;
+}
+
+[data-theme="futuristic"] .checklist {
+    list-style: none;
+    padding: 0;
+}
+
+[data-theme="futuristic"] .checklist li {
+    padding: 0.5rem;
+    color: var(--futuristic-text-secondary);
+    font-family: 'Courier New', monospace;
+}
+
+[data-theme="futuristic"] .checklist li:hover {
+    background: rgba(0, 217, 255, 0.05);
+    color: var(--futuristic-text-primary);
+    border-radius: 4px;
+}

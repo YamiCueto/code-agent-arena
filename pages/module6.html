@@ -20,9 +20,17 @@
     <link rel="stylesheet" href="../css/futuristic/_utilities.css">
     <!-- Game Styles -->
     <link rel="stylesheet" href="../css/games.css">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body data-theme="futuristic">
+    <!-- Futuristic Background Decorations -->
+    <div class="circuit-background"></div>
+    <div class="hexagon-grid"></div>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -38,10 +46,19 @@
     </header>
 
     <main>
-        <div class="module-header">
-            <h1>Módulo 6: Tópicos Avanzados</h1>
-            <p class="module-subtitle">Evaluación, Seguridad y Optimización de Agentes</p>
-        </div>
+        <!-- Module Header -->
+        <section class="module-header">
+            <div class="module-header-content">
+                <div class="breadcrumb">Módulo 6 / Tópicos Avanzados</div>
+                <h1>🔬 Tópicos Avanzados</h1>
+                <p class="module-description">Evaluación, Seguridad y Optimización de Agentes</p>
+                <div class="module-stats">
+                    <span class="stat-item">⏱️ 2 semanas</span>
+                    <span class="stat-item">🎮 1 juego</span>
+                    <span class="stat-item">📝 1 quiz</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Teoría -->
         <section id="teoria" class="theory-section">
@@ -65,17 +82,16 @@
                 <p>No puedes mejorar lo que no mides. La evaluación sistemática es crucial para iterar y optimizar
                     agentes.</p>
 
-                <div class="evaluation-types">
-                    <div class="eval-type">
-                        <h4>1️⃣ Evaluación de Precisión</h4>
-                        <p><strong>¿El agente da respuestas correctas?</strong></p>
-                        <ul>
-                            <li><strong>Métricas:</strong> Accuracy, F1 Score, Exact Match</li>
-                            <li><strong>Método:</strong> Dataset de test con ground truth</li>
-                            <li><strong>Ejemplo:</strong> Agente de soporte responde correctamente 85% de consultas</li>
-                        </ul>
-                        <div class="code-example">
-                            <pre><code># Evaluación simple
+                <div class="theory-card">
+                    <h4>1️⃣ Evaluación de Precisión</h4>
+                    <p><strong>¿El agente da respuestas correctas?</strong></p>
+                    <ul>
+                        <li><strong>Métricas:</strong> Accuracy, F1 Score, Exact Match</li>
+                        <li><strong>Método:</strong> Dataset de test con ground truth</li>
+                        <li><strong>Ejemplo:</strong> Agente de soporte responde correctamente 85% de consultas</li>
+                    </ul>
+                    <div class="code-example">
+                        <pre><code># Evaluación simple</code></pre>
 correct = 0
 total = 0
 for question, expected_answer in test_set:
@@ -87,7 +103,7 @@ accuracy = correct / total  # 0.85 = 85%</code></pre>
                         </div>
                     </div>
 
-                    <div class="eval-type">
+                    <div class="theory-card">
                         <h4>2️⃣ Evaluación de Calidad con LLM-as-Judge</h4>
                         <p><strong>¿La respuesta es útil y bien escrita?</strong></p>
                         <ul>
@@ -114,7 +130,7 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                         </div>
                     </div>
 
-                    <div class="eval-type">
+                    <div class="theory-card">
                         <h4>3️⃣ Evaluación de Eficiencia</h4>
                         <p><strong>¿El agente es rápido y económico?</strong></p>
                         <ul>
@@ -158,7 +174,7 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                         </div>
                     </div>
 
-                    <div class="eval-type">
+                    <div class="theory-card">
                         <h4>4️⃣ Evaluación de Robustez</h4>
                         <p><strong>¿El agente maneja casos edge y adversariales?</strong></p>
                         <ul>
@@ -192,24 +208,28 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
 
                 <div class="eval-frameworks">
                     <h4>🛠️ Frameworks de Evaluación</h4>
-                    <div class="frameworks-grid">
-                        <div class="framework-card">
-                            <h5>LangSmith</h5>
+                    <div class="agent-types-grid">
+                        <div class="agent-type-card">
+                            <div class="agent-type-icon">📊</div>
+                            <h3>LangSmith</h3>
                             <p>Tracking + datasets de test + LLM-as-judge integrado</p>
                             <span class="framework-badge">Recomendado</span>
                         </div>
-                        <div class="framework-card">
-                            <h5>Ragas</h5>
+                        <div class="agent-type-card">
+                            <div class="agent-type-icon">📈</div>
+                            <h3>Ragas</h3>
                             <p>Evaluación específica para RAG (retrieval, relevance, faithfulness)</p>
                             <span class="framework-badge">Para RAG</span>
                         </div>
-                        <div class="framework-card">
-                            <h5>PromptFoo</h5>
+                        <div class="agent-type-card">
+                            <div class="agent-type-icon">🧪</div>
+                            <h3>PromptFoo</h3>
                             <p>Testing de prompts con múltiples LLMs en paralelo</p>
                             <span class="framework-badge">A/B Testing</span>
                         </div>
-                        <div class="framework-card">
-                            <h5>Custom Scripts</h5>
+                        <div class="agent-type-card">
+                            <div class="agent-type-icon">⚙️</div>
+                            <h3>Custom Scripts</h3>
                             <p>Scripts Python con pytest para casos específicos</p>
                             <span class="framework-badge">Flexible</span>
                         </div>
@@ -222,12 +242,12 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                 <p>Los agentes con herramientas y acceso a sistemas reales son vectores de ataque. Debes protegerlos.
                 </p>
 
-                <div class="security-threats">
-                    <h4>⚠️ Amenazas Comunes</h4>
+                <div class="agent-types-grid">
+                    <h4>🛡️ Principales Amenazas de Seguridad</h4>
 
-                    <div class="threat">
+                    <div class="agent-type-card theory-card">
                         <div class="threat-header">
-                            <span class="threat-icon">🎣</span>
+                            <span class="agent-type-icon">💉</span>
                             <h5>1. Prompt Injection</h5>
                             <span class="threat-severity high">Alta</span>
                         </div>
@@ -251,9 +271,9 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                         </div>
                     </div>
 
-                    <div class="threat">
+                    <div class="agent-type-card theory-card">
                         <div class="threat-header">
-                            <span class="threat-icon">💉</span>
+                            <span class="agent-type-icon">🧨</span>
                             <h5>2. Tool Injection</h5>
                             <span class="threat-severity high">Alta</span>
                         </div>
@@ -278,9 +298,9 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                         </div>
                     </div>
 
-                    <div class="threat">
+                    <div class="agent-type-card theory-card">
                         <div class="threat-header">
-                            <span class="threat-icon">🔓</span>
+                            <span class="agent-type-icon">🔓</span>
                             <h5>3. Data Leakage</h5>
                             <span class="threat-severity critical">Crítica</span>
                         </div>
@@ -302,9 +322,9 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                         </div>
                     </div>
 
-                    <div class="threat">
+                    <div class="agent-type-card theory-card">
                         <div class="threat-header">
-                            <span class="threat-icon">💣</span>
+                            <span class="agent-type-icon">💣</span>
                             <h5>4. Hallucinations Peligrosas</h5>
                             <span class="threat-severity medium">Media</span>
                         </div>
@@ -351,12 +371,12 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                 <p>Un agente "alineado" actúa de acuerdo a valores e intenciones humanas, incluso en situaciones
                     ambiguas.</p>
 
-                <div class="alignment-examples">
+                <div class="agent-types-grid">
                     <h4>Ejemplos de Problemas de Alineación</h4>
 
-                    <div class="alignment-scenario">
+                    <div class="agent-type-card theory-card">
                         <div class="scenario-header">
-                            <span class="scenario-icon">📝</span>
+                            <span class="agent-type-icon">📝</span>
                             <h5>Escenario 1: Optimización Mal Dirigida</h5>
                         </div>
                         <div class="scenario-content">
@@ -382,9 +402,9 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                         </div>
                     </div>
 
-                    <div class="alignment-scenario">
+                    <div class="agent-type-card theory-card">
                         <div class="scenario-header">
-                            <span class="scenario-icon">⚖️</span>
+                            <span class="agent-type-icon">⚖️</span>
                             <h5>Escenario 2: Dilema Ético</h5>
                         </div>
                         <div class="scenario-content">
@@ -403,10 +423,10 @@ score = gpt4.evaluate(judge_prompt)  # 8/10</code></pre>
                     </div>
                 </div>
 
-                <div class="alignment-techniques">
+                <div class="agent-types-grid">
                     <h4>Técnicas para Lograr Alineación</h4>
 
-                    <div class="technique">
+                    <div class="agent-type-card theory-card">
                         <h5>1. Constitutional AI</h5>
                         <p>Anthropic desarrolló esta técnica. Consiste en dar "principios" al agente.</p>
                         <div class="code-example">
@@ -424,7 +444,7 @@ Si lo hace, explica por qué no puedes cumplirlo.
                         </div>
                     </div>
 
-                    <div class="technique">
+                    <div class="agent-type-card theory-card">
                         <h5>2. RLHF (Reinforcement Learning from Human Feedback)</h5>
                         <p>Entrenar el modelo con feedback humano sobre qué respuestas son mejores.</p>
                         <ol>
@@ -435,7 +455,7 @@ Si lo hace, explica por qué no puedes cumplirlo.
                         <p><strong>Usado por:</strong> OpenAI (GPT-4), Anthropic (Claude), Meta (Llama 2)</p>
                     </div>
 
-                    <div class="technique">
+                    <div class="agent-type-card theory-card">
                         <h5>3. Red Teaming</h5>
                         <p>Contratar "adversarios" que intenten romper el agente deliberadamente.</p>
                         <ul>
@@ -445,7 +465,7 @@ Si lo hace, explica por qué no puedes cumplirlo.
                         </ul>
                     </div>
 
-                    <div class="technique">
+                    <div class="agent-type-card theory-card">
                         <h5>4. Value Specification</h5>
                         <p>Definir explícitamente qué significa "comportarse bien" para tu caso de uso.</p>
                         <div class="value-spec-example">
@@ -466,10 +486,10 @@ Si lo hace, explica por qué no puedes cumplirlo.
                 <h3>⚡ Optimización de Agentes</h3>
                 <p>Una vez que tu agente funciona bien, optimízalo para reducir costos y mejorar velocidad.</p>
 
-                <div class="optimization-strategies">
+                <div class="agent-types-grid">
                     <h4>Estrategias de Optimización</h4>
 
-                    <div class="optimization-category">
+                    <div class="agent-type-card theory-card">
                         <h5>💰 Reducción de Costos</h5>
                         <div class="strategy">
                             <strong>1. Usar modelos más pequeños cuando sea posible</strong>
@@ -497,7 +517,7 @@ Si lo hace, explica por qué no puedes cumplirlo.
                         </div>
                     </div>
 
-                    <div class="optimization-category">
+                    <div class="agent-type-card theory-card">
                         <h5>⚡ Reducción de Latencia</h5>
                         <div class="strategy">
                             <strong>1. Streaming de respuestas</strong>
@@ -523,7 +543,7 @@ Si lo hace, explica por qué no puedes cumplirlo.
                         </div>
                     </div>
 
-                    <div class="optimization-category">
+                    <div class="agent-type-card theory-card">
                         <h5>🎯 Mejora de Calidad</h5>
                         <div class="strategy">
                             <strong>1. Fine-tuning del LLM</strong>
