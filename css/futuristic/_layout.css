@@ -81,6 +81,20 @@ body[data-theme="futuristic"] .hero-subtitle {
     color: var(--futuristic-text-primary);
 }
 
+body[data-theme="futuristic"] .speech-bubble {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-primary);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .speech-bubble::after {
+    border-bottom-color: rgba(15, 23, 41, 0.7);
+}
+
 /* ============================================
    STATS SECTION
    ============================================ */

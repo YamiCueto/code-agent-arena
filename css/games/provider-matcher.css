@@ -439,3 +439,41 @@
     font-size: 0.9rem;
     color: var(--text-light);
 }
+
+/* ============================================
+   FUTURISTIC THEME OVERRIDES
+   ============================================ */
+body[data-theme="futuristic"] .cost-comparison {
+    background: rgba(15, 23, 41, 0.3);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    margin-top: 1rem;
+}
+
+body[data-theme="futuristic"] .cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: var(--futuristic-glass-bg);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+body[data-theme="futuristic"] .cost-item.highlight-best {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid var(--futuristic-success);
+    font-weight: 700;
+}
+
+body[data-theme="futuristic"] .cost-provider {
+    font-weight: 600;
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .cost-price {
+    color: var(--futuristic-cyan-bright);
+}

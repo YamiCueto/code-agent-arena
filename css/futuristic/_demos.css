@@ -47,6 +47,63 @@ body[data-theme="futuristic"] .cycle-arrow {
     filter: drop-shadow(0 0 5px var(--futuristic-cyan));
 }
 
+/* React Step - Same as cycle-step */
+body[data-theme="futuristic"] .react-step {
+    background: var(--futuristic-glass-bg) !important;
+    border: 1px solid rgba(0, 217, 255, 0.3) !important;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+body[data-theme="futuristic"] .react-step .step-number {
+    background: var(--futuristic-cyan);
+    color: var(--futuristic-bg-primary);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+body[data-theme="futuristic"] .react-step .step-content {
+    flex: 1;
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .react-step .step-content h4 {
+    color: var(--futuristic-cyan-bright) !important;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    font-size: 1.2rem;
+}
+
+body[data-theme="futuristic"] .react-step .step-content p {
+    color: var(--futuristic-text-primary) !important;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+body[data-theme="futuristic"] .step-note {
+    color: var(--futuristic-text-secondary) !important;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
 /* ============================================
    CHAIN-OF-THOUGHT DEMO - TEXT LEGIBILITY FIX
    ============================================ */
