@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Agent Arena - Aprende Agentes IA Jugando 🤖</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/module-futuristic.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
+
+<body data-theme="futuristic">
+    <!-- Futuristic Background Decorations -->
+    <div class="circuit-background"></div>
+    <div class="hexagon-grid"></div>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -27,7 +37,8 @@
             <div class="hero-content">
                 <h2>Aprende sobre Agentes de IA</h2>
                 <h3>¡Jugando! 🎮</h3>
-                <p class="hero-subtitle">Domina los conceptos de agentes inteligentes a través de juegos interactivos. Para todas las edades.</p>
+                <p class="hero-subtitle">Domina los conceptos de agentes inteligentes a través de juegos interactivos.
+                    Para todas las edades.</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="scrollToModules()">Comenzar Aventura</button>
                     <button class="btn btn-secondary" onclick="scrollToRoadmap()">Ver Roadmap</button>
@@ -68,16 +79,19 @@
                 <div class="progress-bar-fill" style="width: 0%;"></div>
             </div>
             <p class="progress-text">0/7 módulos completados (0%)</p>
-            
+
             <!-- Progress Backup Controls -->
             <div class="progress-controls">
-                <button onclick="exportProgress()" class="btn btn-outline" title="Descarga tu progreso como archivo JSON">
+                <button onclick="exportProgress()" class="btn btn-outline"
+                    title="Descarga tu progreso como archivo JSON">
                     💾 Exportar Progreso
                 </button>
-                <button onclick="document.getElementById('import-file').click()" class="btn btn-outline" title="Importa un archivo de progreso">
+                <button onclick="document.getElementById('import-file').click()" class="btn btn-outline"
+                    title="Importa un archivo de progreso">
                     📥 Importar Progreso
                 </button>
-                <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importProgress(this.files[0])">
+                <input type="file" id="import-file" accept=".json" style="display: none;"
+                    onchange="importProgress(this.files[0])">
             </div>
         </section>
 
@@ -85,7 +99,7 @@
         <section id="roadmap" class="roadmap">
             <h2>Tu Camino de Aprendizaje 🗺️</h2>
             <p class="section-subtitle">Un viaje interactivo de 16 semanas</p>
-            
+
             <div class="roadmap-container">
                 <div class="roadmap-item" data-module="1">
                     <div class="module-icon">🎯</div>
@@ -262,10 +276,12 @@
         <div class="footer-content">
             <p>🤖 Code Agent Arena - Aprende jugando</p>
             <p>Basado en el plan de estudio completo de Agentes con IA</p>
-            <p>© 2025 - Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+            <p>© 2025 - Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid
+                    Cueto</a> para la comunidad</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

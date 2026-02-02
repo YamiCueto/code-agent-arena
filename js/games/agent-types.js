@@ -65,14 +65,14 @@ function handleDrop(e) {
     const zoneType = dropZone.dataset.type;
 
     const draggedElement = document.querySelector('.dragging');
-    
+
     if (draggedElement) {
         // Check if element was already marked as correct
         const wasAlreadyCorrect = draggedElement.classList.contains('correct');
-        
+
         // Remove previous states
         draggedElement.classList.remove('dragging', 'incorrect');
-        
+
         // Move element to drop zone
         this.appendChild(draggedElement);
 
@@ -114,7 +114,7 @@ function showFeedback(message, type) {
     const feedback = document.getElementById('game-feedback');
     feedback.textContent = message;
     feedback.className = `game-feedback show ${type}`;
-    
+
     setTimeout(() => {
         feedback.classList.remove('show');
     }, 2000);
@@ -125,6 +125,17 @@ function checkGameComplete() {
         setTimeout(() => {
             showFeedback('🎊 ¡Felicidades! Completaste el juego. Puntuación final: ' + score, 'success');
             celebrateWin();
+
+            // Dispatch custom event to trigger automatic game section reveal
+            const event = new CustomEvent('gameCompleted', {
+                detail: {
+                    module: 'module1',
+                    game: 'agent-types',
+                    score: score,
+                    correctAnswers: correctAnswers
+                }
+            });
+            document.dispatchEvent(event);
         }, 500);
     }
 }
@@ -173,34 +184,34 @@ function resetGame() {
     score = 0;
     correctAnswers = 0;
     updateScore();
-    
+
     // Move all items back to container
     const items = document.querySelectorAll('.draggable-item');
     const container = document.getElementById('items-container');
-    
+
     items.forEach(item => {
         item.classList.remove('correct', 'incorrect');
         item.draggable = true;
         container.appendChild(item);
     });
-    
+
     showFeedback('Juego reiniciado 🔄', 'success');
 }
 
 // Shuffle quiz options
 function shuffleQuizOptions() {
     const questions = document.querySelectorAll('.quiz-question');
-    
+
     questions.forEach((question, index) => {
         const optionsContainer = question.querySelector('.quiz-options');
         const options = Array.from(optionsContainer.querySelectorAll('.quiz-option'));
-        
+
         // Shuffle options
         for (let i = options.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [options[i], options[j]] = [options[j], options[i]];
         }
-        
+
         // Clear and re-append in shuffled order
         optionsContainer.innerHTML = '';
         options.forEach(option => {
@@ -213,24 +224,24 @@ function shuffleQuizOptions() {
 function checkQuiz() {
     let correct = 0;
     let total = 5;
-    
+
     // Check each question
     for (let i = 1; i <= total; i++) {
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
         const options = document.querySelectorAll(`input[name="q${i}"]`);
-        
+
         // Remove previous feedback
         options.forEach(option => {
             const label = option.parentElement;
             label.classList.remove('correct', 'incorrect');
         });
-        
+
         // Only mark the selected option as correct or incorrect
         if (selected) {
             const label = selected.parentElement;
             const answerText = label.querySelector('span').textContent.trim();
             const correctAnswer = quizCorrectAnswers[`q${i}`];
-            
+
             if (answerText === correctAnswer) {
                 label.classList.add('correct');
                 correct++;
@@ -239,7 +250,7 @@ function checkQuiz() {
             }
         }
     }
-    
+
     // Use the new centralized quiz system
     evaluateQuizAndUpdateProgress(correct, total, 1);
 }
@@ -261,10 +272,10 @@ function playSound(type) {
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
-    
+
     oscillator.connect(gainNode);
     gainNode.connect(audioContext.destination);
-    
+
     if (type === 'correct') {
         oscillator.frequency.value = 800;
         gainNode.gain.value = 0.1;
@@ -272,7 +283,7 @@ function playSound(type) {
         oscillator.frequency.value = 200;
         gainNode.gain.value = 0.05;
     }
-    
+
     oscillator.start();
     oscillator.stop(audioContext.currentTime + 0.1);
 }

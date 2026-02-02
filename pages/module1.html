@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo 1: Fundamentos - Code Agent Arena</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="../css/module-futuristic.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
+
+<body data-theme="futuristic">
+    <!-- Futuristic Background Decorations -->
+    <div class="circuit-background"></div>
+    <div class="hexagon-grid"></div>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -41,7 +51,7 @@
         <section id="teoria" class="theory-section">
             <div class="theory-container">
                 <h2>📚 ¿Qué es un Agente de IA?</h2>
-                
+
                 <div class="theory-card">
                     <h3>Definición Simple</h3>
                     <p>Un <strong>agente de IA</strong> es un programa que puede:</p>
@@ -85,7 +95,7 @@
                 </div>
 
                 <h2>🎭 Tipos de Agentes</h2>
-                
+
                 <div class="agent-types-grid">
                     <div class="agent-type-card" data-type="reactive">
                         <div class="agent-type-icon">⚡</div>
@@ -96,7 +106,8 @@
                             <li>No tiene memoria del pasado</li>
                             <li>Muy rápido pero limitado</li>
                         </ul>
-                        <p class="agent-example">📱 Ejemplo: Termostato - Si temperatura > 25°C → encender ventilador</p>
+                        <p class="agent-example">📱 Ejemplo: Termostato - Si temperatura > 25°C → encender ventilador
+                        </p>
                     </div>
 
                     <div class="agent-type-card" data-type="model-based">
@@ -108,7 +119,8 @@
                             <li>Recuerda información importante</li>
                             <li>Toma decisiones más informadas</li>
                         </ul>
-                        <p class="agent-example">🚗 Ejemplo: Auto autónomo - recuerda el tráfico y condiciones del camino</p>
+                        <p class="agent-example">🚗 Ejemplo: Auto autónomo - recuerda el tráfico y condiciones del
+                            camino</p>
                     </div>
 
                     <div class="agent-type-card" data-type="goal-based">
@@ -149,7 +161,7 @@
                 </div>
 
                 <h2>🔧 Componentes Principales</h2>
-                
+
                 <div class="components-diagram">
                     <div class="component-box">
                         <div class="component-icon">👁️</div>
@@ -178,6 +190,13 @@
                         <li><strong>Memoria a largo plazo:</strong> Conocimiento y experiencias previas</li>
                     </ul>
                 </div>
+
+                <!-- Continue to Game Button -->
+                <div class="continue-button-container" style="text-align: center; margin: 3rem 0; padding: 2rem;">
+                    <button class="btn btn-primary continue-btn" onclick="window.moduleProgress.unlockGame()">
+                        🎮 Continuar al Juego
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -185,8 +204,9 @@
         <section id="juego" class="game-section">
             <div class="game-container">
                 <h2>🎮 Juego: Clasifica los Agentes</h2>
-                <p class="game-instructions">Arrastra cada ejemplo al tipo de agente correcto. ¡Completa todas las categorías para ganar!</p>
-                
+                <p class="game-instructions">Arrastra cada ejemplo al tipo de agente correcto. ¡Completa todas las
+                    categorías para ganar!</p>
+
                 <div class="game-board">
                     <!-- Drop zones -->
                     <div class="drop-zones">
@@ -372,12 +392,15 @@
     <footer>
         <div class="footer-content">
             <p>🤖 Code Agent Arena - Módulo 1: Fundamentos</p>
-            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a>
+                para la comunidad</p>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
     <script src="../js/quiz-system.js"></script>
     <script src="../js/games/agent-types.js"></script>
+    <script src="../js/module-progress.js"></script>
 </body>
+
 </html>

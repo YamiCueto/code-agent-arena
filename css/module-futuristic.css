@@ -1,0 +1,1311 @@
+/* ============================================
+   FUTURISTIC THEME - CODE AGENT ARENA
+   Dark Blue/Cyan Theme with Circuit Patterns
+   ============================================ */
+
+/* Import Modern Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+/* ============================================
+   FUTURISTIC COLOR VARIABLES
+   ============================================ */
+:root {
+    /* Dark Blue Background Palette */
+    --futuristic-bg-primary: #0a1628;
+    --futuristic-bg-secondary: #0f1729;
+    --futuristic-bg-tertiary: #1a2332;
+
+    /* Cyan/Blue Accent Colors */
+    --futuristic-cyan: #00d9ff;
+    --futuristic-cyan-bright: #00f0ff;
+    --futuristic-blue: #0ea5e9;
+    --futuristic-blue-dark: #0369a1;
+
+    /* Glow Colors */
+    --futuristic-glow-cyan: rgba(0, 217, 255, 0.5);
+    --futuristic-glow-blue: rgba(14, 165, 233, 0.4);
+
+    /* Text Colors */
+    --futuristic-text-primary: #f0f9ff;
+    --futuristic-text-secondary: #bae6fd;
+    --futuristic-text-muted: #94a3b8;
+
+    /* Card/Glass Colors */
+    --futuristic-glass-bg: rgba(15, 23, 41, 0.7);
+    --futuristic-glass-border: rgba(0, 217, 255, 0.3);
+
+    /* Success/Warning/Danger */
+    --futuristic-success: #10b981;
+    --futuristic-warning: #f59e0b;
+    --futuristic-danger: #ef4444;
+}
+
+/* ============================================
+   BODY & GLOBAL STYLES
+   ============================================ */
+body[data-theme="futuristic"] {
+    background: var(--futuristic-bg-primary);
+    color: var(--futuristic-text-primary);
+    font-family: 'Rajdhani', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   CIRCUIT BOARD BACKGROUND
+   ============================================ */
+.circuit-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    background-image:
+        /* Horizontal lines */
+        linear-gradient(90deg, var(--futuristic-cyan) 1px, transparent 1px),
+        linear-gradient(0deg, var(--futuristic-cyan) 1px, transparent 1px),
+        /* Diagonal circuit lines */
+        linear-gradient(45deg, transparent 48%, var(--futuristic-blue) 49%, var(--futuristic-blue) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, var(--futuristic-blue) 49%, var(--futuristic-blue) 51%, transparent 52%);
+    background-size:
+        100px 100px,
+        100px 100px,
+        50px 50px,
+        50px 50px;
+    background-position:
+        0 0,
+        0 0,
+        0 0,
+        25px 25px;
+    animation: circuitPulse 8s ease-in-out infinite;
+}
+
+@keyframes circuitPulse {
+
+    0%,
+    100% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+}
+
+/* ============================================
+   HEXAGON GRID OVERLAY
+   ============================================ */
+.hexagon-grid {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: 0;
+    opacity: 0.08;
+    pointer-events: none;
+    background-image:
+        repeating-linear-gradient(0deg, var(--futuristic-cyan) 0px, transparent 2px, transparent 60px),
+        repeating-linear-gradient(60deg, var(--futuristic-cyan) 0px, transparent 2px, transparent 60px),
+        repeating-linear-gradient(120deg, var(--futuristic-cyan) 0px, transparent 2px, transparent 60px);
+    animation: hexagonRotate 60s linear infinite;
+}
+
+@keyframes hexagonRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Decorative Hexagons */
+.hexagon-decoration {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue));
+    opacity: 0.1;
+    animation: hexagonFloat 6s ease-in-out infinite;
+}
+
+.hexagon-decoration:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.hexagon-decoration:nth-child(2) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.hexagon-decoration:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes hexagonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+/* ============================================
+   NAVBAR - FUTURISTIC STYLE
+   ============================================ */
+body[data-theme="futuristic"] .navbar {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-tertiary));
+    border-bottom: 2px solid var(--futuristic-cyan);
+    box-shadow: 0 4px 20px var(--futuristic-glow-cyan);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1000;
+}
+
+body[data-theme="futuristic"] .logo h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan),
+        0 0 40px var(--futuristic-glow-cyan);
+    letter-spacing: 2px;
+}
+
+body[data-theme="futuristic"] .nav-links a {
+    color: var(--futuristic-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--futuristic-cyan);
+    box-shadow: 0 0 10px var(--futuristic-cyan);
+    transition: width 0.3s ease;
+}
+
+body[data-theme="futuristic"] .nav-links a:hover {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   SECTIONS & CONTAINERS
+   ============================================ */
+body[data-theme="futuristic"] main {
+    position: relative;
+    z-index: 1;
+}
+
+body[data-theme="futuristic"] section {
+    position: relative;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+body[data-theme="futuristic"] .hero-content h2,
+body[data-theme="futuristic"] .hero-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .hero-subtitle {
+    color: var(--futuristic-text-primary);
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+body[data-theme="futuristic"] .stat-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .stat-number {
+    background: linear-gradient(135deg, var(--futuristic-cyan-bright), var(--futuristic-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body[data-theme="futuristic"] .stat-label {
+    color: var(--futuristic-text-primary);
+    font-weight: 600;
+}
+
+/* ============================================
+   PROGRESS CONTAINER
+   ============================================ */
+body[data-theme="futuristic"] .progress-container {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .progress-container h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .progress-text {
+    color: var(--futuristic-text-primary);
+}
+
+/* ============================================
+   ROADMAP SECTION
+   ============================================ */
+body[data-theme="futuristic"] .roadmap {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-tertiary));
+}
+
+body[data-theme="futuristic"] .roadmap h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .section-subtitle {
+    color: var(--futuristic-text-secondary);
+}
+
+body[data-theme="futuristic"] .roadmap-item {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="futuristic"] .roadmap-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .roadmap-item p,
+body[data-theme="futuristic"] .roadmap-item li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .module-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+/* ============================================
+   MODULES SECTION
+   ============================================ */
+body[data-theme="futuristic"] .modules-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .module-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .module-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .module-card p {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .card-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+body[data-theme="futuristic"] .card-arrow {
+    color: var(--futuristic-cyan-bright);
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+body[data-theme="futuristic"] .about {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .about h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .about-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .about-card p {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .about-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+/* ============================================
+   MODULE HEADER
+   ============================================ */
+body[data-theme="futuristic"] .module-header {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-tertiary));
+    border-bottom: 2px solid var(--futuristic-cyan);
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="futuristic"] .module-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--futuristic-glow-cyan), transparent);
+    animation: scanLine 3s linear infinite;
+}
+
+@keyframes scanLine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+body[data-theme="futuristic"] .module-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    letter-spacing: 2px;
+}
+
+body[data-theme="futuristic"] .breadcrumb {
+    color: var(--futuristic-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+body[data-theme="futuristic"] .module-description {
+    color: var(--futuristic-text-secondary);
+}
+
+body[data-theme="futuristic"] .module-stats .stat-item {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+/* ============================================
+   THEORY CARDS - GLASSMORPHISM
+   ============================================ */
+body[data-theme="futuristic"] .theory-section {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .theory-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .theory-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px var(--futuristic-glow-cyan);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .theory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--futuristic-glow-cyan);
+    border-color: var(--futuristic-cyan);
+}
+
+body[data-theme="futuristic"] .theory-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .theory-card p,
+body[data-theme="futuristic"] .theory-card li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .theory-card strong {
+    color: var(--futuristic-cyan-bright);
+    font-weight: 700;
+}
+
+body[data-theme="futuristic"] .theory-list li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .theory-card.highlight {
+    border: 2px solid var(--futuristic-cyan);
+    background: linear-gradient(135deg, var(--futuristic-glass-bg), rgba(0, 217, 255, 0.05));
+}
+
+/* Example Box Styling */
+body[data-theme="futuristic"] .example-box {
+    background: var(--futuristic-glass-bg) !important;
+    border: 1px solid var(--futuristic-cyan);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .example-step {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .example-step strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .step-icon {
+    filter: drop-shadow(0 0 5px var(--futuristic-cyan));
+}
+
+/* ============================================
+   AGENT TYPE CARDS
+   ============================================ */
+body[data-theme="futuristic"] .agent-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+body[data-theme="futuristic"] .agent-type-card {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="futuristic"] .agent-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--futuristic-cyan), var(--futuristic-blue));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+body[data-theme="futuristic"] .agent-type-card:hover::before {
+    transform: scaleX(1);
+}
+
+body[data-theme="futuristic"] .agent-type-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--futuristic-cyan);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .agent-type-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+body[data-theme="futuristic"] .agent-type-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .agent-type-card p,
+body[data-theme="futuristic"] .agent-type-card li {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .agent-type-card strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+body[data-theme="futuristic"] .agent-example {
+    background: rgba(0, 217, 255, 0.1);
+    border-left: 3px solid var(--futuristic-cyan);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   COMPONENTS DIAGRAM
+   ============================================ */
+body[data-theme="futuristic"] .components-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .component-box {
+    background: var(--futuristic-glass-bg);
+    border: 2px solid var(--futuristic-cyan);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    min-width: 150px;
+}
+
+body[data-theme="futuristic"] .component-box h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    margin-top: 0.5rem;
+}
+
+body[data-theme="futuristic"] .component-box p {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .component-icon {
+    filter: drop-shadow(0 0 10px var(--futuristic-cyan));
+}
+
+body[data-theme="futuristic"] .components-diagram .arrow {
+    font-size: 2rem;
+    color: var(--futuristic-cyan);
+    text-shadow: 0 0 10px var(--futuristic-cyan);
+}
+
+/* ============================================
+   BUTTONS - NEON STYLE
+   ============================================ */
+body[data-theme="futuristic"] .btn {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--futuristic-cyan);
+    background: transparent;
+    color: var(--futuristic-cyan-bright);
+    box-shadow: 0 0 10px var(--futuristic-glow-cyan),
+        inset 0 0 10px rgba(0, 217, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="futuristic"] .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--futuristic-glow-cyan), transparent);
+    transition: left 0.5s ease;
+}
+
+body[data-theme="futuristic"] .btn:hover::before {
+    left: 100%;
+}
+
+body[data-theme="futuristic"] .btn:hover {
+    background: var(--futuristic-cyan);
+    color: var(--futuristic-bg-primary);
+    box-shadow: 0 0 20px var(--futuristic-cyan),
+        0 0 40px var(--futuristic-glow-cyan);
+    transform: translateY(-2px);
+}
+
+body[data-theme="futuristic"] .btn-primary {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue));
+    border-color: var(--futuristic-cyan-bright);
+    color: var(--futuristic-bg-primary);
+}
+
+body[data-theme="futuristic"] .btn-secondary {
+    background: transparent;
+    border-color: var(--futuristic-blue);
+    color: var(--futuristic-blue);
+}
+
+/* ============================================
+   GAME SECTION
+   ============================================ */
+body[data-theme="futuristic"] .game-section {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .game-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    text-align: center;
+}
+
+body[data-theme="futuristic"] .game-instructions {
+    color: var(--futuristic-text-secondary);
+    text-align: center;
+}
+
+body[data-theme="futuristic"] .game-container,
+body[data-theme="futuristic"] .game-board {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .drop-zones {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .drop-area {
+    background: var(--futuristic-glass-bg) !important;
+    border: 2px dashed var(--futuristic-glass-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    min-height: 60px;
+}
+
+body[data-theme="futuristic"] .items-container,
+body[data-theme="futuristic"] .draggable-items {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .drop-zone {
+    background: var(--futuristic-glass-bg);
+    border: 2px dashed var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .drop-zone h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan);
+    font-size: 1rem;
+}
+
+body[data-theme="futuristic"] .drop-zone:hover,
+body[data-theme="futuristic"] .drop-zone.drag-over {
+    border-color: var(--futuristic-cyan);
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .draggable-item {
+    background: linear-gradient(135deg, var(--futuristic-glass-bg), rgba(0, 217, 255, 0.1));
+    border: 1px solid var(--futuristic-cyan);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: var(--futuristic-text-primary);
+    cursor: grab;
+    box-shadow: 0 0 10px var(--futuristic-glow-cyan);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .draggable-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--futuristic-cyan);
+}
+
+body[data-theme="futuristic"] .draggable-item:active {
+    cursor: grabbing;
+}
+
+/* ============================================
+   QUIZ SECTION
+   ============================================ */
+body[data-theme="futuristic"] .quiz-section {
+    background: transparent;
+}
+
+body[data-theme="futuristic"] .quiz-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px var(--futuristic-glow-cyan);
+    text-align: center;
+}
+
+body[data-theme="futuristic"] .quiz-container {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .quiz-questions {
+    background: transparent !important;
+}
+
+body[data-theme="futuristic"] .quiz-question {
+    background: var(--futuristic-glass-bg);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .quiz-question h3 {
+    color: var(--futuristic-cyan-bright);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+}
+
+body[data-theme="futuristic"] .quiz-option span {
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .quiz-option {
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+body[data-theme="futuristic"] .quiz-option:hover {
+    background: rgba(0, 217, 255, 0.15);
+    border-color: var(--futuristic-cyan);
+    box-shadow: 0 0 15px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .quiz-option input[type="radio"]:checked+span {
+    color: var(--futuristic-cyan-bright);
+    font-weight: 700;
+}
+
+/* Game Controls & Score Display */
+body[data-theme="futuristic"] .game-controls {
+    background: var(--futuristic-glass-bg) !important;
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .score-display {
+    background: transparent !important;
+    color: var(--futuristic-text-primary);
+}
+
+body[data-theme="futuristic"] .score-display span {
+    color: var(--futuristic-cyan-bright);
+    font-weight: 700;
+}
+
+body[data-theme="futuristic"] .game-feedback {
+    color: var(--futuristic-text-primary);
+}
+
+/* Module Navigation */
+body[data-theme="futuristic"] .module-navigation .nav-btn {
+    color: var(--futuristic-text-primary);
+    border-color: var(--futuristic-cyan);
+}
+
+body[data-theme="futuristic"] .module-navigation .nav-btn:hover {
+    color: var(--futuristic-bg-primary);
+    background: var(--futuristic-cyan);
+}
+
+/* ============================================
+   PROGRESS BARS - GLOWING
+   ============================================ */
+body[data-theme="futuristic"] .progress-bar {
+    background: var(--futuristic-bg-tertiary);
+    border: 1px solid var(--futuristic-glass-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="futuristic"] .progress-bar-fill {
+    background: linear-gradient(90deg, var(--futuristic-cyan), var(--futuristic-blue));
+    box-shadow: 0 0 20px var(--futuristic-cyan),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: progressGlow 2s ease-in-out infinite;
+}
+
+body[data-theme="futuristic"] .progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes progressGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--futuristic-cyan);
+    }
+
+    50% {
+        box-shadow: 0 0 30px var(--futuristic-cyan-bright);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+body[data-theme="futuristic"] footer {
+    background: linear-gradient(135deg, var(--futuristic-bg-secondary), var(--futuristic-bg-primary));
+    border-top: 2px solid var(--futuristic-cyan);
+    box-shadow: 0 -4px 20px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] footer a {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .hexagon-grid {
+        opacity: 0.03;
+    }
+
+    .circuit-background {
+        opacity: 0.08;
+    }
+
+    body[data-theme="futuristic"] .module-header h1 {
+        font-size: 2rem;
+    }
+
+    body[data-theme="futuristic"] .agent-types-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.glow-text {
+    text-shadow: 0 0 10px var(--futuristic-cyan),
+        0 0 20px var(--futuristic-glow-cyan);
+}
+
+.tech-border {
+    border: 1px solid var(--futuristic-cyan);
+    box-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+/* ============================================
+   SECTION REVEAL ANIMATION
+   ============================================ */
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-reveal {
+    animation: sectionFadeIn 0.6s ease-out;
+}
+
+/* ============================================
+   LOCKED SECTIONS \u0026 CONTINUE BUTTON
+   ============================================ */
+body[data-theme="futuristic"] .locked-section {
+    opacity: 0.3;
+    pointer-events: none;
+    filter: grayscale(100%) blur(2px);
+}
+
+body[data-theme="futuristic"] .continue-button-container {
+    position: relative;
+    z-index: 10;
+}
+
+body[data-theme="futuristic"] .continue-btn {
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="futuristic"] .continue-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 217, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+body[data-theme="futuristic"] .continue-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+body[data-theme="futuristic"] .continue-btn:active {
+    transform: scale(0.95);
+}
+
+/* Pulse animation for continue button */
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px var(--futuristic-glow-cyan),
+            inset 0 0 10px rgba(0, 217, 255, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 25px var(--futuristic-cyan),
+            0 0 40px var(--futuristic-glow-cyan),
+            inset 0 0 20px rgba(0, 217, 255, 0.2);
+    }
+}
+
+body[data-theme="futuristic"] .continue-btn {
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+/* Section unlock notification */
+.section-unlock-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: var(--futuristic-glass-bg);
+    border: 2px solid var(--futuristic-cyan);
+    border-radius: 0.75rem;
+    padding: 1.5rem 2rem;
+    color: var(--futuristic-text-primary);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 30px var(--futuristic-glow-cyan);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    animation: slideInRight 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+}
+
+.section-unlock-notification h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--futuristic-cyan-bright);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.section-unlock-notification p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+/* ============================================
+   BACK NAVIGATION BUTTONS
+   ============================================ */
+body[data-theme="futuristic"] .back-navigation-container {
+    position: relative;
+    z-index: 10;
+}
+
+body[data-theme="futuristic"] .back-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-secondary);
+    box-shadow: none;
+    animation: none;
+    /* No pulse animation for back buttons */
+}
+
+body[data-theme="futuristic"] .back-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--futuristic-cyan);
+    color: var(--futuristic-cyan-bright);
+    box-shadow: 0 0 15px var(--futuristic-glow-cyan);
+}
+
+body[data-theme="futuristic"] .back-btn::before {
+    display: none;
+    /* Remove the sweep animation */
+}
+
+/* ============================================
+   MODULE STEPPER - HORIZONTAL PROGRESS
+   ============================================ */
+body[data-theme="futuristic"] .module-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--futuristic-glass-bg);
+    border-bottom: 1px solid var(--futuristic-glass-border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="futuristic"] .stepper-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0 2rem;
+}
+
+body[data-theme="futuristic"] .stepper-step:hover:not(.locked) {
+    transform: translateY(-3px);
+}
+
+body[data-theme="futuristic"] .step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+body[data-theme="futuristic"] .step-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+body[data-theme="futuristic"] .step-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Step Connector Line */
+body[data-theme="futuristic"] .step-connector {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: var(--futuristic-glass-border);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="futuristic"] .step-connector.completed {
+    background: linear-gradient(90deg, var(--futuristic-cyan), var(--futuristic-blue));
+    box-shadow: 0 0 10px var(--futuristic-cyan);
+}
+
+/* Locked State */
+body[data-theme="futuristic"] .stepper-step.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+body[data-theme="futuristic"] .stepper-step.locked .step-number {
+    background: var(--futuristic-bg-tertiary);
+    border: 2px solid var(--futuristic-glass-border);
+    color: var(--futuristic-text-muted);
+}
+
+body[data-theme="futuristic"] .stepper-step.locked .step-label {
+    color: var(--futuristic-text-muted);
+}
+
+/* Active State */
+body[data-theme="futuristic"] .stepper-step.active .step-number {
+    background: linear-gradient(135deg, var(--futuristic-cyan), var(--futuristic-blue));
+    border: 2px solid var(--futuristic-cyan-bright);
+    color: var(--futuristic-bg-primary);
+    box-shadow: 0 0 20px var(--futuristic-cyan),
+        0 0 40px var(--futuristic-glow-cyan);
+    animation: stepPulse 2s ease-in-out infinite;
+}
+
+body[data-theme="futuristic"] .stepper-step.active .step-label {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px var(--futuristic-glow-cyan);
+}
+
+/* Completed State */
+body[data-theme="futuristic"] .stepper-step.completed .step-number {
+    background: var(--futuristic-success);
+    border: 2px solid var(--futuristic-success);
+    color: white;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+body[data-theme="futuristic"] .stepper-step.completed .step-label {
+    color: var(--futuristic-success);
+}
+
+body[data-theme="futuristic"] .stepper-step.completed:hover .step-number {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
+}
+
+/* Pulse animation for active step */
+@keyframes stepPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--futuristic-cyan),
+            0 0 40px var(--futuristic-glow-cyan);
+    }
+
+    50% {
+        box-shadow: 0 0 30px var(--futuristic-cyan-bright),
+            0 0 60px var(--futuristic-cyan);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body[data-theme="futuristic"] .module-stepper {
+        padding: 1.5rem 1rem;
+    }
+
+    body[data-theme="futuristic"] .stepper-step {
+        padding: 0 1rem;
+    }
+
+    body[data-theme="futuristic"] .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    body[data-theme="futuristic"] .step-icon {
+        font-size: 1.5rem;
+    }
+
+    body[data-theme="futuristic"] .step-label {
+        font-size: 0.85rem;
+    }
+}
