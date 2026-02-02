@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo 5: Casos de Uso - Code Agent Arena</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="../css/futuristic-theme.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -31,11 +34,12 @@
         <!-- Teoría -->
         <section id="teoria" class="theory-section">
             <h2>🎯 Aplicaciones Prácticas de Agentes</h2>
-            
+
             <div class="theory-card">
                 <h3>¿Dónde se Usan los Agentes de IA?</h3>
-                <p>Los agentes de IA están transformando múltiples industrias. En esta lección exploraremos los casos de uso más comunes y efectivos, desde soporte al cliente hasta asistencia en programación.</p>
-                
+                <p>Los agentes de IA están transformando múltiples industrias. En esta lección exploraremos los casos de
+                    uso más comunes y efectivos, desde soporte al cliente hasta asistencia en programación.</p>
+
                 <div class="use-cases-overview">
                     <div class="use-case-category">
                         <div class="category-icon">💬</div>
@@ -62,14 +66,16 @@
 
             <div class="theory-card">
                 <h3>💬 Caso de Uso 1: Soporte al Cliente</h3>
-                <p><strong>Problema:</strong> Las empresas necesitan responder consultas de clientes rápidamente, pero el soporte humano es costoso y limitado en horario.</p>
-                
+                <p><strong>Problema:</strong> Las empresas necesitan responder consultas de clientes rápidamente, pero
+                    el soporte humano es costoso y limitado en horario.</p>
+
                 <div class="use-case-detail">
                     <div class="use-case-components">
                         <h4>Componentes Necesarios:</h4>
                         <ul>
                             <li><strong>LLM:</strong> GPT-4 o Claude (alta calidad de respuesta)</li>
-                            <li><strong>Memoria:</strong> Historial de conversación (short-term) + Base de conocimiento de productos (vector DB)</li>
+                            <li><strong>Memoria:</strong> Historial de conversación (short-term) + Base de conocimiento
+                                de productos (vector DB)</li>
                             <li><strong>Herramientas:</strong>
                                 <ul>
                                     <li>Consulta de pedidos (API CRM)</li>
@@ -81,7 +87,7 @@
                             <li><strong>Arquitectura:</strong> ReAct con herramientas</li>
                         </ul>
                     </div>
-                    
+
                     <div class="use-case-example">
                         <h4>Ejemplo de Conversación:</h4>
                         <div class="conversation-flow">
@@ -91,7 +97,8 @@
                             </div>
                             <div class="message agent-thought">
                                 <span class="role">Agente (Pensamiento):</span>
-                                <span class="text">Necesito consultar el estado del pedido usando la herramienta de tracking</span>
+                                <span class="text">Necesito consultar el estado del pedido usando la herramienta de
+                                    tracking</span>
                             </div>
                             <div class="message agent-action">
                                 <span class="role">Agente (Acción):</span>
@@ -99,15 +106,17 @@
                             </div>
                             <div class="message observation">
                                 <span class="role">Observación:</span>
-                                <span class="text">{"status": "En tránsito", "eta": "2024-03-15", "carrier": "DHL"}</span>
+                                <span class="text">{"status": "En tránsito", "eta": "2024-03-15", "carrier":
+                                    "DHL"}</span>
                             </div>
                             <div class="message agent">
                                 <span class="role">Agente:</span>
-                                <span class="text">Tu pedido #12345 está en tránsito con DHL. Llegará el 15 de marzo. ¿Necesitas algo más? 📦</span>
+                                <span class="text">Tu pedido #12345 está en tránsito con DHL. Llegará el 15 de marzo.
+                                    ¿Necesitas algo más? 📦</span>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="use-case-metrics">
                         <h4>Métricas de Éxito:</h4>
                         <div class="metrics-grid">
@@ -116,329 +125,342 @@
                                 <div class="metric-label">Resolución Automática</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">< 30s</div>
-                                <div class="metric-label">Tiempo de Respuesta</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">4.5/5</div>
-                                <div class="metric-label">Satisfacción</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="theory-card">
-                <h3>🔍 Caso de Uso 2: Asistente de Investigación</h3>
-                <p><strong>Problema:</strong> Investigadores y analistas necesitan procesar grandes cantidades de información de múltiples fuentes para generar insights.</p>
-                
-                <div class="use-case-detail">
-                    <div class="use-case-components">
-                        <h4>Componentes Necesarios:</h4>
-                        <ul>
-                            <li><strong>LLM:</strong> Claude Opus (mejor en análisis profundo) o GPT-4</li>
-                            <li><strong>Memoria:</strong> Documentos procesados (vector DB) + Contexto de investigación (episodic memory)</li>
-                            <li><strong>Herramientas:</strong>
-                                <ul>
-                                    <li>Búsqueda web (API Google/Bing)</li>
-                                    <li>Scraping de sitios específicos</li>
-                                    <li>Lectura de PDFs y papers</li>
-                                    <li>Extracción de datos estructurados</li>
-                                    <li>Generación de resúmenes</li>
-                                </ul>
-                            </li>
-                            <li><strong>Arquitectura:</strong> Multi-agente colaborativo (búsqueda + análisis + síntesis)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="research-workflow">
-                        <h4>Flujo de Trabajo:</h4>
-                        <div class="workflow-steps">
-                            <div class="workflow-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h5>Agente Buscador</h5>
-                                    <p>Encuentra 20 artículos relevantes sobre "IA en medicina"</p>
+                                <div class="metric-value">
+                                    < 30s</div>
+                                        <div class="metric-label">Tiempo de Respuesta</div>
                                 </div>
-                            </div>
-                            <div class="workflow-arrow">→</div>
-                            <div class="workflow-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h5>Agente Extractor</h5>
-                                    <p>Lee cada artículo y extrae hallazgos clave</p>
-                                </div>
-                            </div>
-                            <div class="workflow-arrow">→</div>
-                            <div class="workflow-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h5>Agente Sintetizador</h5>
-                                    <p>Agrupa hallazgos por tema y genera reporte</p>
-                                </div>
-                            </div>
-                            <div class="workflow-arrow">→</div>
-                            <div class="workflow-step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h5>Agente Verificador</h5>
-                                    <p>Valida claims y cita fuentes</p>
+                                <div class="metric">
+                                    <div class="metric-value">4.5/5</div>
+                                    <div class="metric-label">Satisfacción</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="use-case-benefits">
-                        <h4>Beneficios:</h4>
-                        <ul>
-                            <li>✅ Reduce semanas de investigación a horas</li>
-                            <li>✅ Procesa más fuentes que un humano</li>
-                            <li>✅ Identifica patrones no obvios</li>
-                            <li>✅ Genera reportes estructurados automáticamente</li>
-                        </ul>
-                    </div>
                 </div>
-            </div>
 
-            <div class="theory-card">
-                <h3>💻 Caso de Uso 3: Asistente de Código</h3>
-                <p><strong>Problema:</strong> Los desarrolladores necesitan ayuda para escribir, debuggear y optimizar código, pero consultar documentación y buscar soluciones es lento.</p>
-                
-                <div class="use-case-detail">
-                    <div class="use-case-components">
-                        <h4>Componentes Necesarios:</h4>
-                        <ul>
-                            <li><strong>LLM:</strong> GPT-4 con Code Interpreter o Claude 3.5 Sonnet (excelente en código)</li>
-                            <li><strong>Memoria:</strong> Contexto del proyecto (archivos abiertos) + Historial de conversación</li>
-                            <li><strong>Herramientas:</strong>
-                                <ul>
-                                    <li>Lectura de archivos del proyecto</li>
-                                    <li>Edición de código (diff)</li>
-                                    <li>Ejecución de tests</li>
-                                    <li>Búsqueda en codebase (grep, AST parsing)</li>
-                                    <li>Acceso a terminal</li>
-                                    <li>Consulta de documentación</li>
-                                </ul>
-                            </li>
-                            <li><strong>Arquitectura:</strong> ReAct con Code Interpreter + Plan-and-Execute</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="code-assistant-example">
-                        <h4>Ejemplo de Interacción:</h4>
-                        <div class="code-conversation">
-                            <div class="message user">
-                                <span class="role">Dev:</span>
-                                <span class="text">"Mi API de usuarios está lenta. ¿Puedes optimizarla?"</span>
-                            </div>
-                            <div class="message agent-thought">
-                                <span class="role">Agente (Plan):</span>
-                                <div class="plan-steps">
-                                    <div>1. Leer archivo de API de usuarios</div>
-                                    <div>2. Identificar queries a la DB</div>
-                                    <div>3. Buscar N+1 queries o falta de índices</div>
-                                    <div>4. Proponer optimizaciones con código</div>
+                <div class="theory-card">
+                    <h3>🔍 Caso de Uso 2: Asistente de Investigación</h3>
+                    <p><strong>Problema:</strong> Investigadores y analistas necesitan procesar grandes cantidades de
+                        información de múltiples fuentes para generar insights.</p>
+
+                    <div class="use-case-detail">
+                        <div class="use-case-components">
+                            <h4>Componentes Necesarios:</h4>
+                            <ul>
+                                <li><strong>LLM:</strong> Claude Opus (mejor en análisis profundo) o GPT-4</li>
+                                <li><strong>Memoria:</strong> Documentos procesados (vector DB) + Contexto de
+                                    investigación (episodic memory)</li>
+                                <li><strong>Herramientas:</strong>
+                                    <ul>
+                                        <li>Búsqueda web (API Google/Bing)</li>
+                                        <li>Scraping de sitios específicos</li>
+                                        <li>Lectura de PDFs y papers</li>
+                                        <li>Extracción de datos estructurados</li>
+                                        <li>Generación de resúmenes</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Arquitectura:</strong> Multi-agente colaborativo (búsqueda + análisis +
+                                    síntesis)</li>
+                            </ul>
+                        </div>
+
+                        <div class="research-workflow">
+                            <h4>Flujo de Trabajo:</h4>
+                            <div class="workflow-steps">
+                                <div class="workflow-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Agente Buscador</h5>
+                                        <p>Encuentra 20 artículos relevantes sobre "IA en medicina"</p>
+                                    </div>
+                                </div>
+                                <div class="workflow-arrow">→</div>
+                                <div class="workflow-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Agente Extractor</h5>
+                                        <p>Lee cada artículo y extrae hallazgos clave</p>
+                                    </div>
+                                </div>
+                                <div class="workflow-arrow">→</div>
+                                <div class="workflow-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Agente Sintetizador</h5>
+                                        <p>Agrupa hallazgos por tema y genera reporte</p>
+                                    </div>
+                                </div>
+                                <div class="workflow-arrow">→</div>
+                                <div class="workflow-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Agente Verificador</h5>
+                                        <p>Valida claims y cita fuentes</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="message agent-action">
-                                <span class="role">Agente (Ejecuta):</span>
-                                <span class="text">readFile("src/api/users.js")</span>
-                            </div>
-                            <div class="message observation">
-                                <span class="role">Encontrado:</span>
-                                <div class="code-snippet">
-                                    <pre><code>// Problema N+1: loop carga posts uno por uno
+                        </div>
+
+                        <div class="use-case-benefits">
+                            <h4>Beneficios:</h4>
+                            <ul>
+                                <li>✅ Reduce semanas de investigación a horas</li>
+                                <li>✅ Procesa más fuentes que un humano</li>
+                                <li>✅ Identifica patrones no obvios</li>
+                                <li>✅ Genera reportes estructurados automáticamente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-card">
+                    <h3>💻 Caso de Uso 3: Asistente de Código</h3>
+                    <p><strong>Problema:</strong> Los desarrolladores necesitan ayuda para escribir, debuggear y
+                        optimizar código, pero consultar documentación y buscar soluciones es lento.</p>
+
+                    <div class="use-case-detail">
+                        <div class="use-case-components">
+                            <h4>Componentes Necesarios:</h4>
+                            <ul>
+                                <li><strong>LLM:</strong> GPT-4 con Code Interpreter o Claude 3.5 Sonnet (excelente en
+                                    código)</li>
+                                <li><strong>Memoria:</strong> Contexto del proyecto (archivos abiertos) + Historial de
+                                    conversación</li>
+                                <li><strong>Herramientas:</strong>
+                                    <ul>
+                                        <li>Lectura de archivos del proyecto</li>
+                                        <li>Edición de código (diff)</li>
+                                        <li>Ejecución de tests</li>
+                                        <li>Búsqueda en codebase (grep, AST parsing)</li>
+                                        <li>Acceso a terminal</li>
+                                        <li>Consulta de documentación</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Arquitectura:</strong> ReAct con Code Interpreter + Plan-and-Execute</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-assistant-example">
+                            <h4>Ejemplo de Interacción:</h4>
+                            <div class="code-conversation">
+                                <div class="message user">
+                                    <span class="role">Dev:</span>
+                                    <span class="text">"Mi API de usuarios está lenta. ¿Puedes optimizarla?"</span>
+                                </div>
+                                <div class="message agent-thought">
+                                    <span class="role">Agente (Plan):</span>
+                                    <div class="plan-steps">
+                                        <div>1. Leer archivo de API de usuarios</div>
+                                        <div>2. Identificar queries a la DB</div>
+                                        <div>3. Buscar N+1 queries o falta de índices</div>
+                                        <div>4. Proponer optimizaciones con código</div>
+                                    </div>
+                                </div>
+                                <div class="message agent-action">
+                                    <span class="role">Agente (Ejecuta):</span>
+                                    <span class="text">readFile("src/api/users.js")</span>
+                                </div>
+                                <div class="message observation">
+                                    <span class="role">Encontrado:</span>
+                                    <div class="code-snippet">
+                                        <pre><code>// Problema N+1: loop carga posts uno por uno
 users.forEach(user => {
   user.posts = await Post.find({userId: user.id})
 })</code></pre>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="message agent">
-                                <span class="role">Agente:</span>
-                                <span class="text">Encontré un problema N+1. Aquí está la solución optimizada:</span>
-                                <div class="code-snippet">
-                                    <pre><code>// ✅ Solución: una sola query con JOIN
+                                <div class="message agent">
+                                    <span class="role">Agente:</span>
+                                    <span class="text">Encontré un problema N+1. Aquí está la solución
+                                        optimizada:</span>
+                                    <div class="code-snippet">
+                                        <pre><code>// ✅ Solución: una sola query con JOIN
 const users = await User.findAll({
   include: [{ model: Post }]
 })
 // Reducción de 100 queries a 1 query</code></pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="code-assistant-capabilities">
-                        <h4>Capacidades Avanzadas:</h4>
-                        <div class="capabilities-grid">
-                            <div class="capability">
-                                <h5>🐛 Debugging</h5>
-                                <p>Analiza stack traces y sugiere fixes</p>
-                            </div>
-                            <div class="capability">
-                                <h5>📚 Documentación</h5>
-                                <p>Genera JSDoc y READMEs</p>
-                            </div>
-                            <div class="capability">
-                                <h5>🔄 Refactoring</h5>
-                                <p>Mejora arquitectura y clean code</p>
-                            </div>
-                            <div class="capability">
-                                <h5>🧪 Testing</h5>
-                                <p>Crea tests unitarios automáticamente</p>
+
+                        <div class="code-assistant-capabilities">
+                            <h4>Capacidades Avanzadas:</h4>
+                            <div class="capabilities-grid">
+                                <div class="capability">
+                                    <h5>🐛 Debugging</h5>
+                                    <p>Analiza stack traces y sugiere fixes</p>
+                                </div>
+                                <div class="capability">
+                                    <h5>📚 Documentación</h5>
+                                    <p>Genera JSDoc y READMEs</p>
+                                </div>
+                                <div class="capability">
+                                    <h5>🔄 Refactoring</h5>
+                                    <p>Mejora arquitectura y clean code</p>
+                                </div>
+                                <div class="capability">
+                                    <h5>🧪 Testing</h5>
+                                    <p>Crea tests unitarios automáticamente</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="theory-card">
-                <h3>📊 Caso de Uso 4: Análisis de Datos</h3>
-                <p><strong>Problema:</strong> Los analistas de negocio necesitan insights rápidos de datos sin saber programar Python o SQL.</p>
-                
-                <div class="use-case-detail">
-                    <div class="use-case-components">
-                        <h4>Componentes Necesarios:</h4>
-                        <ul>
-                            <li><strong>LLM:</strong> GPT-4 con Code Interpreter (ejecuta Python)</li>
-                            <li><strong>Memoria:</strong> Metadatos de datasets + Análisis previos</li>
-                            <li><strong>Herramientas:</strong>
-                                <ul>
-                                    <li>Ejecución de código Python (pandas, matplotlib)</li>
-                                    <li>Consultas SQL a bases de datos</li>
-                                    <li>Generación de gráficos</li>
-                                    <li>Cálculos estadísticos</li>
-                                    <li>Exportación a Excel/CSV</li>
-                                </ul>
-                            </li>
-                            <li><strong>Arquitectura:</strong> ReAct con Code Interpreter</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="data-analysis-flow">
-                        <h4>Flujo de Análisis:</h4>
-                        <div class="analysis-example">
-                            <div class="message user">
-                                <span class="role">Analista:</span>
-                                <span class="text">"¿Cuáles son las tendencias de ventas del último trimestre por categoría?"</span>
-                            </div>
-                            <div class="message agent">
-                                <span class="role">Agente:</span>
-                                <span class="text">Voy a analizar tus datos de ventas. Primero, cargando el CSV...</span>
-                            </div>
-                            <div class="analysis-steps">
-                                <div class="step">
-                                    <div class="step-icon">📥</div>
-                                    <div class="step-text">Carga <code>ventas_q4.csv</code> con pandas</div>
-                                </div>
-                                <div class="step">
-                                    <div class="step-icon">🔍</div>
-                                    <div class="step-text">Filtra últimos 3 meses y agrupa por categoría</div>
-                                </div>
-                                <div class="step">
-                                    <div class="step-icon">📊</div>
-                                    <div class="step-text">Genera gráfico de líneas con matplotlib</div>
-                                </div>
-                                <div class="step">
-                                    <div class="step-icon">💡</div>
-                                    <div class="step-text">Identifica patrones: "Electrónica +35%, Ropa -10%"</div>
-                                </div>
-                            </div>
-                            <div class="message agent">
-                                <span class="role">Agente:</span>
-                                <div class="analysis-result">
-                                    <img src="../assets/placeholder-chart.svg" alt="Gráfico de tendencias" class="chart-preview">
-                                    <p><strong>Insights clave:</strong></p>
+                <div class="theory-card">
+                    <h3>📊 Caso de Uso 4: Análisis de Datos</h3>
+                    <p><strong>Problema:</strong> Los analistas de negocio necesitan insights rápidos de datos sin saber
+                        programar Python o SQL.</p>
+
+                    <div class="use-case-detail">
+                        <div class="use-case-components">
+                            <h4>Componentes Necesarios:</h4>
+                            <ul>
+                                <li><strong>LLM:</strong> GPT-4 con Code Interpreter (ejecuta Python)</li>
+                                <li><strong>Memoria:</strong> Metadatos de datasets + Análisis previos</li>
+                                <li><strong>Herramientas:</strong>
                                     <ul>
-                                        <li>📈 Electrónica creció 35% (pico en Black Friday)</li>
-                                        <li>📉 Ropa bajó 10% (temporada baja)</li>
-                                        <li>📊 Hogar mantuvo estable (+2%)</li>
-                                        <li>💡 Recomendación: Aumentar stock de electrónica para próximo Q1</li>
+                                        <li>Ejecución de código Python (pandas, matplotlib)</li>
+                                        <li>Consultas SQL a bases de datos</li>
+                                        <li>Generación de gráficos</li>
+                                        <li>Cálculos estadísticos</li>
+                                        <li>Exportación a Excel/CSV</li>
                                     </ul>
+                                </li>
+                                <li><strong>Arquitectura:</strong> ReAct con Code Interpreter</li>
+                            </ul>
+                        </div>
+
+                        <div class="data-analysis-flow">
+                            <h4>Flujo de Análisis:</h4>
+                            <div class="analysis-example">
+                                <div class="message user">
+                                    <span class="role">Analista:</span>
+                                    <span class="text">"¿Cuáles son las tendencias de ventas del último trimestre por
+                                        categoría?"</span>
+                                </div>
+                                <div class="message agent">
+                                    <span class="role">Agente:</span>
+                                    <span class="text">Voy a analizar tus datos de ventas. Primero, cargando el
+                                        CSV...</span>
+                                </div>
+                                <div class="analysis-steps">
+                                    <div class="step">
+                                        <div class="step-icon">📥</div>
+                                        <div class="step-text">Carga <code>ventas_q4.csv</code> con pandas</div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-icon">🔍</div>
+                                        <div class="step-text">Filtra últimos 3 meses y agrupa por categoría</div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-icon">📊</div>
+                                        <div class="step-text">Genera gráfico de líneas con matplotlib</div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-icon">💡</div>
+                                        <div class="step-text">Identifica patrones: "Electrónica +35%, Ropa -10%"</div>
+                                    </div>
+                                </div>
+                                <div class="message agent">
+                                    <span class="role">Agente:</span>
+                                    <div class="analysis-result">
+                                        <img src="../assets/placeholder-chart.svg" alt="Gráfico de tendencias"
+                                            class="chart-preview">
+                                        <p><strong>Insights clave:</strong></p>
+                                        <ul>
+                                            <li>📈 Electrónica creció 35% (pico en Black Friday)</li>
+                                            <li>📉 Ropa bajó 10% (temporada baja)</li>
+                                            <li>📊 Hogar mantuvo estable (+2%)</li>
+                                            <li>💡 Recomendación: Aumentar stock de electrónica para próximo Q1</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="theory-card">
-                <h3>🔑 Cómo Elegir el Caso de Uso Correcto</h3>
-                <div class="decision-matrix">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Pregunta</th>
-                                <th>Si es SÍ, considera...</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>¿Necesitas respuestas inmediatas 24/7?</td>
-                                <td>Soporte al Cliente</td>
-                            </tr>
-                            <tr>
-                                <td>¿Requieres procesar muchas fuentes de info?</td>
-                                <td>Asistente de Investigación</td>
-                            </tr>
-                            <tr>
-                                <td>¿El trabajo involucra escribir/leer código?</td>
-                                <td>Asistente de Código</td>
-                            </tr>
-                            <tr>
-                                <td>¿Necesitas insights de datos cuantitativos?</td>
-                                <td>Análisis de Datos</td>
-                            </tr>
-                            <tr>
-                                <td>¿Requieres respuestas creativas o contenido?</td>
-                                <td>Agente de Generación de Contenido</td>
-                            </tr>
-                            <tr>
-                                <td>¿Necesitas automatizar tareas repetitivas?</td>
-                                <td>Agente RPA (Robotic Process Automation)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="theory-card">
-                <h3>⚠️ Consideraciones Importantes</h3>
-                <div class="considerations-grid">
-                    <div class="consideration warning">
-                        <h4>🔒 Seguridad y Privacidad</h4>
-                        <ul>
-                            <li>No envíes datos sensibles a APIs públicas sin encriptar</li>
-                            <li>Usa modelos on-premise para datos confidenciales</li>
-                            <li>Implementa controles de acceso y auditoría</li>
-                        </ul>
-                    </div>
-                    <div class="consideration info">
-                        <h4>💰 Costos</h4>
-                        <ul>
-                            <li>Soporte al cliente: $0.01-0.05 por conversación (GPT-4)</li>
-                            <li>Investigación: $0.50-2.00 por reporte (múltiples llamadas)</li>
-                            <li>Código: $0.10-0.30 por tarea (depende del contexto)</li>
-                            <li>Datos: $0.05-0.20 por análisis</li>
-                        </ul>
-                    </div>
-                    <div class="consideration success">
-                        <h4>✅ ROI Esperado</h4>
-                        <ul>
-                            <li>Soporte: 50-70% reducción de costos operativos</li>
-                            <li>Investigación: 80-90% reducción de tiempo</li>
-                            <li>Código: 30-50% aumento de productividad</li>
-                            <li>Datos: Insights 10x más rápidos</li>
-                        </ul>
+                <div class="theory-card">
+                    <h3>🔑 Cómo Elegir el Caso de Uso Correcto</h3>
+                    <div class="decision-matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pregunta</th>
+                                    <th>Si es SÍ, considera...</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>¿Necesitas respuestas inmediatas 24/7?</td>
+                                    <td>Soporte al Cliente</td>
+                                </tr>
+                                <tr>
+                                    <td>¿Requieres procesar muchas fuentes de info?</td>
+                                    <td>Asistente de Investigación</td>
+                                </tr>
+                                <tr>
+                                    <td>¿El trabajo involucra escribir/leer código?</td>
+                                    <td>Asistente de Código</td>
+                                </tr>
+                                <tr>
+                                    <td>¿Necesitas insights de datos cuantitativos?</td>
+                                    <td>Análisis de Datos</td>
+                                </tr>
+                                <tr>
+                                    <td>¿Requieres respuestas creativas o contenido?</td>
+                                    <td>Agente de Generación de Contenido</td>
+                                </tr>
+                                <tr>
+                                    <td>¿Necesitas automatizar tareas repetitivas?</td>
+                                    <td>Agente RPA (Robotic Process Automation)</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
+
+                <div class="theory-card">
+                    <h3>⚠️ Consideraciones Importantes</h3>
+                    <div class="considerations-grid">
+                        <div class="consideration warning">
+                            <h4>🔒 Seguridad y Privacidad</h4>
+                            <ul>
+                                <li>No envíes datos sensibles a APIs públicas sin encriptar</li>
+                                <li>Usa modelos on-premise para datos confidenciales</li>
+                                <li>Implementa controles de acceso y auditoría</li>
+                            </ul>
+                        </div>
+                        <div class="consideration info">
+                            <h4>💰 Costos</h4>
+                            <ul>
+                                <li>Soporte al cliente: $0.01-0.05 por conversación (GPT-4)</li>
+                                <li>Investigación: $0.50-2.00 por reporte (múltiples llamadas)</li>
+                                <li>Código: $0.10-0.30 por tarea (depende del contexto)</li>
+                                <li>Datos: $0.05-0.20 por análisis</li>
+                            </ul>
+                        </div>
+                        <div class="consideration success">
+                            <h4>✅ ROI Esperado</h4>
+                            <ul>
+                                <li>Soporte: 50-70% reducción de costos operativos</li>
+                                <li>Investigación: 80-90% reducción de tiempo</li>
+                                <li>Código: 30-50% aumento de productividad</li>
+                                <li>Datos: Insights 10x más rápidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <!-- Juego: Build Your Agent -->
         <section class="game-section" id="buildYourAgent">
             <h2>🎮 Juego: Construye Tu Agente</h2>
-            <p class="game-description">Para cada escenario, configura el agente ideal seleccionando el LLM, memoria, herramientas y arquitectura correctos.</p>
-            
+            <p class="game-description">Para cada escenario, configura el agente ideal seleccionando el LLM, memoria,
+                herramientas y arquitectura correctos.</p>
+
             <div class="agent-builder">
                 <!-- Scenario Display -->
                 <div class="scenario-card" id="scenarioCard">
@@ -574,52 +596,74 @@ const users = await User.findAll({
             <h2>📝 Quiz del Módulo 5</h2>
             <div class="quiz-container">
                 <div class="quiz-question">
-                    <p><strong>1.</strong> ¿Qué arquitectura es mejor para un agente de soporte al cliente que necesita consultar múltiples sistemas (CRM, inventario, tickets)?</p>
+                    <p><strong>1.</strong> ¿Qué arquitectura es mejor para un agente de soporte al cliente que necesita
+                        consultar múltiples sistemas (CRM, inventario, tickets)?</p>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q1" value="a"> Reflection (para auto-mejorar respuestas)</label>
-                        <label><input type="radio" name="q1" value="b"> ReAct con herramientas (permite usar APIs en cada step)</label>
-                        <label><input type="radio" name="q1" value="c"> Plan-and-Execute sin herramientas (solo planifica)</label>
-                        <label><input type="radio" name="q1" value="d"> Multi-agente jerárquico (sobrecomplica tarea simple)</label>
+                        <label><input type="radio" name="q1" value="a"> Reflection (para auto-mejorar
+                            respuestas)</label>
+                        <label><input type="radio" name="q1" value="b"> ReAct con herramientas (permite usar APIs en
+                            cada step)</label>
+                        <label><input type="radio" name="q1" value="c"> Plan-and-Execute sin herramientas (solo
+                            planifica)</label>
+                        <label><input type="radio" name="q1" value="d"> Multi-agente jerárquico (sobrecomplica tarea
+                            simple)</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <p><strong>2.</strong> Un asistente de investigación que procesa 50 papers científicos y genera un reporte. ¿Qué tipo de memoria es esencial?</p>
+                    <p><strong>2.</strong> Un asistente de investigación que procesa 50 papers científicos y genera un
+                        reporte. ¿Qué tipo de memoria es esencial?</p>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q2" value="a"> Solo memoria de conversación (insuficiente para 50 docs)</label>
-                        <label><input type="radio" name="q2" value="b"> Vector database con embeddings (permite buscar info relevante de todos los docs)</label>
-                        <label><input type="radio" name="q2" value="c"> Memoria procedural (es para habilidades, no datos)</label>
+                        <label><input type="radio" name="q2" value="a"> Solo memoria de conversación (insuficiente para
+                            50 docs)</label>
+                        <label><input type="radio" name="q2" value="b"> Vector database con embeddings (permite buscar
+                            info relevante de todos los docs)</label>
+                        <label><input type="radio" name="q2" value="c"> Memoria procedural (es para habilidades, no
+                            datos)</label>
                         <label><input type="radio" name="q2" value="d"> Sin memoria (imposible recordar 50 docs)</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <p><strong>3.</strong> Para un asistente de código que debe debuggear un error en un proyecto de 10,000 líneas, ¿qué herramienta es MÁS importante?</p>
+                    <p><strong>3.</strong> Para un asistente de código que debe debuggear un error en un proyecto de
+                        10,000 líneas, ¿qué herramienta es MÁS importante?</p>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q3" value="a"> Búsqueda web (no ayuda con código privado)</label>
-                        <label><input type="radio" name="q3" value="b"> Code Interpreter (ejecuta pruebas pero no lee codebase)</label>
-                        <label><input type="radio" name="q3" value="c"> Sistema de archivos (necesita leer y buscar en todos los archivos)</label>
-                        <label><input type="radio" name="q3" value="d"> APIs externas (no relevante para codebase interno)</label>
+                        <label><input type="radio" name="q3" value="a"> Búsqueda web (no ayuda con código
+                            privado)</label>
+                        <label><input type="radio" name="q3" value="b"> Code Interpreter (ejecuta pruebas pero no lee
+                            codebase)</label>
+                        <label><input type="radio" name="q3" value="c"> Sistema de archivos (necesita leer y buscar en
+                            todos los archivos)</label>
+                        <label><input type="radio" name="q3" value="d"> APIs externas (no relevante para codebase
+                            interno)</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <p><strong>4.</strong> ¿Cuál LLM elegirías para un agente que analiza datos financieros CONFIDENCIALES de una empresa?</p>
+                    <p><strong>4.</strong> ¿Cuál LLM elegirías para un agente que analiza datos financieros
+                        CONFIDENCIALES de una empresa?</p>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q4" value="a"> GPT-4 vía API de OpenAI (envía datos a servidores externos)</label>
-                        <label><input type="radio" name="q4" value="b"> Claude Opus vía Anthropic API (también externo)</label>
-                        <label><input type="radio" name="q4" value="c"> Llama 3 on-premise (se ejecuta localmente, datos privados)</label>
-                        <label><input type="radio" name="q4" value="d"> Gemini Flash (es externo y menos potente)</label>
+                        <label><input type="radio" name="q4" value="a"> GPT-4 vía API de OpenAI (envía datos a
+                            servidores externos)</label>
+                        <label><input type="radio" name="q4" value="b"> Claude Opus vía Anthropic API (también
+                            externo)</label>
+                        <label><input type="radio" name="q4" value="c"> Llama 3 on-premise (se ejecuta localmente, datos
+                            privados)</label>
+                        <label><input type="radio" name="q4" value="d"> Gemini Flash (es externo y menos
+                            potente)</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <p><strong>5.</strong> Un agente de análisis de datos debe generar gráficos de tendencias. ¿Qué herramienta permite esto?</p>
+                    <p><strong>5.</strong> Un agente de análisis de datos debe generar gráficos de tendencias. ¿Qué
+                        herramienta permite esto?</p>
                     <div class="quiz-options">
                         <label><input type="radio" name="q5" value="a"> Búsqueda web (no genera gráficos)</label>
-                        <label><input type="radio" name="q5" value="b"> Code Interpreter con Python (puede usar matplotlib/pandas)</label>
+                        <label><input type="radio" name="q5" value="b"> Code Interpreter con Python (puede usar
+                            matplotlib/pandas)</label>
                         <label><input type="radio" name="q5" value="c"> APIs de CRM (no hacen visualización)</label>
-                        <label><input type="radio" name="q5" value="d"> Sistema de archivos (solo lee/escribe, no ejecuta código)</label>
+                        <label><input type="radio" name="q5" value="d"> Sistema de archivos (solo lee/escribe, no
+                            ejecuta código)</label>
                     </div>
                 </div>
 
@@ -638,7 +682,8 @@ const users = await User.findAll({
     <footer>
         <div class="footer-content">
             <p>🤖 Code Agent Arena - Módulo 5: Casos de Uso</p>
-            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a>
+                para la comunidad</p>
         </div>
     </footer>
 
@@ -646,4 +691,5 @@ const users = await User.findAll({
     <script src="../js/quiz-system.js"></script>
     <script src="../js/games/agent-builder.js"></script>
 </body>
+
 </html>

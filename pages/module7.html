@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo 7: Proyectos Capstone - Code Agent Arena</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="../css/futuristic-theme.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -42,31 +45,35 @@
         <!-- Tab Content: Introducción -->
         <section id="intro" class="tab-content active theory-section">
             <h2>🎓 ¡Llegaste al Final del Viaje!</h2>
-            
+
             <div class="theory-card">
                 <h3>¿Qué es un Proyecto Capstone?</h3>
-                <p>Un proyecto capstone es un proyecto final integrador donde aplicas todos los conceptos aprendidos para construir algo real y funcional.</p>
-                
+                <p>Un proyecto capstone es un proyecto final integrador donde aplicas todos los conceptos aprendidos
+                    para construir algo real y funcional.</p>
+
                 <div class="capstone-overview">
                     <div class="overview-item">
                         <div class="overview-icon">✅</div>
                         <div class="overview-content">
                             <h4>Integración Completa</h4>
-                            <p>Usarás arquitecturas (ReAct, CoT), memoria (vector DBs), herramientas, y evaluación en un solo proyecto.</p>
+                            <p>Usarás arquitecturas (ReAct, CoT), memoria (vector DBs), herramientas, y evaluación en un
+                                solo proyecto.</p>
                         </div>
                     </div>
                     <div class="overview-item">
                         <div class="overview-icon">🛠️</div>
                         <div class="overview-content">
                             <h4>Implementación Real</h4>
-                            <p>No son ejercicios teóricos. Son proyectos que puedes usar en tu portafolio o adaptar para casos reales.</p>
+                            <p>No son ejercicios teóricos. Son proyectos que puedes usar en tu portafolio o adaptar para
+                                casos reales.</p>
                         </div>
                     </div>
                     <div class="overview-item">
                         <div class="overview-icon">📚</div>
                         <div class="overview-content">
                             <h4>Guía Paso a Paso</h4>
-                            <p>Cada proyecto incluye: especificaciones, pseudocódigo, decisiones de diseño, y recursos para implementar.</p>
+                            <p>Cada proyecto incluye: especificaciones, pseudocódigo, decisiones de diseño, y recursos
+                                para implementar.</p>
                         </div>
                     </div>
                 </div>
@@ -75,13 +82,14 @@
             <div class="theory-card">
                 <h3>📋 Los 3 Proyectos</h3>
                 <p>Elegimos estos proyectos porque representan casos de uso comunes y valiosos en la industria:</p>
-                
+
                 <div class="projects-preview">
                     <div class="project-preview-card">
                         <div class="project-icon">🤖</div>
                         <h4>Proyecto 1: Agente de FAQ Inteligente</h4>
                         <p class="project-difficulty">Dificultad: 🟢 Intermedia</p>
-                        <p>Un agente de soporte que responde preguntas frecuentes usando RAG con una base de conocimiento. Incluye fallback a humano cuando no está seguro.</p>
+                        <p>Un agente de soporte que responde preguntas frecuentes usando RAG con una base de
+                            conocimiento. Incluye fallback a humano cuando no está seguro.</p>
                         <div class="project-tech">
                             <span class="tech-badge">ReAct</span>
                             <span class="tech-badge">Vector DB</span>
@@ -94,7 +102,8 @@
                         <div class="project-icon">📊</div>
                         <h4>Proyecto 2: Agente de Análisis de Datos</h4>
                         <p class="project-difficulty">Dificultad: 🟡 Intermedia-Avanzada</p>
-                        <p>Un agente que carga CSVs, ejecuta análisis con Python (pandas), genera gráficos, y responde preguntas sobre los datos en lenguaje natural.</p>
+                        <p>Un agente que carga CSVs, ejecuta análisis con Python (pandas), genera gráficos, y responde
+                            preguntas sobre los datos en lenguaje natural.</p>
                         <div class="project-tech">
                             <span class="tech-badge">Code Interpreter</span>
                             <span class="tech-badge">Plan-and-Execute</span>
@@ -107,7 +116,8 @@
                         <div class="project-icon">🔍</div>
                         <h4>Proyecto 3: Agente de Investigación Multi-Fuente</h4>
                         <p class="project-difficulty">Dificultad: 🔴 Avanzada</p>
-                        <p>Un agente que busca información en múltiples fuentes (web, papers, APIs), sintetiza hallazgos, y genera un reporte estructurado con citas verificables.</p>
+                        <p>Un agente que busca información en múltiples fuentes (web, papers, APIs), sintetiza
+                            hallazgos, y genera un reporte estructurado con citas verificables.</p>
                         <div class="project-tech">
                             <span class="tech-badge">Multi-Agente</span>
                             <span class="tech-badge">Web Search</span>
@@ -134,8 +144,9 @@
 
             <div class="theory-card">
                 <h3>🛠️ Stack Tecnológico Recomendado</h3>
-                <p>Estos proyectos pueden implementarse con diferentes stacks. Aquí está la recomendación para principiantes:</p>
-                
+                <p>Estos proyectos pueden implementarse con diferentes stacks. Aquí está la recomendación para
+                    principiantes:</p>
+
                 <div class="tech-stack">
                     <div class="stack-category">
                         <h4>Lenguaje</h4>
@@ -221,7 +232,8 @@
                 <div class="project-content">
                     <div class="project-description">
                         <h4>📋 Descripción del Problema</h4>
-                        <p>Una empresa de software tiene 200+ preguntas frecuentes en su base de conocimiento (markdown files). Los clientes preguntan cosas como:</p>
+                        <p>Una empresa de software tiene 200+ preguntas frecuentes en su base de conocimiento (markdown
+                            files). Los clientes preguntan cosas como:</p>
                         <ul>
                             <li>"¿Cómo reseteo mi contraseña?"</li>
                             <li>"¿Cuál es el precio del plan Enterprise?"</li>
@@ -356,36 +368,48 @@ def evaluate_agent(test_cases, vector_store):
                         <h4>🤔 Decisiones de Diseño</h4>
                         <div class="decision-item">
                             <strong>¿Por qué GPT-4o-mini en vez de GPT-4?</strong>
-                            <p>Para FAQs, 4o-mini es suficiente (las preguntas son directas). Es 20x más barato ($0.15 vs $3/1M tokens) y 2x más rápido.</p>
+                            <p>Para FAQs, 4o-mini es suficiente (las preguntas son directas). Es 20x más barato ($0.15
+                                vs $3/1M tokens) y 2x más rápido.</p>
                         </div>
                         <div class="decision-item">
                             <strong>¿Por qué top-3 docs en vez de top-1?</strong>
-                            <p>Un solo doc puede no tener toda la info. Top-3 da contexto más completo. El LLM sabe sintetizar múltiples fuentes.</p>
+                            <p>Un solo doc puede no tener toda la info. Top-3 da contexto más completo. El LLM sabe
+                                sintetizar múltiples fuentes.</p>
                         </div>
                         <div class="decision-item">
                             <strong>¿Por qué threshold de 0.7 para escalar?</strong>
-                            <p>Basado en experimentos: < 0.7 → alto riesgo de hallucination. Mejor escalar que dar respuesta incorrecta.</p>
+                            <p>Basado en experimentos: < 0.7 → alto riesgo de hallucination. Mejor escalar que dar
+                                    respuesta incorrecta.</p>
                         </div>
                     </div>
 
                     <div class="project-improvements">
                         <h4>🚀 Mejoras Opcionales</h4>
                         <ul>
-                            <li><strong>Reranking:</strong> Usar modelo de reranking (Cohere, jina-reranker) para ordenar mejor los docs</li>
-                            <li><strong>Hybrid search:</strong> Combinar búsqueda semántica + keyword (BM25) para mejor recall</li>
-                            <li><strong>Memoria conversacional:</strong> Recordar contexto de conversación (follow-up questions)</li>
-                            <li><strong>A/B testing:</strong> Comparar diferentes modelos (GPT-4o-mini vs Claude Haiku) en producción</li>
-                            <li><strong>Analytics:</strong> Dashboard con queries más comunes, escalation rate, satisfaction scores</li>
+                            <li><strong>Reranking:</strong> Usar modelo de reranking (Cohere, jina-reranker) para
+                                ordenar mejor los docs</li>
+                            <li><strong>Hybrid search:</strong> Combinar búsqueda semántica + keyword (BM25) para mejor
+                                recall</li>
+                            <li><strong>Memoria conversacional:</strong> Recordar contexto de conversación (follow-up
+                                questions)</li>
+                            <li><strong>A/B testing:</strong> Comparar diferentes modelos (GPT-4o-mini vs Claude Haiku)
+                                en producción</li>
+                            <li><strong>Analytics:</strong> Dashboard con queries más comunes, escalation rate,
+                                satisfaction scores</li>
                         </ul>
                     </div>
 
                     <div class="project-resources">
                         <h4>📚 Recursos</h4>
                         <ul>
-                            <li><a href="https://python.langchain.com/docs/tutorials/rag/" target="_blank" rel="noopener">LangChain RAG Tutorial</a></li>
-                            <li><a href="https://docs.trychroma.com/getting-started" target="_blank" rel="noopener">Chroma Quick Start</a></li>
-                            <li><a href="https://cookbook.openai.com/examples/question_answering_using_embeddings" target="_blank" rel="noopener">OpenAI RAG Cookbook</a></li>
-                            <li><a href="https://docs.smith.langchain.com/" target="_blank" rel="noopener">LangSmith Docs (Evaluación)</a></li>
+                            <li><a href="https://python.langchain.com/docs/tutorials/rag/" target="_blank"
+                                    rel="noopener">LangChain RAG Tutorial</a></li>
+                            <li><a href="https://docs.trychroma.com/getting-started" target="_blank"
+                                    rel="noopener">Chroma Quick Start</a></li>
+                            <li><a href="https://cookbook.openai.com/examples/question_answering_using_embeddings"
+                                    target="_blank" rel="noopener">OpenAI RAG Cookbook</a></li>
+                            <li><a href="https://docs.smith.langchain.com/" target="_blank" rel="noopener">LangSmith
+                                    Docs (Evaluación)</a></li>
                         </ul>
                     </div>
 
@@ -413,10 +437,12 @@ def evaluate_agent(test_cases, vector_store):
                 <div class="project-content">
                     <div class="project-description">
                         <h4>📋 Descripción del Problema</h4>
-                        <p>Un analista de negocios necesita insights rápidos de datos pero no sabe programar. El agente debe:</p>
+                        <p>Un analista de negocios necesita insights rápidos de datos pero no sabe programar. El agente
+                            debe:</p>
                         <ul>
                             <li>Aceptar archivos CSV como input</li>
-                            <li>Responder preguntas en lenguaje natural: "¿Cuál es el promedio de ventas por región?"</li>
+                            <li>Responder preguntas en lenguaje natural: "¿Cuál es el promedio de ventas por región?"
+                            </li>
                             <li>Ejecutar código Python (pandas, matplotlib) para análisis</li>
                             <li>Generar gráficos visuales automáticamente</li>
                             <li>Explicar resultados en español simple (no jerga técnica)</li>
@@ -424,7 +450,10 @@ def evaluate_agent(test_cases, vector_store):
                         <p><strong>Ejemplo de interacción:</strong></p>
                         <div class="example-interaction">
                             <div class="user-msg">👤 "Analiza ventas.csv y dime qué región vendió más en Q4"</div>
-                            <div class="agent-msg">🤖 Analizando datos...<br><code>[Ejecuta: df = pd.read_csv(...); df[df['quarter']=='Q4'].groupby('region')['sales'].sum()]</code><br>📊 [Genera gráfico de barras]<br><br>La región Norte lideró ventas en Q4 con $2.3M (35% del total). Sur fue segundo con $1.8M. Te adjunto el gráfico 📈</div>
+                            <div class="agent-msg">🤖 Analizando
+                                datos...<br><code>[Ejecuta: df = pd.read_csv(...); df[df['quarter']=='Q4'].groupby('region')['sales'].sum()]</code><br>📊
+                                [Genera gráfico de barras]<br><br>La región Norte lideró ventas en Q4 con $2.3M (35% del
+                                total). Sur fue segundo con $1.8M. Te adjunto el gráfico 📈</div>
                         </div>
                     </div>
 
@@ -436,7 +465,8 @@ def evaluate_agent(test_cases, vector_store):
                                     <div class="step-number">1</div>
                                     <div class="step-content">
                                         <strong>Plan</strong>
-                                        <p>LLM genera plan de análisis:<br>"1. Cargar CSV<br>2. Filtrar Q4<br>3. Agrupar por región<br>4. Sumar ventas<br>5. Graficar"</p>
+                                        <p>LLM genera plan de análisis:<br>"1. Cargar CSV<br>2. Filtrar Q4<br>3. Agrupar
+                                            por región<br>4. Sumar ventas<br>5. Graficar"</p>
                                     </div>
                                 </div>
                                 <div class="arch-arrow-down">↓</div>
@@ -444,7 +474,8 @@ def evaluate_agent(test_cases, vector_store):
                                     <div class="step-number">2</div>
                                     <div class="step-content">
                                         <strong>Execute</strong>
-                                        <p>Ejecuta cada paso en sandbox:<br><code>docker run python pandas_script.py</code></p>
+                                        <p>Ejecuta cada paso en
+                                            sandbox:<br><code>docker run python pandas_script.py</code></p>
                                     </div>
                                 </div>
                                 <div class="arch-arrow-down">↓</div>
@@ -589,15 +620,18 @@ def evaluate_analysis_agent(test_cases):
                         <h4>🤔 Decisiones de Diseño</h4>
                         <div class="decision-item">
                             <strong>¿Por qué Plan-and-Execute en vez de ReAct?</strong>
-                            <p>ReAct es reactivo (paso a paso). Para análisis de datos, es mejor planificar TODO antes de ejecutar (más eficiente, menos llamadas al LLM).</p>
+                            <p>ReAct es reactivo (paso a paso). Para análisis de datos, es mejor planificar TODO antes
+                                de ejecutar (más eficiente, menos llamadas al LLM).</p>
                         </div>
                         <div class="decision-item">
                             <strong>¿Por qué sandbox con Docker?</strong>
-                            <p>Ejecutar código no confiable es peligroso. Docker aísla el código: sin acceso a red, límites de CPU/memoria, no puede tocar el filesystem host.</p>
+                            <p>Ejecutar código no confiable es peligroso. Docker aísla el código: sin acceso a red,
+                                límites de CPU/memoria, no puede tocar el filesystem host.</p>
                         </div>
                         <div class="decision-item">
                             <strong>¿Por qué validar código antes de ejecutar?</strong>
-                            <p>Defensa en profundidad. Aunque Docker aísla, mejor prevenir código malicioso (imports peligrosos como <code>os.system</code>).</p>
+                            <p>Defensa en profundidad. Aunque Docker aísla, mejor prevenir código malicioso (imports
+                                peligrosos como <code>os.system</code>).</p>
                         </div>
                     </div>
 
@@ -608,17 +642,22 @@ def evaluate_analysis_agent(test_cases):
                             <li><strong>Streaming:</strong> Mostrar análisis en tiempo real mientras se ejecuta</li>
                             <li><strong>Soporte multi-archivo:</strong> Joins entre múltiples CSVs</li>
                             <li><strong>Exportar resultados:</strong> Descargar análisis como Excel o PDF</li>
-                            <li><strong>Templates:</strong> Análisis pre-definidos (ventas por mes, top productos, etc.)</li>
+                            <li><strong>Templates:</strong> Análisis pre-definidos (ventas por mes, top productos, etc.)
+                            </li>
                         </ul>
                     </div>
 
                     <div class="project-resources">
                         <h4>📚 Recursos</h4>
                         <ul>
-                            <li><a href="https://github.com/langchain-ai/langgraph/blob/main/examples/plan-and-execute/plan-and-execute.ipynb" target="_blank" rel="noopener">LangGraph Plan-and-Execute</a></li>
-                            <li><a href="https://docs.docker.com/engine/api/sdk/examples/" target="_blank" rel="noopener">Docker Python SDK</a></li>
-                            <li><a href="https://platform.openai.com/docs/assistants/tools/code-interpreter" target="_blank" rel="noopener">OpenAI Code Interpreter API</a></li>
-                            <li><a href="https://github.com/e2b-dev/e2b" target="_blank" rel="noopener">E2B - Sandbox as a Service</a></li>
+                            <li><a href="https://github.com/langchain-ai/langgraph/blob/main/examples/plan-and-execute/plan-and-execute.ipynb"
+                                    target="_blank" rel="noopener">LangGraph Plan-and-Execute</a></li>
+                            <li><a href="https://docs.docker.com/engine/api/sdk/examples/" target="_blank"
+                                    rel="noopener">Docker Python SDK</a></li>
+                            <li><a href="https://platform.openai.com/docs/assistants/tools/code-interpreter"
+                                    target="_blank" rel="noopener">OpenAI Code Interpreter API</a></li>
+                            <li><a href="https://github.com/e2b-dev/e2b" target="_blank" rel="noopener">E2B - Sandbox as
+                                    a Service</a></li>
                         </ul>
                     </div>
 
@@ -647,15 +686,19 @@ def evaluate_analysis_agent(test_cases):
                 <div class="project-content">
                     <div class="project-description">
                         <h4>📋 Descripción del Problema</h4>
-                        <p>Un investigador o analista necesita un reporte sobre un tema complejo (ej: "Estado actual de IA en medicina"). El agente debe:</p>
+                        <p>Un investigador o analista necesita un reporte sobre un tema complejo (ej: "Estado actual de
+                            IA en medicina"). El agente debe:</p>
                         <ul>
-                            <li>Buscar información en: Google, papers científicos (arXiv), Wikipedia, sitios específicos</li>
+                            <li>Buscar información en: Google, papers científicos (arXiv), Wikipedia, sitios específicos
+                            </li>
                             <li>Leer y procesar 20-30 fuentes</li>
                             <li>Identificar hallazgos clave y tendencias</li>
                             <li>Fact-check: verificar claims importantes en múltiples fuentes</li>
-                            <li>Generar reporte estructurado (introducción, hallazgos, conclusiones) con citas verificables</li>
+                            <li>Generar reporte estructurado (introducción, hallazgos, conclusiones) con citas
+                                verificables</li>
                         </ul>
-                        <p><strong>Output esperado:</strong> Reporte de 3-5 páginas, formato markdown, con secciones claras y 15-20 citas.</p>
+                        <p><strong>Output esperado:</strong> Reporte de 3-5 páginas, formato markdown, con secciones
+                            claras y 15-20 citas.</p>
                     </div>
 
                     <div class="project-architecture">
@@ -852,36 +895,45 @@ Contenido sintetizado:
                         <h4>🤔 Decisiones de Diseño</h4>
                         <div class="decision-item">
                             <strong>¿Por qué multi-agente en vez de un solo agente?</strong>
-                            <p>Cada agente se especializa en una tarea (buscar, leer, sintetizar, verificar, escribir). Más modular, testeable, y permite paralelizar lectura de fuentes.</p>
+                            <p>Cada agente se especializa en una tarea (buscar, leer, sintetizar, verificar, escribir).
+                                Más modular, testeable, y permite paralelizar lectura de fuentes.</p>
                         </div>
                         <div class="decision-item">
                             <strong>¿Por qué clustering para agrupar findings?</strong>
-                            <p>Con 100+ findings, es difícil para un humano o LLM agruparlos manualmente. Clustering automático encuentra temas emergentes.</p>
+                            <p>Con 100+ findings, es difícil para un humano o LLM agruparlos manualmente. Clustering
+                                automático encuentra temas emergentes.</p>
                         </div>
                         <div class="decision-item">
                             <strong>¿Por qué fact-checking con múltiples fuentes?</strong>
-                            <p>Un solo LLM puede alucinar. Si un claim aparece en 2-3 fuentes independientes, es más creíble. Esto aumenta la confianza del reporte.</p>
+                            <p>Un solo LLM puede alucinar. Si un claim aparece en 2-3 fuentes independientes, es más
+                                creíble. Esto aumenta la confianza del reporte.</p>
                         </div>
                     </div>
 
                     <div class="project-improvements">
                         <h4>🚀 Mejoras Opcionales</h4>
                         <ul>
-                            <li><strong>Streaming de progreso:</strong> Mostrar qué fuente está leyendo en tiempo real</li>
-                            <li><strong>Priorización de fuentes:</strong> Papers académicos > blogs > redes sociales</li>
+                            <li><strong>Streaming de progreso:</strong> Mostrar qué fuente está leyendo en tiempo real
+                            </li>
+                            <li><strong>Priorización de fuentes:</strong> Papers académicos > blogs > redes sociales
+                            </li>
                             <li><strong>Gráficos automáticos:</strong> Timeline de eventos, redes de conceptos</li>
                             <li><strong>Multi-idioma:</strong> Buscar en inglés, francés, español</li>
-                            <li><strong>Actualización continua:</strong> Re-ejecutar búsqueda cada semana, detectar cambios</li>
+                            <li><strong>Actualización continua:</strong> Re-ejecutar búsqueda cada semana, detectar
+                                cambios</li>
                         </ul>
                     </div>
 
                     <div class="project-resources">
                         <h4>📚 Recursos</h4>
                         <ul>
-                            <li><a href="https://github.com/langchain-ai/langgraph/tree/main/examples/multi_agent" target="_blank" rel="noopener">LangGraph Multi-Agent Examples</a></li>
-                            <li><a href="https://serpapi.com/" target="_blank" rel="noopener">SerpAPI (Google Search)</a></li>
+                            <li><a href="https://github.com/langchain-ai/langgraph/tree/main/examples/multi_agent"
+                                    target="_blank" rel="noopener">LangGraph Multi-Agent Examples</a></li>
+                            <li><a href="https://serpapi.com/" target="_blank" rel="noopener">SerpAPI (Google
+                                    Search)</a></li>
                             <li><a href="https://arxiv.org/help/api" target="_blank" rel="noopener">arXiv API</a></li>
-                            <li><a href="https://github.com/assafelovic/gpt-researcher" target="_blank" rel="noopener">GPT Researcher (proyecto similar open source)</a></li>
+                            <li><a href="https://github.com/assafelovic/gpt-researcher" target="_blank"
+                                    rel="noopener">GPT Researcher (proyecto similar open source)</a></li>
                         </ul>
                     </div>
 
@@ -895,28 +947,33 @@ Contenido sintetizado:
         <!-- Tab Content: Certificado -->
         <section id="certificado" class="tab-content certificate-section">
             <h2>🎓 ¡Felicidades por Completar el Curso!</h2>
-            
+
             <div class="certificate-container">
                 <div class="certificate-info">
-                    <p>Si completaste los 3 proyectos capstone, ¡mereces reconocimiento! Genera tu certificado personalizado para compartir en LinkedIn o tu portafolio.</p>
-                    
+                    <p>Si completaste los 3 proyectos capstone, ¡mereces reconocimiento! Genera tu certificado
+                        personalizado para compartir en LinkedIn o tu portafolio.</p>
+
                     <div class="certificate-form">
                         <h3>Genera Tu Certificado</h3>
                         <form id="certificateForm">
                             <div class="form-group">
                                 <label for="studentName">Tu Nombre Completo</label>
-                                <input type="text" id="studentName" name="studentName" placeholder="Ej: María García" required>
+                                <input type="text" id="studentName" name="studentName" placeholder="Ej: María García"
+                                    required>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label>Proyectos Completados</label>
                                 <div class="checkbox-group">
-                                    <label><input type="checkbox" name="project1" id="project1" required> Proyecto 1: FAQ Agent</label>
-                                    <label><input type="checkbox" name="project2" id="project2" required> Proyecto 2: Data Analysis Agent</label>
-                                    <label><input type="checkbox" name="project3" id="project3" required> Proyecto 3: Research Agent</label>
+                                    <label><input type="checkbox" name="project1" id="project1" required> Proyecto 1:
+                                        FAQ Agent</label>
+                                    <label><input type="checkbox" name="project2" id="project2" required> Proyecto 2:
+                                        Data Analysis Agent</label>
+                                    <label><input type="checkbox" name="project3" id="project3" required> Proyecto 3:
+                                        Research Agent</label>
                                 </div>
                             </div>
-                            
+
                             <button type="button" onclick="generateCertificate()" class="btn btn-primary btn-large">
                                 Generar Certificado 🎓
                             </button>
@@ -933,25 +990,26 @@ Contenido sintetizado:
                                     <h1>Code Agent Arena</h1>
                                     <p class="certificate-subtitle">Certificado de Completación</p>
                                 </div>
-                                
+
                                 <div class="certificate-body">
                                     <p class="certificate-text">Se otorga este certificado a</p>
                                     <h2 class="certificate-name" id="certName">María García</h2>
                                     <p class="certificate-text">Por completar exitosamente el curso</p>
                                     <h3 class="certificate-course">"Agentes de IA: De Fundamentos a Proyectos"</h3>
-                                    
+
                                     <div class="certificate-details">
                                         <p>✅ 7 Módulos Completos</p>
                                         <p>✅ 15+ Juegos Interactivos</p>
                                         <p>✅ 3 Proyectos Capstone</p>
                                     </div>
-                                    
+
                                     <div class="certificate-skills">
                                         <p><strong>Habilidades Adquiridas:</strong></p>
-                                        <p>Arquitecturas de Agentes • RAG • Multi-Agente • Evaluación • Seguridad • Optimización</p>
+                                        <p>Arquitecturas de Agentes • RAG • Multi-Agente • Evaluación • Seguridad •
+                                            Optimización</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="certificate-footer">
                                     <div class="certificate-date">
                                         <p>Fecha de Completación</p>
@@ -965,7 +1023,7 @@ Contenido sintetizado:
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="certificate-actions">
                         <button onclick="downloadCertificate()" class="btn btn-primary">Descargar PNG 📥</button>
                         <button onclick="shareCertificate()" class="btn btn-secondary">Compartir en LinkedIn 🔗</button>
@@ -984,7 +1042,8 @@ Contenido sintetizado:
     <footer>
         <div class="footer-content">
             <p>🤖 Code Agent Arena - Módulo 7: Proyectos Capstone</p>
-            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a>
+                para la comunidad</p>
         </div>
     </footer>
 
@@ -992,4 +1051,5 @@ Contenido sintetizado:
     <script src="../js/quiz-system.js"></script>
     <script src="../js/games/capstone-projects.js"></script>
 </body>
+
 </html>

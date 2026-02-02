@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Módulo 3: Técnicas - Code Agent Arena</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/futuristic-theme.css">
     <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="../css/games/memory-challenge.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
+
+<body data-theme="futuristic">
+    <!-- Futuristic Background Decorations -->
+    <div class="circuit-background"></div>
+    <div class="hexagon-grid"></div>
+
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -41,7 +52,7 @@
         <section id="teoria" class="theory-section">
             <div class="theory-container">
                 <h2>💾 Memory Systems</h2>
-                
+
                 <div class="theory-card">
                     <h3>¿Por qué los agentes necesitan memoria?</h3>
                     <p>Sin memoria, un agente es como tener amnesia: olvida todo inmediatamente. La memoria permite:</p>
@@ -99,81 +110,124 @@
                 <div class="theory-card highlight">
                     <h3>🗄️ Vector Databases</h3>
                     <p>Las bases de datos vectoriales son el cerebro de la memoria a largo plazo:</p>
-                    <div class="vector-demo">
-                        <div class="vector-step">
-                            <span class="step-num">1</span>
-                            <div class="step-text">
-                                <strong>Texto:</strong> "Me gustan los gatos"<br>
-                                <strong>→ Vector:</strong> [0.2, 0.8, 0.1, ...]
+                    <div class="react-cycle-demo">
+                        <div class="cycle-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>📝 Texto</h4>
+                                <p>"Me gustan los gatos"<br>
+                                <strong>→ Vector:</strong> [0.2, 0.8, 0.1, ...]</p>
                             </div>
                         </div>
-                        <div class="vector-step">
-                            <span class="step-num">2</span>
-                            <div class="step-text">
-                                <strong>Guardar:</strong> Vector + metadata en DB<br>
-                                (Pinecone, Chroma, Weaviate)
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>💾 Guardar</h4>
+                                <p>Vector + metadata en DB<br>
+                                (Pinecone, Chroma, Weaviate)</p>
                             </div>
                         </div>
-                        <div class="vector-step">
-                            <span class="step-num">3</span>
-                            <div class="step-text">
-                                <strong>Buscar:</strong> "felinos" encuentra "gatos"<br>
-                                ¡Búsqueda por significado, no por palabra exacta!
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>🔍 Buscar</h4>
+                                <p>"felinos" encuentra "gatos"<br>
+                                ¡Búsqueda por significado, no por palabra exacta!</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <h2>🔧 Tool Use (Uso de Herramientas)</h2>
-                
+
                 <div class="theory-card">
                     <h3>¿Qué son las Tools?</h3>
                     <p>Las herramientas permiten al agente interactuar con el mundo:</p>
-                    <div class="tools-grid">
-                        <div class="tool-item">🔍 Búsqueda en Google</div>
-                        <div class="tool-item">🗄️ Consultar base de datos</div>
-                        <div class="tool-item">📧 Enviar emails</div>
-                        <div class="tool-item">🧮 Hacer cálculos</div>
-                        <div class="tool-item">📄 Leer archivos</div>
-                        <div class="tool-item">🌐 Llamar APIs</div>
-                        <div class="tool-item">💻 Ejecutar código</div>
-                        <div class="tool-item">📊 Generar gráficos</div>
+                </div>
+
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🔍</div>
+                        <h3>Búsqueda</h3>
+                        <p>Buscar en Google, Wikipedia, documentos</p>
+                    </div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🗄️</div>
+                        <h3>Base de Datos</h3>
+                        <p>Consultar y guardar información</p>
+                    </div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🌐</div>
+                        <h3>APIs</h3>
+                        <p>Llamar servicios externos</p>
+                    </div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">💻</div>
+                        <h3>Código</h3>
+                        <p>Ejecutar scripts y programas</p>
+                    </div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">📧</div>
+                        <h3>Comunicación</h3>
+                        <p>Enviar emails y mensajes</p>
+                    </div>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🧮</div>
+                        <h3>Cálculos</h3>
+                        <p>Operaciones matemáticas complejas</p>
                     </div>
                 </div>
 
                 <div class="theory-card">
                     <h3>Function Calling</h3>
                     <p>El agente decide QUÉ herramienta usar y CÓMO usarla:</p>
-                    <div class="function-calling-demo">
-                        <div class="fc-step">
-                            <div class="fc-label">Usuario:</div>
-                            <div class="fc-content">"¿Cuál es el clima en Miami?"</div>
+                    <div class="react-cycle-demo">
+                        <div class="cycle-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>🗣️ Usuario</h4>
+                                <p>"¿Cuál es el clima en Miami?"</p>
+                            </div>
                         </div>
-                        <div class="fc-arrow">↓</div>
-                        <div class="fc-step fc-agent">
-                            <div class="fc-label">Agente piensa:</div>
-                            <div class="fc-content">"Necesito la herramienta get_weather"</div>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>🧠 Agente piensa</h4>
+                                <p>"Necesito la herramienta get_weather"</p>
+                            </div>
                         </div>
-                        <div class="fc-arrow">↓</div>
-                        <div class="fc-step fc-tool">
-                            <div class="fc-label">Llama función:</div>
-                            <div class="fc-content">get_weather(location="Miami")</div>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>⚡ Llama función</h4>
+                                <p>get_weather(location="Miami")</p>
+                            </div>
                         </div>
-                        <div class="fc-arrow">↓</div>
-                        <div class="fc-step fc-result">
-                            <div class="fc-label">Resultado:</div>
-                            <div class="fc-content">"28°C, Soleado, Humedad 75%"</div>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>📊 Resultado</h4>
+                                <p>"28°C, Soleado, Humedad 75%"</p>
+                            </div>
                         </div>
-                        <div class="fc-arrow">↓</div>
-                        <div class="fc-step">
-                            <div class="fc-label">Respuesta:</div>
-                            <div class="fc-content">"En Miami hace 28°C y está soleado 🌞"</div>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>💬 Respuesta</h4>
+                                <p>"En Miami hace 28°C y está soleado 🌞"</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <h2>👥 Multi-Agent Systems</h2>
-                
+
                 <div class="theory-card">
                     <h3>Múltiples Agentes Trabajando Juntos</h3>
                     <p>Como un equipo de trabajo, cada agente tiene su especialidad:</p>
@@ -219,35 +273,56 @@
 
                 <div class="theory-card highlight">
                     <h3>Ejemplo Multi-Agent: Escribir un Artículo</h3>
-                    <div class="multi-agent-flow">
-                        <div class="ma-agent">
-                            <strong>🔍 Researcher:</strong> Busca información sobre el tema
+                    <div class="react-cycle-demo">
+                        <div class="cycle-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>🔍 Researcher</h4>
+                                <p>Busca información sobre el tema</p>
+                            </div>
                         </div>
-                        <div class="ma-arrow">→</div>
-                        <div class="ma-agent">
-                            <strong>✍️ Writer:</strong> Escribe el borrador del artículo
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>✍️ Writer</h4>
+                                <p>Escribe el borrador del artículo</p>
+                            </div>
                         </div>
-                        <div class="ma-arrow">→</div>
-                        <div class="ma-agent">
-                            <strong>🔍 Fact-Checker:</strong> Verifica que todo sea correcto
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>🔍 Fact-Checker</h4>
+                                <p>Verifica que todo sea correcto</p>
+                            </div>
                         </div>
-                        <div class="ma-arrow">→</div>
-                        <div class="ma-agent">
-                            <strong>✨ Editor:</strong> Mejora la redacción y formato
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>✨ Editor</h4>
+                                <p>Mejora la redacción y formato</p>
+                            </div>
                         </div>
-                        <div class="ma-arrow">→</div>
-                        <div class="ma-result">
-                            📄 <strong>Artículo Final</strong>
+                        <div class="cycle-arrow">↓</div>
+                        <div class="cycle-step">
+                            <div class="step-number">✅</div>
+                            <div class="step-content">
+                                <h4>📄 Artículo Final</h4>
+                                <p>Listo para publicar</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <h2>🚀 Frameworks Populares</h2>
 
-                <div class="frameworks-grid">
-                    <div class="framework-card">
-                        <h3>🦜 LangChain</h3>
-                        <p>El framework más popular para agentes</p>
+                <div class="agent-types-grid">
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🦜</div>
+                        <h3>LangChain</h3>
+                        <p><strong>El framework más popular para agentes</strong></p>
                         <ul>
                             <li>Chains y agents pre-construidos</li>
                             <li>Gran comunidad</li>
@@ -255,9 +330,10 @@
                         </ul>
                     </div>
 
-                    <div class="framework-card">
-                        <h3>🔄 LangGraph</h3>
-                        <p>Para workflows complejos</p>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🔄</div>
+                        <h3>LangGraph</h3>
+                        <p><strong>Para workflows complejos</strong></p>
                         <ul>
                             <li>State machines</li>
                             <li>Grafos de agentes</li>
@@ -265,9 +341,10 @@
                         </ul>
                     </div>
 
-                    <div class="framework-card">
-                        <h3>👥 CrewAI</h3>
-                        <p>Especializado en multi-agent</p>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">👥</div>
+                        <h3>CrewAI</h3>
+                        <p><strong>Especializado en multi-agent</strong></p>
                         <ul>
                             <li>Equipos de agentes</li>
                             <li>Roles y tareas</li>
@@ -275,9 +352,10 @@
                         </ul>
                     </div>
 
-                    <div class="framework-card">
-                        <h3>🤖 AutoGen</h3>
-                        <p>De Microsoft, conversacional</p>
+                    <div class="agent-type-card">
+                        <div class="agent-type-icon">🤖</div>
+                        <h3>AutoGen</h3>
+                        <p><strong>De Microsoft, conversacional</strong></p>
                         <ul>
                             <li>Agentes que chatean</li>
                             <li>Fácil de usar</li>
@@ -292,8 +370,9 @@
         <section id="juego" class="game-section">
             <div class="game-container">
                 <h2>🎮 Juego: Memory Challenge</h2>
-                <p class="game-instructions">Ayuda al agente a gestionar su memoria correctamente. ¿Qué tipo de memoria debe usar para cada situación?</p>
-                
+                <p class="game-instructions">Ayuda al agente a gestionar su memoria correctamente. ¿Qué tipo de memoria
+                    debe usar para cada situación?</p>
+
                 <div class="game-board">
                     <div class="memory-game">
                         <div class="memory-scenario" id="scenario-display">
@@ -448,7 +527,8 @@
     <footer>
         <div class="footer-content">
             <p>🤖 Code Agent Arena - Módulo 3: Técnicas y Frameworks</p>
-            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a> para la comunidad</p>
+            <p>Hecho con ❤️ por <a href="https://github.com/YamiCueto" target="_blank" rel="noopener">Yamid Cueto</a>
+                para la comunidad</p>
         </div>
     </footer>
 
@@ -456,4 +536,5 @@
     <script src="../js/quiz-system.js"></script>
     <script src="../js/games/memory-challenge.js"></script>
 </body>
+
 </html>
