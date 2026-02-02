@@ -1366,3 +1366,139 @@
 [data-theme="futuristic"] .arch-flow {
     padding: 1rem;
 }
+
+/* Multi-Agent Diagram Futuristic Overrides */
+[data-theme="futuristic"] .multi-agent-diagram {
+    background: rgba(15, 23, 41, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+[data-theme="futuristic"] .agent-node {
+    background: rgba(15, 23, 41, 0.5);
+    border-color: var(--futuristic-cyan-bright);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .agent-node:hover {
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+}
+
+[data-theme="futuristic"] .agent-node strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .agent-node p {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .arrow-right,
+[data-theme="futuristic"] .arrow-down {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+/* Certificate Section Futuristic Overrides */
+[data-theme="futuristic"] .certificate-container {
+    background: transparent;
+}
+
+[data-theme="futuristic"] .certificate-info {
+    background: rgba(15, 23, 41, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .certificate-form h3 {
+    color: var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .form-group label {
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .form-group input[type="text"] {
+    background: rgba(15, 23, 41, 0.4);
+    border-color: rgba(0, 217, 255, 0.3);
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .form-group input[type="text"]::placeholder {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .form-group input[type="text"]:focus {
+    border-color: var(--futuristic-cyan-bright);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+[data-theme="futuristic"] .checkbox-group label {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .checkbox-group input[type="checkbox"] {
+    accent-color: var(--futuristic-cyan-bright);
+    background: rgba(15, 23, 41, 0.4);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+/* Certificate Preview */
+[data-theme="futuristic"] .certificate {
+    background: rgba(15, 23, 41, 0.7);
+}
+
+[data-theme="futuristic"] .certificate-border {
+    border: 3px solid var(--futuristic-cyan-bright);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+}
+
+[data-theme="futuristic"] .certificate-content {
+    background: rgba(15, 23, 41, 0.9);
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .certificate-header h1 {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+[data-theme="futuristic"] .certificate-subtitle,
+[data-theme="futuristic"] .certificate-text {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .certificate-name {
+    color: var(--futuristic-cyan-bright);
+    text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+[data-theme="futuristic"] .certificate-course {
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .certificate-details p {
+    color: var(--futuristic-text-primary);
+}
+
+[data-theme="futuristic"] .certificate-skills p {
+    color: var(--futuristic-text-secondary);
+}
+
+[data-theme="futuristic"] .certificate-skills strong {
+    color: var(--futuristic-cyan-bright);
+}
+
+[data-theme="futuristic"] .certificate-date,
+[data-theme="futuristic"] .certificate-signature {
+    color: var(--futuristic-text-secondary);
+    border-top: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+[data-theme="futuristic"] .certificate-actions {
+    background: rgba(15, 23, 41, 0.5);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
